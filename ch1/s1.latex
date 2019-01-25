@@ -1,0 +1,861 @@
+\documentclass{article}
+
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{centernot}
+\usepackage{todo}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\thesubsection}{(\alph{subsection})}
+\newtheorem{thm}{Theorem}
+
+\begin{document}
+\title{Exercies for \S 1 Fundamental Concepts}
+\author{Charles Southerland}
+\date{7 January 2019}
+
+\maketitle
+
+\section{Check the distributive laws for \(\cup\) and \(\cap\) and De Morgan's laws.}
+
+\begin{thm}[\(\cap\) distributes over \(\cup\)]
+	Set intersection distributes across set union. That is, for any sets
+	\(A\), \(B\), and \(C\),
+	\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)
+\end{thm}
+\begin{proof}
+	Given that sets are said to be equal iff they are subsets of each other,
+	the goal can be shown directly by demonstrating both of the sets in
+	question are subsets of each other. Symbolically, that would be:
+	\begin{itemize}
+		\item \([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\)
+		\item \([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \cap (B \cup C)\): either the
+	set is empty, or there exists at least one element in the set. We will
+	address these possibilities independently.
+
+	If \(A \cap (B \cup C) = \emptyset\), then
+	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\) since the
+	empty set is a subset of all sets.
+
+	If \(\exists x \in A \cap (B \cup C)\), then both \(x \in A\) and
+	\(x \in B \cup C\) by the definition of set intersection. Further, by
+	the definition of set union, \(x \in B\) or \(x \in C\). Without loss of
+	generality, assume \(x \in B\). Since both \(x \in A\) and \(x \in B\),
+	the definition of set intersection gives us \(x \in A \cap B\). By
+	disjunctive introduction, \(x \in A \cap B \lor x \in A \cap C\), and
+	by the definition of set union, \(x \in (A \cap B) \cup (A \cap C)\). So
+	\(\exists x \in A \cap (B \cup C) \implies x \in (A \cap B) \cup (A \cap C)\),
+	and by the definition of subset
+	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\).
+
+	Thus, regardless if \(A \cap (B \cup C) = \emptyset\) or
+	\(\exists x \in A \cap (B \cup C)\), it is certain that
+	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\).
+
+	\medskip
+	Second, let's consider the nature of \((A \cap B) \cup (A \cap C)\):
+	either the set is empty, or there exists at least one element in the
+	set. We will address these possibilities independently.
+
+	If \((A \cap B) \cup (A \cap C) = \emptyset\), then
+	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\) since the
+	empty set is a subset of all sets.
+
+	If \(\exists x \in (A \cap B) \cup (A \cap C)\), then either
+	\(x \in A \cap B\) or \(x \in A \cap C\) by the definition of set union.
+	Without loss of generality, assume \(x \in A \cap B\). By the definition
+	of set intersection, \(x \in A\) and \(x \in B\). By disjunctive
+	introduction, \(x \in B \lor x \in C\), and by the definition of set
+	union, \(x \in B \cup C\). By the definition of set intersection,
+	\(x \in A \cap (B \cup C)\). So
+	\(\exists x \in (A \cap B) \cup (A \cap C) \implies x \in A \cap (B \cup C)\),
+	and by definition of subset
+	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\).
+
+	Thus, regardless if \((A \cap B) \cup (A \cap C) = \emptyset\) or
+	\(\exists x \in (A \cap B) \cup (A \cap C)\), it is certain that
+	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\).
+
+	\medskip
+	Since both
+	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\) and
+	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\) it is
+	therefore the case that
+	\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\).
+\end{proof}
+
+\bigbreak{}
+
+\begin{thm}[\(\cup\) distributes over \(\cap\)]
+	Set union distributes across set intersection. That is, given sets
+	\(A\), \(B\), and \(C\),
+	\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)
+\end{thm}
+\begin{proof}
+	Given the definition of set equality, it is sufficent to demonstrate
+	equality by showing that each set is a subset of the other. Symbolically:
+	\begin{itemize}
+		\item \([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\)
+		\item \([(A \cup B) \cap (A \cup C)] \subset [A \cup (B \cap C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \cup (B \cap C)\). In the
+	trivial case that the set has no memebers (i.e., it is equal to the
+	empty set), then
+	\([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\) since the
+	empty set is a subset of all other sets. If instead
+	\(\exists x \in A \cup (B \cap C)\), then either \(x \in A\) or
+	\(x \in (B \cap C)\) (or both) by the definition of set union.
+
+	When \(x \in A\), then \(x \in A \lor x \in B\) and
+	\(x \in A \lor x \in C\) by disjunctive introduction, which gives
+	\(x \in A \cup B\) and \(x \in A \cup C\) by the definition of set
+	union.By the definition of set intersection,
+	\(x \in [(A \cup B) \cap (A \cup C)]\). So assuming \(x \in A\) gives
+	\([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\).
+
+	When \(x \in (B \cap C)\), then \(x \in B\) and \(x \in C\) by the
+	definition of set intersection. This gives both \(x \in A \cup B\) and
+	\(x \in A \cup C\) by disjunctive introduction and the definition of set
+	union. By the definition of set intersection, we get that
+	\(x \in (A \cup B) \cap (A \cup C)\). So assuming \(x \in (B \cap C)\)
+	gives \([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\).
+
+	So \(\exists x \in A \cup (B \cap C)\) also gives
+	\([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\) regardless
+	of the particular conditions when \(x \in A \cup (B \cap C)\). Thus it
+	is true that \([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\)
+	in all circumstances.
+
+	\medskip
+	Second, let's consider the nature of \((A \cup B) \cap (A \cup C)\). In
+	the trivial case that the set has no members (i.e., it is equal to the
+	empty set), then
+	\([(A \cup B) \cap (A \cup C)] \subset [A \cup (B \cap C)]\) since the
+	empty set is a subset of all other sets. However, there is more to
+	consider if the set is non-empty.
+
+	When \((A \cup B) \cap (A \cup C) \neq \emptyset\), then
+	\(\exists x \in (A \cup B) \cap (A \cup C)\) by the negation of the
+	definition of the empty set. By the definition of set intersection,
+	\(x \in A \cup B \land x \in A \cup C\). By the definition of set union,
+	\((x \in A \lor x \in B) \land (x \in A \lor x \in C)\). We can proceed
+	by separately considering the cases that \(x \in A\),
+	\(x \notin A \land x \in B\), and \(x \notin A \land x \in C\). Note
+	that either \(x \notin A \land x \notin B\) or
+	\(x \notin A \land x \notin C\) would directly contradict
+	\((x \in A \lor x \in B) \land (x \in A \lor x \in C)\).
+
+	If \(x \in A\), then \((x \in A) \lor (x \in B \cap C)\) by disjunctive
+	introduction. By the definition of set union,
+	\(x \in A \cup (B \cap C)\).
+
+	Next, let's say \(x \notin A \land x \in B\). Now it would also seem
+	either \(x \in C\) or \(x \notin C\).
+
+	Suppose \(x \notin C\). With what is given, we would directly have that
+	\(x \notin A \land x \notin C\). But, as noted above, this contradicts
+	what has already been established. So it is not the case that
+	\(x \notin C\).
+
+	So we have reached \(x \notin A \land x \in B \land x \in C\). By the
+	definition of set intersection, we have
+	\(x \notin A \land x \in B \cap C\). By conjunctive elimination, we have
+	\(x \in B \cap C\). By disjunctive introduction, we have
+	\((x \in A) \lor (x \in B \cap C)\). By the definition of set union, we
+	have \(x \in A \cup (B \cap C)\).
+
+	The demonstration from \(x \notin A \land x \in C\) is equivalently
+	constructed as the demonstration from \(x \notin A \land x \in B\).
+
+	Since all cases descending from
+	\(\exists x \in (A \cup B) \cap (A \cup C)\) lead either to
+	contradiction or a demonstration that \(x \in A \cup (B \cap C)\), it is
+	certain that \((A \cup B) \cap (A \cup C) \neq \emptyset\) implies
+	\((A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)\). Thus, when
+	taken with the trivial case that was previously shown, it has been
+	demonstrated that
+	\((A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)\).
+
+	\medskip
+	Therefore, since the relevant sets have been shown to be subsets of each
+	other, by the definition of set equality we have that
+	\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\).
+\end{proof}
+
+\bigbreak{}
+
+\begin{thm}[De Morgan's First Law]
+	Set difference across set union is equivalent to set intersection of set
+	differences. That is, given sets \(A\), \(B\), and \(C\),
+	\(A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)\)
+\end{thm}
+\begin{proof}
+	Given the definition of set equality, it is sufficent to demonstrate
+	equality by showing that each set is a subset of the other. Symbolically:
+	\begin{itemize}
+		\item \([A \setminus (B \cup C)] \subset [(A \setminus B) \cap (A \setminus C)]\)
+		\item \([(A \setminus B) \cap (A \setminus C)] \subset [A \setminus (B \cup C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \setminus (B \cup C)\). In the
+	trivial case that the set has no memebers (i.e., it is equal to the
+	empty set), then
+	\([A \setminus (B \cup C)] \subset [(A \setminus B) \cap (A \setminus C)]\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in A \setminus (B \cup C)\), then it is certain that
+	\(x \in A\) and \(x \notin (B \cup C)\) by the definition of set
+	difference. We can proceed by exploring whether or not \(x \in B\) or
+	\(x \in C\).
+
+	Suppose \(x \in B\). By disjunctive introduction,
+	\((x \in B) \lor (x \in C)\). By the definition of set union,
+	\(x \in (B \cup C)\). But this contradicts \(x \notin (B \cup C)\),
+	which has already been shown from our assumptions. So our supposition
+	is false, and it is certain that \(x \notin B\). A similar consturction
+	starting with a supposition of \(x \in C\) yields a similar
+	contradiction, so we also have that \(x \notin C\).
+
+	To recap, we have that \(x \in A\), \(x \notin (B \cup C)\),
+	\(x \notin B\), and \(x \notin C\). So we have both
+	\((x \in A) \land (x \notin B)\) and \((x \in A) \land (x \notin C)\).
+	By the definition of set difference, we have both
+	\(x \in (A \setminus B)\) and \(x \in (A \setminus C)\). By the
+	definition of set intersection, we have that
+	\(x \in (A \setminus B) \cap (A \setminus C)\). Thus we have shown
+	\(A \setminus (B \cup C) \subset (A \setminus B) \cap (A \setminus C)\)
+	in all circumstances.
+
+	\medskip
+	Second, let's consider the nature of
+	\((A \setminus B) \cap (A \setminus C)\). In the trivial case that the
+	set has no memebers (i.e., it is equal to the empty set), then
+	\((A \setminus B) \cap (A \setminus C) \subset A \setminus (B \cup C)\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in (A \setminus B) \cap (A \setminus C)\), then it is
+	certain that both \(x \in (A \setminus B)\) and
+	\(x \in (A \setminus C)\) by the definition of set intersection. By the
+	definition of set difference, we have \((x \in A) \land (x \notin B)\)
+	and \((x \in A) \land (x \notin C)\). So we have \(x \in A\),
+	\(x \notin B\), and \(x \notin C\).
+
+	Suppose \(x \in (B \cup C)\). Then either \(x \in B\) or \(x \in C\) or
+	both by the definition of set union. But each of these possibilities
+	contradicts what we have already established, so the supposition is
+	false and \(x \notin (B \cup C)\).
+
+	Since we have both \(x \in A\) and \(x \notin (B \cup C)\), then we have
+	\(x \in A \setminus (B \cup C)\) by the definition of set difference.
+	Thus we have shown
+	\((A \setminus B) \cap (A \setminus C) \subset A \setminus (B \cup C)\)
+	in all circumstances.
+
+	\medskip
+	Since we have demonstrated each set is a subset of the other, we have
+	therefore demonstrated that
+	\(A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)\).
+\end{proof}
+
+\bigbreak{}
+
+\begin{thm}[De Morgan's Second Law]
+	Set difference across set intersection is equivalent to set union of set
+	differences. That is, given sets \(A\), \(B\), and \(C\),
+	\(A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)\)
+\end{thm}
+\begin{proof}
+	Given the definition of set equality, it is sufficent to demonstrate
+	equality by showing that each set is a subset of the other. Symbolically:
+	\begin{itemize}
+		\item \([A \setminus (B \cap C)] \subset [(A \setminus B) \cup (A \setminus C)]\)
+		\item \([(A \setminus B) \cup (A \setminus C)] \subset [A \setminus (B \cap C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \setminus (B \cap C)\). In the
+	trivial case that the set has no members (i.e., it is equal to the
+	empty set), then
+	\([A \setminus (B \cap C)] \subset [(A \setminus B) \cup (A \setminus C)]\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in A \setminus (B \cap C)\), then \(x \in A\) and
+	\(x \notin (B \cap C)\) by the definition of set difference. We can
+	proceed by examining whether or not \(x \in B\) and \(x \in C\).
+
+	If \(x \notin B\), then combining with the already established fact that
+	\(x \in A\) gives \(x \in A \setminus B\) by the definition of set
+	intersection. By disjunctive introduction, we have that
+	\((x \in A \setminus B) \lor (x \in A \setminus C)\). By the definition
+	of set union, we have that
+	\(x \in (A \setminus B) \cup (A \setminus C)\). So
+	\(\exists x \in A \setminus (B \cap C) \land x \notin B\) is sufficent
+	to demonstrate that
+	\(A \setminus (B \cap C) \subset (A \setminus B) \cup (A \setminus C)\).
+	A similar construction assuming \(x \notin C\) yields
+	\(\exists x \in A \setminus (B \cap C) \land x \notin C \implies
+	x \in (A \setminus B) \cup (A \setminus C)\).
+
+	The previous cases admit the possibility that the alternate set in
+	question may or may not contain member \(x\) (i.e., the previous
+	demonstration in the case that \(x \notin B\) holds for both \(x \in C\)
+	and \(x \notin C\)). However, suppose both \(x \in B\) and \(x \in C\).
+	Then by the definition of set intersection, \(x \in (B \cap C)\). But
+	this contradicts \(x \notin (B \cap C)\), which has already been
+	established directly from our assumptions. So it is not the case that
+	both \(x \in B\) and \(x \in C\).
+
+	Since all cases eminating from \(\exists x \in A \setminus (B \cap C)\)
+	yield either contradictions or demonstrations that
+	\(x \in (A \setminus B) \cup (A \setminus C)\), and since the case that
+	\(A \setminus (B \cap C) = \emptyset\) has also given the particular
+	result, we can say that
+	\(A \setminus (B \cap C) \subset (A \setminus B) \cup (A \setminus C)\)
+	in all circumstances.
+
+	\medskip
+	Second, let's consider the nature of
+	\((A \setminus B) \cup (A \setminus C)\). In the trivial case that the
+	set has no members (i.e., it is equal to the empty set), then
+	\((A \setminus B) \cup (A \setminus C) \subset A \setminus (B \cap C)\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in (A \setminus B) \cup (A \setminus C)\), then either
+	\(x \in A \setminus B\) or \(x \in A \setminus C\) or both by the
+	definition of set union.
+
+	If \(x \in A \setminus B\), then \(x \in A\) and \(x \notin B\) by the
+	definition of set difference. Suppose \(x \in (B \cap C)\). Then
+	\(x \in B\) and \(x \in C\) by the definition of set intersection. But
+	this contradicts that \(x \notin B\), which has already been established
+	by the assumptions we have made for this case. So
+	\(x \notin (B \cap C)\). Since we have already established that
+	\(x \in A\), we have that \(x \in A \setminus (B \cap C)\) by the
+	definition of set difference. So
+	\(\exists x \in (A \setminus B) \cup (A \setminus C) \land x \in (A \setminus B)
+	\implies x \in A \setminus (B \cap C)\). A similar construction
+	demonstrates that the case when \(x \in A \setminus C\) also yields
+	\(\exists x \in (A \setminus B) \cup (A \setminus C) \land x \in (A \setminus C)
+	\implies x \in A \setminus (B \cap C)\). Neither of these cases
+	precludes the possibility that both \(x \in A \setminus B\) and
+	\(x \in A \setminus C\), but the possibility that neither is true is
+	precluded by the assumption
+	\(\exists x \in (A \setminus B) \cup (A \setminus C)\).
+
+	Since all cases eminating from
+	\(\exists x \in (A \setminus B) \cup (A \setminus C)\) yield either
+	contradictions or demonstrations that \(x \in A \setminus (B \cap C)\),
+	and since the case that
+	\((A \setminus B) \cup (A \setminus C) = \emptyset\) has also given the
+	following result, we can say that
+	\((A \setminus B) \cup (A \setminus C) \subset A \setminus (B \cap C)\)
+	in all circumstances.
+
+	\medskip
+	Since we have demonstrated each set is a subset of the other, we have
+	therefore demonstrated that
+	\(A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)\).
+\end{proof}
+
+\bigbreak{}
+
+\section{Determine which of the following statements are true for all sets
+	\(A\), \(B\), \(C\), and \(D\).}
+If a double implication fails, determine whether one or the other of the
+possible implications holds. If an equality fails, determine whether the
+statement becomes true if the ``equals'' symbol is replaced by one or the other
+of the inclusion symbols \(\subset\) or \(\supset\).
+
+\subsection{\(A \subset B \land A \subset C \iff A \subset (B \cup C)\).}\label{2a}
+\begin{thm}[Double implication fails in~\ref{2a}]
+	\(A \subset B \land A \subset C \centernot\iff A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset (B \cup C) \implies A \subset B \land A \subset C\).
+
+	Consider \(A \subset (B \cup C)\). Choose
+	\(A = \{m | m = 3k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	3, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all integers are even or odd, we can say that it is
+	indeed the case that \(A \subset (B \cup C)\) holds for our choices of
+	\(A\), \(B\), and \(C\). Suppose
+	\(A \subset (B \cup C) \implies A \subset B \land A \subset C\). Since
+	we have already shown that the antecedent holds for our choices of
+	\(A\), \(B\), and \(C\), this would require the consequent to be true as
+	well. So both \(A \subset B\) and \(A \subset C\). Considerring just
+	\(A \subset B\), this would mean that the set of multiples of 3 is a
+	subset of the evens. This would imply that \(\forall x \in A, x \in B\).
+	Now note that \(3 = x \in A\) because 3 is a multiple of 3. However,
+	\(3 = x \notin B\) as 3 is not even. This contradicts our requirement
+	that for any \(x \in A\), it is also the case that \(x \in B\). So our
+	supposition is false, and
+	\(A \subset (B \cup C) \centernot\implies A \subset B \land A \subset C\).
+
+	Since we have demonstrated that one of the predicates does not imply the
+	other predicate, we have therefore established that the double
+	implication fails as well.
+\end{proof}
+
+\begin{thm}[LHS implies RHS in~\ref{2a}]
+	\(A \subset B \land A \subset C \implies A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	It is given that \(A \subset B\) and \(A \subset C\). Considerring just
+	\(A \subset B\), it is either the case that \(A = \emptyset\) or
+	\(\exists x \in A \implies x \in B\). In the trivial case that
+	\(A = \emptyset\), \(A \subset (B \cup C)\) since the empty set is a
+	subset of all sets. In the case that \(A\) is not empty, then we can say
+	that \(\exists x \in A \implies (x \in B \lor x \in C)\) by disjunctive
+	inclusion. By the definition of set union, we have that
+	\(x \in (B \cup C)\). So
+	\(A \neq \emptyset \implies A \subset (B \cup C)\). Since
+	\(A \subset (B \cup C)\) in all cases derived from our assumptions, we
+	have therefore demonstrated that
+	\(A \subset B \land A \subset C \implies A \subset (B \cup C)\).
+\end{proof}
+
+\subsection{\(A \subset B \lor A \subset C \iff A \subset (B \cup C)\).}\label{2b}
+\begin{thm}[Double implication fails in~\ref{2b}]
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset (B \cup C) \implies A \subset B \lor A \subset C\).
+
+	Consider \(A \subset (B \cup C)\). Choose
+	\(A = \{m | m = 3k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	3, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all integers are even or odd, we can say that it is
+	indeed the case that \(A \subset (B \cup C)\) holds for our choices of
+	\(A\), \(B\), and \(C\). Suppose
+	\(A \subset (B \cup C) \implies A \subset B \lor A \subset C\). Since
+	we have already shown that the antecedent holds for our choices of
+	\(A\), \(B\), and \(C\), this would require the consequent to be true as
+	well. So either \(A \subset B\) or \(A \subset C\) or both.
+
+	First consider the possibility that \(A \subset B\). This would mean
+	that the set of multiples of 3 is a subset of the evens. This would
+	imply that \(\forall x \in A, x \in B\). Now note that \(3 = x \in A\)
+	because 3 is a multiple of 3. However, \(3 = x \notin B\) as 3 is not
+	even. This contradicts our requirement that for any \(x \in A\), it is
+	also the case that \(x \in B\). So our supposition would be false in the
+	case that \(A \subset B\), and the implication would not hold.
+
+	Next consider the possibility that \(A \subset C\). This would mean
+	that the set of multiples of 3 is a subset of the odds. This would imply
+	that \(\forall x \in A, x \in C\). Now note that \(6 = x \in A\) because
+	6 is a multiple of 3. However, \(6 = x \notin C\) as 6 is not odd. This
+	contradicts our requirement that for any \(x \in A\), it is also the
+	case that \(x \in C\). So our supposition would be false in the case
+	that \(A \subset C\), and the implication would not hold.
+
+	Since both cases derived from our supposition reach contradictions, our
+	supposition was false and the implication therefore does not hold. Since
+	we have demonstrated that one of the predicates does not imply the other
+	predicate, we have therefore established that the double implication
+	fails as well.
+\end{proof}
+
+\begin{thm}[LHS implies RHS in~\ref{2b}]
+	\(A \subset B \lor A \subset C \implies A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	It is given that either \(A \subset B\) or \(A \subset C\) or both.
+
+	Consider the possibility that \(A \subset B\). It is either the case
+	that \(A = \emptyset\) or \(\exists x \in A \implies x \in B\). In the
+	trivial case that \(A = \emptyset\), \(A \subset (B \cup C)\) since the
+	empty set is a subset of all sets. In the case that \(A\) is not empty,
+	then we can say that \(\exists x \in A \implies (x \in B \lor x \in C)\)
+	by disjunctive inclusion. By the definition of set union, we have that
+	\(x \in (B \cup C)\). So
+	\(A \neq \emptyset \implies A \subset (B \cup C)\) in this case. A
+	similar construction can be made given \(A \subset C\) to show that
+	\(A \subset (B \cup C)\) regardless of whether \(A = \emptyset\) as
+	well. Since \(A \subset (B \cup C)\) in all cases derived from our
+	assumptions, we have therefore demonstrated that
+	\(A \subset B \lor A \subset C \implies A \subset (B \cup C)\).
+\end{proof}
+
+\subsection{\(A \subset B \land A \subset C \iff A \subset (B \cap C)\).}\label{2c}
+\begin{thm}[\ref{2c} holds]
+	\(A \subset B \land A \subset C \iff A \subset (B \cap C)\)
+\end{thm}
+\begin{proof}
+	To demonstrate double implication, it is sufficient to demonstrate each
+	implication.
+
+	\medskip{}
+	First, consider \(A \subset B \land A \subset C\). Now suppose
+	\(\neg [A \subset (B \cap C)]\). By the definition of the subset
+	relation, we have that
+	\(\neg (x \in A \implies [x \in (B \cap C)])\). By the definition of
+	set intersection, we have that
+	\(\neg (x \in A \implies [x \in B \land x \in C])\). By DeMorgan's Law,
+	we have that \(x \in A \land (x \notin B \lor x \notin C)\). By the
+	distribution of \(\land\) over \(\lor\), we have
+	\((x \in A \land x \notin B) \lor (x \in A \land x \notin C)\). By
+	DeMorgan's Law, we have that
+	\(\neg (x \in A \implies x \in B) \lor \neg (x \in A \implies x \in B)\).
+	By the definition of the subset relation, we have that
+	\(\neg (A \subset B) \lor \neg (A \subset C)\). However,
+	\(\neg (A \subset B)\) contradicts our assumption that \(A \subset B\),
+	and \(\neg (A \subset C)\) contradicts our assumption that
+	\(A \subset C\). Since both cases of the conditional result in
+	contradiction, the conditional as a whole also contradicts our
+	assumptions. So our supposition was false, and \(A \subset (B \cap C)\).
+	Thus \(A \subset B \land A \subset C \implies A \subset (B \cap C)\).
+
+	\medskip{}
+	Second, consider \(A \subset (B \cap C)\). By the definition of the
+	subset relation, we see \(x \in A \implies x \in (B \cap C)\). By the
+	definition of set intersection, we have
+	\(x \in A \implies (x \in B \land x \in C)\). By the distribution of
+	\(\lor\) over \(\land\), we have
+	\((x \in A \implies x \in B) \land (x \in A \implies x \in C)\). By the
+	definition of the subset relation, we have that
+	\(A \subset B \land A \subset C\). Thus
+	\(A \subset (B \cap C) \implies A \subset B \land A \subset C\).
+
+	\medskip{}
+	Therefore, since both implications have been shown, it is certain that
+	\(A \subset B \land A \subset C \iff A \subset (B \cap C)\).
+\end{proof}
+
+\subsection{\(A \subset B \lor A \subset C \iff A \subset (B \cap C)\).}\label{2d}
+\begin{thm}[Double implication fails in~\ref{2d}]
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cap C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset B \lor A \subset C \implies A \subset (B \cap C)\).
+
+	Consider \(A \subset B \lor A \subset C\). Choose
+	\(A = \{m | m = 4k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	4, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all multiples of 4 are even numbers, it is the case
+	that \(A \subset B\). By disjunctive introduction, we can say that
+	\(A \subset B \lor A \subset C\).
+
+	Now consider \(B \cap C\). Given our choices for \(B\) and \(C\), this
+	would be the intersection of the evens and the odds. Since no even
+	number is also an odd number (and vice-versa), we can say that
+	\(B \cap C = \emptyset\). Since our choice for \(A\) is the set of
+	multiples of 4, we know that \(\exists x \in A\) (for example,
+	\(4 = x \in A\)). Further, we can say that
+	\(\neg [A \subset (B \cap C)]\) since
+	\(\exists x \in A \land x \notin (B \cap C)\).
+
+	Suppose \(A \subset B \lor A \subset C \implies A \subset (B \cap C)\).
+	It has already been established that \(A \subset B \lor A \subset C\).
+	By modus ponens, \(A \subset (B \cap C)\). However, this contradicts
+	\(\neg [A \subset (B \cap C)]\), which has already been established. So
+	our supposition is false and
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cap C)\).
+\end{proof}
+
+\begin{thm}[RHS implies LHS in~\ref{2b}]
+	\(A \subset (B \cap C) \implies A \subset B \lor A \subset C\)
+\end{thm}
+\begin{proof}
+	Assume \(A \subset (B \cap C)\). By the definition of the subset
+	relation, \(\forall x \in A, x \in (B \cap C)\). By the definition of
+	set intersection, this can be extended to
+	\(\forall x \in A, x \in B \land x \in C\).  By conjunctive elimination,
+	we have that \(\forall x \in A, x \in B\). By the definition of the
+	subset relation, \(A \subset B\). By disjunctive introduction,
+	\(A \subset B \lor A \subset C\). Therefore
+	\(A \subset (B \cap C) \implies A \subset B \lor A \subset C\).
+\end{proof}
+
+\subsection{\(A \setminus (A \setminus B) = B\).}\label{2e}
+\begin{thm}[Equality fails in~\ref{2e}]
+	Given two sets \(A\) and \(B\), it is not the case that \(B\) is equal
+	to the portion of \(A\) removing the other portion of \(A\) which does
+	not overlap with \(B\). Symbolically, that is:
+	\[\neg [A \setminus (A \setminus B) = B]\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Specifically, given particular
+	choices for sets \(A\) and \(B\), we will explore whether \(B\) is a
+	subset of \(A \setminus (A \setminus B)\).
+
+	Choose set \(A\) to be the set of all even integers. Choose set \(B\) to
+	be the set of all odd integers. Since the set of all even integers does
+	not have any members that are also in the set of all odd integers,
+	removing \(B\) from \(A\) still leaves the whole of \(A\). That is, for
+	our particular choices for \(A\) and \(B\), we have that
+	\(A \setminus B = A\). By substitution, removing from \(A\) the portion
+	of \(A\) that does not overlap with \(B\) is simply removing all of
+	\(A\) from itself. Removing such a set from itself must result in the
+	empty set.
+
+	Continuing with our previous choices for sets \(A\) and \(B\), suppose
+	it really was the case that \(B\) is a subset of the portion of \(A\)
+	removing the other portion of \(A\) which does not overlap with \(B\).
+	Since we have previously demonstrated that
+	\(A \setminus (A \setminus B)\) is the empty set, that would mean that
+	the set of all odd integers is a subset of the empty set. However, that
+	is absurd, as there certainly do exist odd integers, and that would
+	contradict the notion that \(B\) is a subset of the empty set. Since we
+	have reached a contradiction, we can say that we were incorrect in our
+	supposition, and so it is not always the case that \(B\) is a subset of
+	the portion of \(A\) removing the other portion of \(A\) which does not
+	overlap with \(B\).
+\end{proof}
+
+\begin{thm}[LHS is a subset of RHS in~\ref{2e}]
+	Given two sets \(A\) and \(B\), it is the case that \(B\) is a subset of
+	the portion of \(A\) removing the other portion of \(A\) which does not
+	overlap with \(B\). Symbolically, that is:
+	\[A \setminus (A \setminus B) \subset B\]
+\end{thm}
+\begin{proof}
+	Assume there are two arbitrary sets \(A\) and \(B\). Note that removing
+	the portion of \(A\) which overlaps with \(B\) is equivalent to taking
+	the intesection of \(A\) and the complement of \(B\). Now removing from
+	\(A\) the intersection of \(A\) and the complement of \(B\) leaves only
+	the intersection of \(A\) and \(B\). Finally, it is the case that the
+	intersection of \(A\) and \(B\) is a subset of \(B\) given the
+	definition of set intersection.
+\end{proof}
+
+\subsection{\(A \setminus (B \setminus A) = A \setminus B\).}\label{2f}
+\begin{thm}[Equality fails in~\ref{2f}]
+	Given sets \(A\) and \(B\), it is not the case that the portion of \(A\)
+	without the portion of \(B\) which does not overlap with \(A\) is equal
+	to the portion of \(A\) which does not overlap with \(B\). Symbolically,
+	that is:
+	\[\neg [A \setminus (B \setminus A) = A \setminus B]\]
+\end{thm}
+\begin{proof}
+	Choose set \(A\) to be the set of integers. Choose set \(B\) to be the
+	set of all odd integers specificaly. Since the set of all odd integers
+	only includes members which are also in the set of all integers,
+	removing \(A\) from \(B\) leaves the empty set. That is, for our
+	particular choices of \(A\) and \(B\), we have that
+	\(B \setminus A = \emptyset\). By substitution, removing from \(A\) the
+	portion of \(B\) that does not overlap with \(A\) is simply removing the
+	empty set from \(A\). Removing the empty set leaves a set unchanged, so
+	our particular choices for \(A\) and \(B\) actually give
+	\(A \setminus (B \setminus A) = A\).
+
+	Continuing with our previous choices for sets \(A\) and \(B\), we can
+	see that removing the the set of all odd integers (i.e., \(B\)) from
+	the set of all integers (i.e., \(A\)) leaves the set of all even
+	integers. Now suppose it really was the case that the portion of \(A\)
+	without the portion of \(B\) which does not overlap with \(A\) is equal
+	to the portion of \(A\) which does not overlap with \(B\). Then that
+	would mean that the set of all integers is equal to the set of just the
+	even integers, which is absurd as there are certainly integers which are
+	not even (specifically, there are odd integers). Since we have reached a
+	contradiction, we can say that we were incorrect in our supposition, and
+	so it is not always the case that \(A\) without the portion of \(B\)
+	which does not overlap with \(A\) is equal to \(A\) without the
+	overlapping portion of \(B\).
+\end{proof}
+
+\begin{thm}[RHS is a subset of LHS in~\ref{2f}]
+	Given sets \(A\) and \(B\), the portion of \(A\) which does not overlap
+	with \(B\) is a subset of the portion of \(A\) without the portion of
+	\(B\) which does not overlap with \(A\). Symbolically, that is:
+	\[A \setminus B \subset A \setminus (B \setminus A)\]
+\end{thm}
+\begin{proof}
+	Assume there are two arbitrary sets \(A\) and \(B\). Note that removing
+	the portion of \(B\) which overlaps with \(A\) is equivalent to taking
+	the intesection of \(B\) and the complement of \(A\). Now removing from
+	\(A\) the intersection of \(B\) and the complement of \(A\) would only
+	remove portions of \(A\) that were also in the complement of \(A\) which
+	also happened to be in \(B\). As \(A\) and the complement of \(A\)
+	necessarilly do not overlap at all, this would remove nothing from \(A\)
+	regardless of the nature of \(B\). Finally, taking the portion of \(A\)
+	which does not overlap with \(B\) gives a subset of \(A\), and, by
+	substitution, a subset of the portion of \(A\) which does not overlap
+	with the portion of \(B\) which does not itself overlap with \(A\).
+\end{proof}
+
+\subsection{\(A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)\).}\label{2g}
+\begin{thm}[Equality holds in~\ref{2g}]
+	Given sets \(A\), \(B\), and \(C\), the intersection of \(A\) and the
+	portion of \(B\) which does not overlap with \(C\) is equal to the
+	portion of the intersection of \(A\) and \(B\) without the portion
+	overlapping the intersection of \(A\) and \(C\). Symbolically, that is:
+	\[A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Let \(A\), \(B\), and \(C\) be sets.
+
+	\medskip
+	First, let's consider the intersection of \(A\) and the portion of \(B\)
+	which does not overlap with \(C\). Since the empty set is already known
+	to be a subset of all sets, in order to demonstrate this first subset
+	relationship it is only necessary to demonstrate that if some element
+	were indeed in \(A \cap (B \setminus C)\), then it would follow that the
+	element must also be in \((A \cap B) \setminus (A \cap C)\).
+
+	Let \(x\) be some arbitrary member of \(A \cap (B \setminus C)\). We
+	know that \(x\) must be in both \(A\) and \(B \setminus C\) due to the
+	definition of set intersection. We can also say that \(x\) must be in
+	\(B\) and that \(x\) must not be in \(C\) given the definition of set
+	difference. So since \(x\) must be in both \(A\) and \(B\), we know that
+	\(x\) is in \(A \cap B\) given the definition of set intersection. So
+	all that remains to demonstrate the subset relationship is to show that
+	\(x\) is not in \(A \cap C\).
+
+	Let's suppose for a bit that \(x\) really was somehow in \(A \cap C\).
+	That would imply that both \(x\) was in \(A\) and that \(x\) was in
+	\(C\), again by the definition of set intersection. However, this
+	contradicts the fact that \(x\) must not be in \(C\), which we had
+	already established before we made this absurd supposition. So it must
+	be the case that \(x\) is not in \(A \cap C\). As a result, we can say
+	with certainty that the intersection of \(A\) and the portion of \(B\)
+	which does not overlap with \(C\) is a subset of the portion of the
+	intersection of \(A\) and \(B\) without the portion overlapping the
+	intersection of \(A\) and \(C\).
+
+	So we have demonstrated that
+	\[A \cap (B \setminus C) \subset (A \cap B) \setminus (A \cap C)\]
+
+	\medskip
+	Second, let's consider the portion of the intersection of \(A\) and
+	\(B\) without the portion overlapping the intersection of \(A\) and
+	\(C\). Again, since the empty set is already known to be a subset of all
+	sets, we simply need to demonstrate that if some element were indeed to
+	exist in \((A \cap B) \setminus (A \cap C)\), then it would follow that
+	the element must also be in \(A \cap (B \setminus C)\).
+
+	Let \(x\) be some arbitrary member of the intersection of \(A\) and
+	\(B\) without the portion overlapping the intersection of \(A\) and
+	\(C\). We know that \(x\) must be in \(A \cap B\) and that \(x\) must
+	not be in \(A \cap C\) due to the definition of set difference. Further,
+	we know that \(x\) must be in both \(A\) and \(B\) given the definition
+	of set intersection. So since \(x\) is in \(A\), all that remains to
+	demonstrate the subset relationship is to show that \(x\) must in
+	\(B \setminus C\) in order to show that \(x\) in
+	\(A \cap (B \setminus C)\).
+
+	Recall that \(x\) is not in \(A \cap C\). In other words, it is not the
+	case that both \(x\) is in \(A\) and \(x\) is in \(C\). Using De
+	Morgan's Law, we can translate this statement into the equivalent
+	statement that either \(x\) is not in \(A\) or \(x\) is not in \(C\) (or
+	both). Since we have already established that \(x\) must be in \(A\), we
+	can say that \(x\) must not be in \(C\) using the disjunctive syllogism.
+	Combined with our previous demonstration that \(x\) must be in \(B\),
+	we can say that \(x\) must be in \(B \setminus C\) using the definition
+	of set difference.
+
+	So we have demonstrated that
+	\[(A \cap B) \setminus (A \cap C) \subset A \cap (B \setminus C)\]
+
+	\medskip
+	Finally, since we have demonstrated that each set is a subset of the
+	other, we can say that the sets are equal.
+\end{proof}
+
+\subsection{\(A \cup (B \setminus C) = (A \cup B) \setminus (A \cup C)\).}\label{2h}
+\begin{thm}[Equality fails in~\ref{2h}]
+	Given sets \(A\), \(B\), and \(C\), it is not the case that the union of
+	\(A\) with the portion of \(B\) which does not overlap with \(C\) is
+	equal to the set resulting from removing the union of \(A\) and \(C\)
+	from the union of \(A\) and \(B\). Symbolically, that is
+	\[\neg [A \cup (B \setminus C) = (A \cup B) \setminus (A \cup C)]\]
+\end{thm}
+\begin{proof}
+	Choose \(A\) to be the set of multiples of 3, \(B\) to be the set of
+	multiples of 4, and \(C\) to be the set of multiples of 2. We can see
+	that \(B \setminus C\) is the empty set since all multiples of 4 are
+	also multiples of 2. So \(A \cup (B \setminus C)\) is just the multiples
+	of 3 given the behavior of set union with the empty set. Note that
+	\(A \cup (B \setminus C)\) is not empty since there really do exist
+	multiples of 3 (for example, 3 itself).
+
+	Given our choices, \(A \cup B\) is the set of all multiples of 3 or 4,
+	and \(A \cup C\) is the set of all multiples of 3 or 2. Since any
+	multiple of 3 or 4 (or both) would certainly be a multiple of either 3
+	or 2 or both, then \((A \cup B) \setminus (A \cup C)\) is the empty set.
+
+	Since \(A \cup (B \setminus C)\) is a non-empty set and
+	\((A \cup B) \setminus (A \cup C)\) is the empty set, it is certainly
+	not the case that \(A \cup (B \setminus C)\) is a subset of
+	\((A \cup B) \setminus (A \cup C)\). Therefore, we can say that equality
+	of the sets is not possible in this case.
+\end{proof}
+
+\begin{thm}[RHS is a subset of LHS in~\ref{2h}]
+	Given sets \(A\), \(B\), and \(C\), the set resulting from removing the
+	union of \(A\) and \(C\) from the union of \(A\) and \(B\) is a subset
+	of the union of \(A\) and the portion of \(B\) which does not overlap
+	with \(C\). Symbolically, that is
+	\[(A \cup B) \setminus (A \cup C) \subset A \cup (B \setminus C)\]
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets. Since the empty set is already
+	known to be a subset of all sets, we will simply examine whether some
+	arbitrary value which might exist in \((A \cup B) \setminus (A \cup C)\)
+	would necessarilly also be in \(A \cup (B \setminus C)\).
+
+	Let \(x\) be some arbitrary member of
+	\((A \cup B) \setminus (A \cup C)\). We know that \(x\) is in
+	\(A \cup B\) and that \(x\) is not in \(A \cup C\). Using the definition
+	of set union, we can say both that \(x\) is in \(A\) or \(B\) and that
+	it is not the case that \(x\) is in \(A\) or \(C\) (or both). De
+	Morgan's Law tells use that the latter is equivalent to the statement
+	that both \(x\) is not in \(A\) and \(x\) is not in \(C\). This combined
+	with the previously established statement that \(x\) is in \(A\) or
+	\(x\) is in \(B\) (or both), the disjunctive syllogism informs us that
+	it must be that \(x\) is in \(B\). Taking this together with \(x\) not
+	being in \(C\), by definition we can say \(x\) is in \(B \setminus C\).
+	It follows that \(x\) is in \(A \cup (B \setminus C)\) by disjunctive
+	introduction.
+
+	So \((A \cup B) \setminus (A \cup C)\) is a subset of
+	\(A \cup (B \setminus C)\).
+\end{proof}
+
+\subsection{\((A \cap B) \cup (A \setminus B) = A\).}\label{2i}
+\todo{State and prove theorem.}
+
+\subsection{\(A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\).}\label{2j}
+\todo{State and prove theorem.}
+
+\subsection{The converse of~\ref{2j}.}\label{2k}
+\todo{State and prove theorem.}
+
+\subsection{The converse of~\ref{2j}, assuming that \(A\) and \(B\) are nonempty.}\label{2l}
+\todo{State and prove theorem.}
+
+\subsection{\((A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)\).}\label{2m}
+\todo{State and prove theorem.}
+
+\subsection{\((A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)\).}\label{2n}
+\todo{State and prove theorem.}
+
+\subsection{\(A \times (B \setminus C) = (A \times B) \setminus (A \times C)\).}\label{2o}
+\todo{State and prove theorem.}
+
+\subsection{\((A \setminus B) \times (C \setminus D) = (A \times C \setminus B \times C) \setminus (A \times D)\).}\label{2p}
+\todo{State and prove theorem.}
+
+\subsection{\((A \times B) \setminus (C \times D) = (A \setminus C) \times (B \setminus D)\).}\label{2q}
+\todo{State and prove theorem.}
+
+\end{document}

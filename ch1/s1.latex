@@ -14,6 +14,17 @@
 \renewcommand{\thesubsection}{\thesection(\alph{subsection})}
 \newtheorem{thm}{Theorem}
 \newtheorem*{remark}{Remark}
+\newcommand{\card}[1] {\vert{} #1 \vert{}}
+\newcommand{\sunion}{\cup}
+\newcommand{\union}{\cup}
+\newcommand{\sintersect}{\cap}
+\newcommand{\intersect}{\cap}
+\newcommand{\sdiff}{\setminus}
+\newcommand{\powerset}[1]{\mathcal{P} (#1)}
+\newcommand{\metaset}[1]{\mathscr{#1}}
+\newcommand{\sbuild}[2]{\{#1|#2\}}
+\newcommand{\suchthat}{:}
+\newcommand{\cross}{\times}
 
 \begin{document}
 \title{Exercies for \S 1 Fundamental Concepts}
@@ -22,76 +33,76 @@
 
 \maketitle
 
-\section{Check the distributive laws for \(\cup\) and \(\cap\) and De Morgan's laws.}
+\section{Check the distributive laws for \(\sunion\) and \(\sintersect\) and De Morgan's laws.}
 
-\begin{thm}[\(\cap\) distributes over \(\cup\)]
+\begin{thm}[\(\sintersect\) distributes over \(\cup\)]
 	Set intersection distributes across set union. That is, for any sets
 	\(A\), \(B\), and \(C\),
-	\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)
+	\(A \sintersect (B \sunion C) = (A \sintersect B) \sunion (A \sintersect C)\)
 \end{thm}
 \begin{proof}
 	Given that sets are said to be equal iff they are subsets of each other,
 	the goal can be shown directly by demonstrating both of the sets in
 	question are subsets of each other. Symbolically, that would be:
 	\begin{itemize}
-		\item \([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\)
-		\item \([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\)
+		\item \([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\)
+		\item \([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\)
 	\end{itemize}
 
 	\medskip
-	First, let's consider the nature of \(A \cap (B \cup C)\): either the
+	First, let's consider the nature of \(A \sintersect (B \sunion C)\): either the
 	set is empty, or there exists at least one element in the set. We will
 	address these possibilities independently.
 
-	If \(A \cap (B \cup C) = \emptyset\), then
-	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\) since the
+	If \(A \sintersect (B \sunion C) = \emptyset\), then
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\) since the
 	empty set is a subset of all sets.
 
-	If \(\exists x \in A \cap (B \cup C)\), then both \(x \in A\) and
-	\(x \in B \cup C\) by the definition of set intersection. Further, by
+	If \(\exists x \in A \sintersect (B \sunion C)\), then both \(x \in A\) and
+	\(x \in B \sunion C\) by the definition of set intersection. Further, by
 	the definition of set union, \(x \in B\) or \(x \in C\). Without loss of
 	generality, assume \(x \in B\). Since both \(x \in A\) and \(x \in B\),
-	the definition of set intersection gives us \(x \in A \cap B\). By
-	disjunctive introduction, \(x \in A \cap B \lor x \in A \cap C\), and
-	by the definition of set union, \(x \in (A \cap B) \cup (A \cap C)\). So
-	\(\exists x \in A \cap (B \cup C) \implies x \in (A \cap B) \cup (A \cap C)\),
+	the definition of set intersection gives us \(x \in A \sintersect B\). By
+	disjunctive introduction, \(x \in A \sintersect B \lor x \in A \sintersect C\), and
+	by the definition of set union, \(x \in (A \sintersect B) \sunion (A \sintersect C)\). So
+	\(\exists x \in A \sintersect (B \sunion C) \implies x \in (A \sintersect B) \sunion (A \sintersect C)\),
 	and by the definition of subset
-	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\).
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\).
 
-	Thus, regardless if \(A \cap (B \cup C) = \emptyset\) or
-	\(\exists x \in A \cap (B \cup C)\), it is certain that
-	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\).
+	Thus, regardless if \(A \sintersect (B \sunion C) = \emptyset\) or
+	\(\exists x \in A \sintersect (B \sunion C)\), it is certain that
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\).
 
 	\medskip
-	Second, let's consider the nature of \((A \cap B) \cup (A \cap C)\):
+	Second, let's consider the nature of \((A \sintersect B) \sunion (A \sintersect C)\):
 	either the set is empty, or there exists at least one element in the
 	set. We will address these possibilities independently.
 
-	If \((A \cap B) \cup (A \cap C) = \emptyset\), then
-	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\) since the
+	If \((A \sintersect B) \sunion (A \sintersect C) = \emptyset\), then
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\) since the
 	empty set is a subset of all sets.
 
-	If \(\exists x \in (A \cap B) \cup (A \cap C)\), then either
-	\(x \in A \cap B\) or \(x \in A \cap C\) by the definition of set union.
-	Without loss of generality, assume \(x \in A \cap B\). By the definition
+	If \(\exists x \in (A \sintersect B) \sunion (A \sintersect C)\), then either
+	\(x \in A \sintersect B\) or \(x \in A \sintersect C\) by the definition of set union.
+	Without loss of generality, assume \(x \in A \sintersect B\). By the definition
 	of set intersection, \(x \in A\) and \(x \in B\). By disjunctive
 	introduction, \(x \in B \lor x \in C\), and by the definition of set
-	union, \(x \in B \cup C\). By the definition of set intersection,
-	\(x \in A \cap (B \cup C)\). So
-	\(\exists x \in (A \cap B) \cup (A \cap C) \implies x \in A \cap (B \cup C)\),
+	union, \(x \in B \sunion C\). By the definition of set intersection,
+	\(x \in A \sintersect (B \sunion C)\). So
+	\(\exists x \in (A \sintersect B) \sunion (A \sintersect C) \implies x \in A \sintersect (B \sunion C)\),
 	and by definition of subset
-	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\).
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\).
 
-	Thus, regardless if \((A \cap B) \cup (A \cap C) = \emptyset\) or
-	\(\exists x \in (A \cap B) \cup (A \cap C)\), it is certain that
-	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\).
+	Thus, regardless if \((A \sintersect B) \sunion (A \sintersect C) = \emptyset\) or
+	\(\exists x \in (A \sintersect B) \sunion (A \sintersect C)\), it is certain that
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\).
 
 	\medskip
 	Since both
-	\([A \cap (B \cup C)] \subset [(A \cap B) \cup (A \cap C)]\) and
-	\([(A \cap B) \cup (A \cap C)] \subset [A \cap (B \cup C)]\) it is
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\) and
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\) it is
 	therefore the case that
-	\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\).
+	\(A \sintersect (B \sunion C) = (A \sintersect B) \sunion (A \sintersect C)\).
 \end{proof}
 
 \bigbreak{}
@@ -1575,28 +1586,68 @@ Also, determine which of the three statements is true.
 \section{Write the contrapositive of each of the statements of~\ref{Ex5}.}
 
 \subsection{Contrapositive of~\ref{5a}}
-\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \notin A\}: x \notin \bigcup\limits_{A \in \mathcal{A}} A\]
+\begin{remark}[Contrapositive of~\ref{5a}]
+	The statement
+	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \notin A\}: x \notin \bigcup\limits_{A \in \mathcal{A}} A\]
+	is the contrapositive of the statement
+	\[\forall x \in \bigcup\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \in A\]
+\end{remark}
 
 \subsection{Contrapositive of coverse of~\ref{5a}}
-\[\forall x \notin \bigcup\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \notin A\]
+\begin{remark}[Contrapositive of coverse of~\ref{5a}]
+	The statement
+	\[\forall x \notin \bigcup\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \notin A\]
+	is the contrapositive of the statement
+	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \in A\}: x \in \bigcup\limits_{A \in \mathcal{A}} A\]
+\end{remark}
 
 \subsection{Contrapositive of~\ref{5b}}
-\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \notin A\}: x \notin \bigcup\limits_{A \in \mathcal{A}} A\]
+\begin{remark}[Contrapositive of~\ref{5b}]
+	The statement
+	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \notin A\}: x \notin \bigcup\limits_{A \in \mathcal{A}} A\]
+	is the contrapositive of the statement
+	\[\forall x \in \bigcup\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \in A\]
+\end{remark}
 
 \subsection{Contrapositive of coverse of~\ref{5b}}
-\[\forall x \notin \bigcup\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \notin A\]
+\begin{remark}[Contrapositive of coverse of~\ref{5b}]
+	The statement
+	\[\forall x \notin \bigcup\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \notin A\]
+	is the contrapositive of the statement
+	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \in A\}: x \in \bigcup\limits_{A \in \mathcal{A}} A\]
+\end{remark}
 
 \subsection{Contrapositive of~\ref{5c}}
-\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \notin A\}: x \notin \bigcap\limits_{A \in \mathcal{A}} A\]
+\begin{remark}[Contrapositive of~\ref{5c}]
+	The statement
+	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \notin A\}: x \notin \bigcap\limits_{A \in \mathcal{A}} A\]
+	is the contrapositive of the statement
+	\[\forall x \in \bigcap\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \in A\]
+\end{remark}
 
 \subsection{Contrapositive of coverse of~\ref{5c}}
-\[\forall x \notin \bigcap\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \notin A\]
+\begin{remark}[Contrapositive of coverse of~\ref{5c}]
+	The statement
+	\[\forall x \notin \bigcap\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \notin A\]
+	is the contrapositive of the statement
+	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \in A\}: x \in \bigcap\limits_{A \in \mathcal{A}} A\]
+\end{remark}
 
 \subsection{Contrapositive of~\ref{5d}}
-\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \notin A\}: x \notin \bigcap\limits_{A \in \mathcal{A}} A\]
+\begin{remark}[Contrapositive of~\ref{5d}]
+	The statement
+	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \notin A\}: x \notin \bigcap\limits_{A \in \mathcal{A}} A\]
+	is the contrapositive of the statement
+	\[\forall x \in \bigcap\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \in A\]
+\end{remark}
 
 \subsection{Contrapositive of coverse of~\ref{5d}}
-\[\forall x \notin \bigcap\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \notin A\]
+\begin{remark}[Contrapositive of coverse of~\ref{5d}]
+	The statement
+	\[\forall x \notin \bigcap\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \notin A\]
+	is the contrapositive of the statement
+	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \in A\}: x \in \bigcap\limits_{A \in \mathcal{A}} A\]
+\end{remark}
 
 
 
@@ -1606,24 +1657,123 @@ Also, determine which of the three statements is true.
 	\(\cap\), and \(\setminus\).}
 
 \subsection{\(D = \{x | x \in A \land (x \in B \lor x \in C)\}\)}
-\[D = A \cap (B \cup C)\]
+\begin{remark}[\(D = \{x | x \in A \land (x \in B \lor x \in C)\}\)]
+	The set
+	\[D = \{x | x \in A \land (x \in B \lor x \in C)\}\]
+	could also be expressed as
+	\[D = A \cap (B \cup C)\]
+\end{remark}
 
 \subsection{\(E = \{x | (x \in A \land x \in B) \lor x \in C\}\)}
-\[E = (A \cap B) \cup C\]
+\begin{remark}[\(E = \{x | (x \in A \land x \in B) \lor x \in C\}\)]
+	The set
+	\[E = \{x | (x \in A \land x \in B) \lor x \in C\}\]
+	could also be expressed as
+	\[E = (A \cap B) \cup C\]
+\end{remark}
 
 \subsection{\(F = \{x | x \in A \land (x \in B \implies x \in C)\}\)}
-\[F = A \setminus (B \setminus C)\]
+\begin{remark}[\(F = \{x | x \in A \land (x \in B \implies x \in C)\}\)]
+	The set
+	\[F = \{x | x \in A \land (x \in B \implies x \in C)\}\]
+	could also be expressed as
+	\[F = A \setminus (B \setminus C)\]
+\end{remark}
 
 
 \section{If a set \(A\) has two elements, show that \(\mathscr{P}(A)\) has four
-	elements.}
-How many elements does \(\mathscr{P}(A)\) have if \(A\) has one element? Three
-elements? No elements? Why is \(\mathscr{P}(A)\) called the power set of \(A\)?
-\todo{do it}
+	elements. How many elements does \(\mathscr{P}(A)\) have if \(A\) has
+	one element? Three elements? No elements? Why is \(\mathscr{P}(A)\)
+	called the power set of \(A\)?}
+
+\begin{thm}[\(\card{A} = 2 \implies \card{\mathscr{P}(A)} = 4\)]
+	The power set of a set with two elements has four elements.
+\end{thm}
+\begin{proof}
+	Let \(A\) be a set with two aribtrary elements which we will address as
+	\(A_0\) and \(A_1\). Constructing the power set of \(A\), the definition
+	of the power set gives \(\mathscr{P}(A)\) equal to
+	\(\{\emptyset, \{A_0\}, \{A_1\}, \{A_0, A_1\}\}\). We see that there are
+	four elements in \(\mathscr{P}(A)\).
+\end{proof}
+
+\begin{thm}[\(\card{A} = 1 \implies \card{\mathscr{P}(A)} = 2\)]
+	The power set of a set with one element has two elements.
+\end{thm}
+\begin{proof}
+	Let \(A\) be a set with one aribtrary element which we will address as
+	\(A_0\). Constructing the power set of \(A\), the definition of the
+	power set gives \(\mathscr{P}(A)\) equal to \(\{\emptyset, \{A_0\}\}\).
+	We see that there are two elements in \(\mathscr{P}(A)\).
+\end{proof}
+
+\begin{thm}[\(\card{A} = 3 \implies \card{\mathscr{P}(A)} = 8\)]
+	The power set of a set with three elements has eight elements.
+\end{thm}
+\begin{proof}
+	Let \(A\) be a set with three aribtrary elements which we will address
+	as \(A_0\), \(A_1\), and \(A_2\). Constructing the power set of \(A\),
+	the definition of the power set gives \(\mathscr{P}(A)\) equal to:
+	\[\{\emptyset, \\
+	\{A_0\}, \{A_1\}, \{A_2\}, \\
+	\{A_0, A_1\}, \{A_0, A_2\}, \{A_1, A_2\},
+	\{A_0, A_1, A_2\}\}\]
+	We see that there are eight elements in \(\mathscr{P}(A)\).
+\end{proof}
+
+\begin{thm}[\(\card{A} = 0 \implies \card{\mathscr{P}(A)} = 1\)]
+	The power set of the empty set has one element.
+\end{thm}
+\begin{proof}
+	Constructing the power set of \(\emptyset\) (i.e., the empty set), the
+	definition of the power set gives \(\mathscr{P}(\emptyset)\) equal to
+	\(\{\emptyset\}\). We see that there is one element in
+	\(\mathscr{P}(\emptyset)\).
+\end{proof}
+
+\begin{remark}[Why \(\mathscr{P}(A)\) is called the power set]
+	The power set of some set is so-called as the set resulting from the
+	power set construction operation has a cardinality equal to 2
+	exponentiated to the power of the cardinality of the set on which the
+	power set operation is performed. Symbolically, that is (given a set
+	\(A\)):
+	\[\card{\mathscr{P}(A)} = 2^{\card{A}}\]
+\end{remark}
 
 
 \section{Formulate and prove De Morgan's laws for arbitrary unions and intersections.}
-\todo{do it}
+\begin{remark}
+	All forms of De Morgan's Laws are about the distributivity of a form of
+	negation across the equivalent forms of disjunction and conjunction. In
+	the first order logical operator sense, that manifests in the
+	distribution behavior of \(\neg\) (i.e., logical not) across \(\land\)
+	(i.e., logical and) and \(\lor\) (i.e., logical or). As shown earlier in
+	this very assignment, the basic set operator sense describes the
+	distribution behavior of \(\setminus\) (i.e., basic set difference)
+	across \(\cap\) (i.e., basic set intersection) and \(\cup\) (i.e., basic
+	set union). When discussing the generalized form of set intersections
+	(i.e., \(\bigcap\)) and set unions (i.e., \(\bigcup\)), presumably we
+	would be interested in finding the distribution behavior of some
+	generalized form of set difference. As we have not discussed such a
+	thing to this point in the text or exercises, I will instead proceed
+	with the assumption that we want to address the distribution behavior of
+	basic set difference across these more generalized operators.
+\end{remark}
+\begin{thm}[De Morgan's First Law]
+	Set difference across generalized set union is equivalent to generalized
+	set intersection of set differences. Symbolically, given a set \(A\) and
+	a collection of sets \(\mathcal{B}\):
+	\[A \setminus \bigcup\limits_{B \in \mathcal{B}} B = \bigcap\limits_{B \in \mathcal{B}} (A \setminus B)\]
+\end{thm}
+\todo{proof}
+
+\begin{thm}[De Morgan's Second Law]
+	Set difference across generalized set intersection is equivalent to
+	generalized set union of set differences. Symbolically, given a set
+	\(A\) and a collection of sets \(\mathcal{B}\):
+	\[A \setminus \bigcap\limits_{B \in \mathcal{B}} B = \bigcup\limits_{B \in \mathcal{B}} (A \setminus B)\]
+\end{thm}
+\todo{proof}
 
 
 \section{Let \(\mathbb{R}\) denote the set of real numbers. For each of the

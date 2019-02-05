@@ -9,6 +9,7 @@
 \usepackage{mathtools}
 \usepackage{centernot}
 \usepackage{todo}
+\usepackage{theoremref}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 \renewcommand{\thesubsection}{\thesection(\alph{subsection})}
@@ -22,9 +23,20 @@
 \newcommand{\sdiff}{\setminus}
 \newcommand{\powerset}[1]{\mathcal{P} (#1)}
 \newcommand{\metaset}[1]{\mathscr{#1}}
-\newcommand{\sbuild}[2]{\{#1|#2\}}
+\newcommand{\setbuild}[2]{\{#1|#2\}}
 \newcommand{\suchthat}{:}
 \newcommand{\cross}{\times}
+\newcommand{\without}{\setminus}
+\newcommand{\isasubsetof}{\subset}
+\newcommand{\generalizedunion}[2]{\bigcup_{#1} {#2}}
+\newcommand{\arbitraryunion}[2]{\bigcup_{#1} {#2}}
+\newcommand{\Arbitraryunion}[2]{\bigcup\limits_{#1} {#2}}
+\newcommand{\generalizedintersection}[2]{\bigcap_{#1} {#2}}
+\newcommand{\arbitraryintersection}[2]{\bigcap_{#1} {#2}}
+\newcommand{\Arbitraryintersection}[2]{\bigcap\limits_{#1} {#2}}
+\newcommand{\isin}{\in}
+\newcommand{\thereexists}{\exists}
+\newcommand{\itisnothecasethat}[1]{\neg{} (#1)}
 
 \begin{document}
 \title{Exercies for \S 1 Fundamental Concepts}
@@ -1439,17 +1451,17 @@ Also, determine which of the three statements is true.
 \end{remark}
 
 
-\section{Let \(\mathcal{A}\) be a nonempty collection of sets. Detemine the
+\section{Let \(\metaset{A}\) be a nonempty collection of sets. Detemine the
 	truth of each of the following statements and of their converses.}\label{Ex5}
 
-\subsection{\(x \in \bigcup_{A \in \mathcal{A}} A \implies x \in A\) for at
-	least one \(A \in \mathcal{A}\).}\label{5a}
-\begin{thm}[Implication holds in~\ref{5a}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, for every \(x\)
-	in the generalized union over all sets in \(\mathcal{A}\), there exists
-	some set \(A\) in \(\mathcal{A}\) such that \(x\) is in \(A\).
+\subsection{\(x \isin \arbitraryunion{A \in \metaset{A}}{A} \implies x \isin A\) for at
+	least one \(A \in \metaset{A}\).}\label{5a}
+\begin{thm}[Implication holds in~\ref{5a}]\thlabel{5at}
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	in the generalized union over all sets in \(\metaset{A}\), there exists
+	some set \(A\) in \(\metaset{A}\) such that \(x\) is in \(A\).
 	Symbolically, that is
-	\[\forall x \in \bigcup\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \in A\]
+	\[x \isin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\thereexists A \in \metaset{A} \suchthat x' \isin A}\]
 \end{thm}
 \begin{proof}
 	By the definition of the generalized union, every member of a
@@ -1457,12 +1469,12 @@ Also, determine which of the three statements is true.
 	of the constituent sets of the generalized union.
 \end{proof}
 
-\begin{thm}[Implication holds for the converse of~\ref{5a}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, for every \(x\)
-	such that there exists some set \(A\) in \(\mathcal{A}\) where \(x\) is
+\begin{thm}[Implication holds for the converse of~\ref{5a}]\thlabel{5atc}
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	such that there exists some set \(A\) in \(\metaset{A}\) where \(x\) is
 	in \(A\), it is the case that \(x\) is also in the generalized union
-	over all sets in \(\mathcal{A}\). Symbolically, that is
-	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \in A\}: x \in \bigcup\limits_{A \in \mathcal{A}} A\]
+	over all sets in \(\metaset{A}\). Symbolically, that is
+	\[x \isin \setbuild{x'}{\thereexists A \in \metaset{A} \suchthat x' \isin A} \implies x \isin \Arbitraryunion{A \in \metaset{A}}{A}\]
 \end{thm}
 \begin{proof}
 	By the definition of the generalized union, any item that is a member of
@@ -1470,96 +1482,96 @@ Also, determine which of the three statements is true.
 	the generalized union.
 \end{proof}
 
-\subsection{\(x \in \bigcup_{A \in \mathcal{A}} A \implies x \in A\) for every
-	\(A \in \mathcal{A}\).}\label{5b}
+\subsection{\(x \isin \arbitraryunion{A \in \metaset{A}}{A} \implies x \isin A\) for every
+	\(A \in \metaset{A}\).}\label{5b}
 \begin{thm}[Implication fails in~\ref{5b}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, it is not the
+	Given \(\metaset{A}\) is a nonempty collection of sets, it is not the
 	case that for every \(x\) in the generalized union over all sets in
-	\(\mathcal{A}\), for every set \(A\) in \(\mathcal{A}\) it must be that
+	\(\metaset{A}\), for every set \(A\) in \(\metaset{A}\) it must be that
 	\(x\) is in \(A\). Symbolically, that is
-	\[\neg (\forall x \in \bigcup\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \in A)\]
+	\[\itisnothecasethat{x \isin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A}}\]
 \end{thm}
 \begin{proof}
-	Choose \(\mathcal{A}\) such that \(\mathcal{A}_0\) is \(\{1\}\) and
-	\(\mathcal{A}_1\) is \(\{2\}\). Now \(\bigcup_{A \in \mathcal{A}} A\) is
+	Choose \(\metaset{A}\) such that \(\metaset{A}_0\) is \(\{1\}\) and
+	\(\metaset{A}_1\) is \(\{2\}\). Now \(\arbitraryunion{A \in \metaset{A}}{A}\) is
 	\(\{1,2\}\) by the definition of generalized union. Choose \(x\) to be
-	2, which is in \(\bigcup_{A \in \mathcal{A}} A\). Note that \(x\) is not
-	in \(\mathcal{A}_0\). So given our choices, we see that there it is not
-	the case that for every \(x\) in \(\bigcup_{A \in \mathcal{A}} A\) and
-	for every \(A\) in \(\mathcal{A}\) that \(x\) is in \(A\).
+	2, which is in \(\arbitraryunion{A \in \metaset{A}}{A}\). Note that \(x\) is not
+	in \(\metaset{A}_0\). So given our choices, we see that there it is not
+	the case that for every \(x\) in \(\arbitraryunion{A \in \metaset{A}}{A}\) and
+	for every \(A\) in \(\metaset{A}\) that \(x\) is in \(A\).
 \end{proof}
 
 \begin{thm}[Implication holds for the converse of~\ref{5b}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, for every \(x\)
-	that is common to all sets in \(\mathcal{A}\), it is certain that \(x\)
-	is in the generalized union over all sets in \(\mathcal{A}\).
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	that is common to all sets in \(\metaset{A}\), it is certain that \(x\)
+	is in the generalized union over all sets in \(\metaset{A}\).
 	Symbolically, that is
-	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \in A\}: x \in \bigcup\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A} \implies x \isin \Arbitraryunion{A \in \metaset{A}}{A}\]
 \end{thm}
 \begin{proof}
-	Let \(\mathcal{A}\) be a nonempty collection of sets. Consider the set
-	\(A'\) of members common among all the sets of \(\mathcal{A}\). If
+	Let \(\metaset{A}\) be a nonempty collection of sets. Consider the set
+	\(A'\) of members common among all the sets of \(\metaset{A}\). If
 	\(A'\) is empty, then it is a subset of the generalized union of
-	\(\mathcal{A}\) since the empty set is a subset of all sets. Exploring
+	\(\metaset{A}\) since the empty set is a subset of all sets. Exploring
 	the case that \(A'\) is not empty, let \(x\) be an arbitrary member of
 	\(A'\). Note that since \(x\) is a member of every set in
-	\(\mathcal{A}\) and since \(\mathcal{A}\) is itself nonempty, we can say
-	that \(x\) is a member of at least one set in \(\mathcal{A}\). By the
+	\(\metaset{A}\) and since \(\metaset{A}\) is itself nonempty, we can say
+	that \(x\) is a member of at least one set in \(\metaset{A}\). By the
 	definition of generalized union, we know that \(x\) is also in
-	\(\bigcup_{A \in \mathcal{A}} A\). So all members common among all the
-	sets of \(\mathcal{A}\) are in the generalized union over
-	\(\mathcal{A}\).
+	\(\arbitraryunion{A \in \metaset{A}}{A}\). So all members common among all the
+	sets of \(\metaset{A}\) are in the generalized union over
+	\(\metaset{A}\).
 \end{proof}
 
-\subsection{\(x \in \bigcap_{A \in \mathcal{A}} A \implies x \in A\) for at
-	least one \(A \in \mathcal{A}\).}\label{5c}
+\subsection{\(x \isin \arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin A\) for at
+	least one \(A \in \metaset{A}\).}\label{5c}
 \begin{thm}[Implication holds in~\ref{5c}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, for every \(x\)
-	in the generalized intersection over all sets in \(\mathcal{A}\), there
-	exists some set \(A\) in \(\mathcal{A}\) such that \(x\) is in \(A\).
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	in the generalized intersection over all sets in \(\metaset{A}\), there
+	exists some set \(A\) in \(\metaset{A}\) such that \(x\) is in \(A\).
 	Symbolically, that is
-	\[\forall x \in \bigcap\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \in A\]
+	\[x \isin \Arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\thereexists A \in \metaset{A} \suchthat x' \isin A}\]
 \end{thm}
 \begin{proof}
-	Let \(\mathcal{A}\) be a nonempty collection of sets, and let
-	\(\mathcal{A}_0\) be some set in \(\mathcal{A}\). It is possible
-	that the generalized intersection over \(\mathcal{A}\) is empty, but
+	Let \(\metaset{A}\) be a nonempty collection of sets, and let
+	\(\metaset{A}_0\) be some set in \(\metaset{A}\). It is possible
+	that the generalized intersection over \(\metaset{A}\) is empty, but
 	instead we will consider the non-vacuous case. Let \(x\) be in the
-	generalized intersection over \(\mathcal{A}\). By definition, we know
-	that \(x\) is a member of every set in \(\mathcal{A}\), and so \(x\) is
-	in \(\mathcal{A}_0\) in particular. So there exists at least one set
-	\(A\) in \(\mathcal{A}\) for which \(x\) is in \(A\).
+	generalized intersection over \(\metaset{A}\). By definition, we know
+	that \(x\) is a member of every set in \(\metaset{A}\), and so \(x\) is
+	in \(\metaset{A}_0\) in particular. So there exists at least one set
+	\(A\) in \(\metaset{A}\) for which \(x\) is in \(A\).
 \end{proof}
 
 \begin{thm}[Implication fails for the converse of~\ref{5c}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, it is not the
+	Given \(\metaset{A}\) is a nonempty collection of sets, it is not the
 	case that for every \(x\) which is in at least one set of
-	\(\mathcal{A}\), that \(x\) is also in the generalized intersection over
-	all sets in \(\mathcal{A}\). Symbolically, that is
-	\[\neg (\forall x \in \{x' | \exists A \in \mathcal{A}: x' \in A\}: x \in \bigcap\limits_{A \in \mathcal{A}} A)\]
+	\(\metaset{A}\), that \(x\) is also in the generalized intersection over
+	all sets in \(\metaset{A}\). Symbolically, that is
+	\[\itisnothecasethat{x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \isin A} \implies x \isin \Arbitraryintersection{A \in \metaset{A}}{A}}\]
 \end{thm}
 \begin{proof}
-	Choose \(\mathcal{A}\) to be \(\{\{1\},\{1,2\}\}\), which is a nonempty
-	collection of sets. Note that the set \(\{1,2\}\) is in \(\mathcal{A}\),
-	that 2 is in \(\{1,2\}\), and that there exists a set in \(\mathcal{A}\)
+	Choose \(\metaset{A}\) to be \(\{\{1\},\{1,2\}\}\), which is a nonempty
+	collection of sets. Note that the set \(\{1,2\}\) is in \(\metaset{A}\),
+	that 2 is in \(\{1,2\}\), and that there exists a set in \(\metaset{A}\)
 	such that 2 is in that set. So choose \(x\) to be 2. Using the
 	definition of the generalized intersection, we calculate the generalized
-	intersection of our choice for \(\mathcal{A}\) in particular to be the
-	set \(\{1\}\). Despite there existing some set in \(\mathcal{A}\) to
+	intersection of our choice for \(\metaset{A}\) in particular to be the
+	set \(\{1\}\). Despite there existing some set in \(\metaset{A}\) to
 	which \(x\) is a member, our choice of \(x\) is not in the generalized
-	intersection over \(\mathcal{A}\). So it is not always the case that a
-	value being in some set in \(\mathcal{A}\) is sufficient for that value
-	to also be in the generalized intersection over \(\mathcal{A}\).
+	intersection over \(\metaset{A}\). So it is not always the case that a
+	value being in some set in \(\metaset{A}\) is sufficient for that value
+	to also be in the generalized intersection over \(\metaset{A}\).
 \end{proof}
 
-\subsection{\(x \in \bigcap_{A \in \mathcal{A}} A \implies x \in A\) for every
-	\(A \in \mathcal{A}\).}\label{5d}
+\subsection{\(x \isin \arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin A\) for every
+	\(A \in \metaset{A}\).}\label{5d}
 \begin{thm}[Implication holds in~\ref{5d}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, for every \(x\)
-	in the generalized intersection over all sets in \(\mathcal{A}\), for
-	every \(A\) in \(\mathcal{A}\), it is the case that \(x\) is in \(A\).
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	in the generalized intersection over all sets in \(\metaset{A}\), for
+	every \(A\) in \(\metaset{A}\), it is the case that \(x\) is in \(A\).
 	Symbolically, that is
-	\[\forall x \in \bigcap\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \in A\]
+	\[x \isin \Arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\forall A \in \metaset{A}, x \isin A}\]
 \end{thm}
 \begin{proof}
 	By the definition of the generalized intersection, any item in the
@@ -1568,11 +1580,11 @@ Also, determine which of the three statements is true.
 \end{proof}
 
 \begin{thm}[Implication holds for the converse of~\ref{5d}]
-	Given \(\mathcal{A}\) is a nonempty collection of sets, for every \(x\)
-	that is common to every set in \(\mathcal{A}\), then \(x\) is also in
-	the generalized intersection over all sets in \(\mathcal{A}\).
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	that is common to every set in \(\metaset{A}\), then \(x\) is also in
+	the generalized intersection over all sets in \(\metaset{A}\).
 	Symbolically, that is
-	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \in A\}: x \in \bigcap\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A} \implies x \isin \Arbitraryintersection{A \in \metaset{A}}{A}\]
 \end{thm}
 \begin{proof}
 	By the definition of the generalized intersection, any item in every
@@ -1585,68 +1597,68 @@ Also, determine which of the three statements is true.
 
 \section{Write the contrapositive of each of the statements of~\ref{Ex5}.}
 
-\subsection{Contrapositive of~\ref{5a}}
+\subsection{Contrapositive of~\ref{5a}}\label{6a}
 \begin{remark}[Contrapositive of~\ref{5a}]
 	The statement
-	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \notin A\}: x \notin \bigcup\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \notin A} \implies x \notin \Arbitraryunion{A \in \metaset{A}}{A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \bigcup\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \in A\]
+	\[x \isin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\thereexists A \in \metaset{A} \suchthat x' \isin A}\]
 \end{remark}
 
-\subsection{Contrapositive of coverse of~\ref{5a}}
+\subsection{Contrapositive of coverse of~\ref{5a}}\label{6b}
 \begin{remark}[Contrapositive of coverse of~\ref{5a}]
 	The statement
-	\[\forall x \notin \bigcup\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \notin A\]
+	\[x \notin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \notin A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \in A\}: x \in \bigcup\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \isin A} \implies x \isin \Arbitraryunion{A \in \metaset{A}}{A}\]
 \end{remark}
 
-\subsection{Contrapositive of~\ref{5b}}
+\subsection{Contrapositive of~\ref{5b}}\label{6c}
 \begin{remark}[Contrapositive of~\ref{5b}]
 	The statement
-	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \notin A\}: x \notin \bigcup\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \notin A} \implies x \notin \Arbitraryunion{A \in \metaset{A}}{A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \bigcup\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \in A\]
+	\[x \isin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A}\]
 \end{remark}
 
-\subsection{Contrapositive of coverse of~\ref{5b}}
+\subsection{Contrapositive of coverse of~\ref{5b}}\label{6d}
 \begin{remark}[Contrapositive of coverse of~\ref{5b}]
 	The statement
-	\[\forall x \notin \bigcup\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \notin A\]
+	\[x \notin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \notin A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \in A\}: x \in \bigcup\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A} \implies x \isin \Arbitraryunion{A \in \metaset{A}}{A}\]
 \end{remark}
 
-\subsection{Contrapositive of~\ref{5c}}
+\subsection{Contrapositive of~\ref{5c}}\label{6e}
 \begin{remark}[Contrapositive of~\ref{5c}]
 	The statement
-	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \notin A\}: x \notin \bigcap\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \notin A} \implies x \notin \Arbitraryintersection{A \in \metaset{A}}{A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \bigcap\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \in A\]
+	\[x \isin \Arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \isin A}\]
 \end{remark}
 
-\subsection{Contrapositive of coverse of~\ref{5c}}
+\subsection{Contrapositive of coverse of~\ref{5c}}\label{6f}
 \begin{remark}[Contrapositive of coverse of~\ref{5c}]
 	The statement
-	\[\forall x \notin \bigcap\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \notin A\]
+	\[x \notin \Arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \notin A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \in A\}: x \in \bigcap\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \isin A} \implies x \isin \Arbitraryintersection{A \in \metaset{A}}{A}\]
 \end{remark}
 
-\subsection{Contrapositive of~\ref{5d}}
+\subsection{Contrapositive of~\ref{5d}}\label{6g}
 \begin{remark}[Contrapositive of~\ref{5d}]
 	The statement
-	\[\forall x \in \{x' | \exists A \in \mathcal{A}: x' \notin A\}: x \notin \bigcap\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \notin A} \implies x \notin \Arbitraryintersection{A \in \metaset{A}}{A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \bigcap\limits_{A \in \mathcal{A}} A: \forall A \in \mathcal{A}: x \in A\]
+	\[x \isin \Arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \in A}\]
 \end{remark}
 
-\subsection{Contrapositive of coverse of~\ref{5d}}
+\subsection{Contrapositive of coverse of~\ref{5d}}\label{6h}
 \begin{remark}[Contrapositive of coverse of~\ref{5d}]
 	The statement
-	\[\forall x \notin \bigcap\limits_{A \in \mathcal{A}} A: \exists A \in \mathcal{A}: x \notin A\]
+	\[x \notin \Arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \notin A}\]
 	is the contrapositive of the statement
-	\[\forall x \in \{x' | \forall A \in \mathcal{A}: x' \in A\}: x \in \bigcap\limits_{A \in \mathcal{A}} A\]
+	\[x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A} \implies x \isin \Arbitraryintersection{A \in \metaset{A}}{A}\]
 \end{remark}
 
 
@@ -1681,63 +1693,63 @@ Also, determine which of the three statements is true.
 \end{remark}
 
 
-\section{If a set \(A\) has two elements, show that \(\mathscr{P}(A)\) has four
-	elements. How many elements does \(\mathscr{P}(A)\) have if \(A\) has
-	one element? Three elements? No elements? Why is \(\mathscr{P}(A)\)
+\section{If a set \(A\) has two elements, show that \(\powerset{A}\) has four
+	elements. How many elements does \(\powerset{A}\) have if \(A\) has
+	one element? Three elements? No elements? Why is \(\powerset{A}\)
 	called the power set of \(A\)?}
 
-\begin{thm}[\(\card{A} = 2 \implies \card{\mathscr{P}(A)} = 4\)]
+\begin{thm}[\(\card{A} = 2 \implies \card{\powerset{A}} = 4\)]
 	The power set of a set with two elements has four elements.
 \end{thm}
 \begin{proof}
 	Let \(A\) be a set with two aribtrary elements which we will address as
 	\(A_0\) and \(A_1\). Constructing the power set of \(A\), the definition
-	of the power set gives \(\mathscr{P}(A)\) equal to
+	of the power set gives \(\powerset{A}\) equal to
 	\(\{\emptyset, \{A_0\}, \{A_1\}, \{A_0, A_1\}\}\). We see that there are
-	four elements in \(\mathscr{P}(A)\).
+	four elements in \(\powerset{A}\).
 \end{proof}
 
-\begin{thm}[\(\card{A} = 1 \implies \card{\mathscr{P}(A)} = 2\)]
+\begin{thm}[\(\card{A} = 1 \implies \card{\powerset{A}} = 2\)]
 	The power set of a set with one element has two elements.
 \end{thm}
 \begin{proof}
 	Let \(A\) be a set with one aribtrary element which we will address as
 	\(A_0\). Constructing the power set of \(A\), the definition of the
-	power set gives \(\mathscr{P}(A)\) equal to \(\{\emptyset, \{A_0\}\}\).
-	We see that there are two elements in \(\mathscr{P}(A)\).
+	power set gives \(\powerset{A}\) equal to \(\{\emptyset, \{A_0\}\}\).
+	We see that there are two elements in \(\powerset{A}\).
 \end{proof}
 
-\begin{thm}[\(\card{A} = 3 \implies \card{\mathscr{P}(A)} = 8\)]
+\begin{thm}[\(\card{A} = 3 \implies \card{\powerset{A}} = 8\)]
 	The power set of a set with three elements has eight elements.
 \end{thm}
 \begin{proof}
 	Let \(A\) be a set with three aribtrary elements which we will address
 	as \(A_0\), \(A_1\), and \(A_2\). Constructing the power set of \(A\),
-	the definition of the power set gives \(\mathscr{P}(A)\) equal to:
+	the definition of the power set gives \(\powerset{A}\) equal to:
 	\[\{\emptyset, \\
 	\{A_0\}, \{A_1\}, \{A_2\}, \\
 	\{A_0, A_1\}, \{A_0, A_2\}, \{A_1, A_2\},
 	\{A_0, A_1, A_2\}\}\]
-	We see that there are eight elements in \(\mathscr{P}(A)\).
+	We see that there are eight elements in \(\powerset{A}\).
 \end{proof}
 
-\begin{thm}[\(\card{A} = 0 \implies \card{\mathscr{P}(A)} = 1\)]
+\begin{thm}[\(\card{A} = 0 \implies \card{\powerset{A}} = 1\)]
 	The power set of the empty set has one element.
 \end{thm}
 \begin{proof}
 	Constructing the power set of \(\emptyset\) (i.e., the empty set), the
-	definition of the power set gives \(\mathscr{P}(\emptyset)\) equal to
+	definition of the power set gives \(\powerset{\emptyset}\) equal to
 	\(\{\emptyset\}\). We see that there is one element in
-	\(\mathscr{P}(\emptyset)\).
+	\(\powerset{\emptyset}\).
 \end{proof}
 
-\begin{remark}[Why \(\mathscr{P}(A)\) is called the power set]
+\begin{remark}[Why \(\powerset{A}\) is called the power set]
 	The power set of some set is so-called as the set resulting from the
 	power set construction operation has a cardinality equal to 2
 	exponentiated to the power of the cardinality of the set on which the
 	power set operation is performed. Symbolically, that is (given a set
 	\(A\)):
-	\[\card{\mathscr{P}(A)} = 2^{\card{A}}\]
+	\[\card{\powerset{A}} = 2^{\card{A}}\]
 \end{remark}
 
 
@@ -1765,7 +1777,68 @@ Also, determine which of the three statements is true.
 	a collection of sets \(\mathcal{B}\):
 	\[A \setminus \bigcup\limits_{B \in \mathcal{B}} B = \bigcap\limits_{B \in \mathcal{B}} (A \setminus B)\]
 \end{thm}
-\todo{proof}
+\begin{proof}
+	We will establish set equality by demonstrating that each set it a
+	subset of the other. Let \(A\) be a set and \(\metaset{B}\) be a
+	collection of sets.
+
+	\medskip{}
+	First we'll consider \(A \without \arbitraryunion{B \in \metaset{B}}{B}\).
+	In the trivial case that the set is empty, then it is a subset of
+	\(\arbitraryintersection{B \in \metaset{B}}{B}\) since the empty set is
+	a subset of all sets. Instead, let \(x\) be an arbitrary value in
+	\(A \without \arbitraryunion{B \in \metaset{B}}{B}\). By the definition
+	of set difference, we know that \(x\) is in \(A\) and \(x\) is not in
+	\(\arbitraryunion{B \in \metaset{B}}{B}\). Recall that the converse
+	of~\ref{5a} (i.e.,~\thref{5atc}) is true. Since the contrapositive of a
+	statement has the same truth value as the original statement, we know
+	that the contrapositive of~\ref{5a} (i.e.,~\ref{6b}) is also true. So we
+	have that \(x\) not being in \(\arbitraryunion{B \in \metaset{B}}{B}\)
+	implies that \(x\) is in
+	\(\setbuild{x'}{\forall B \in \metaset{B}, x' \notin B}\). As we have
+	already established that \(x\) is not in
+	\(\arbitraryunion{B \in \metaset{B}}{B}\), modus ponens shows that for
+	all \(B\) in \(\metaset{B}\), we know that \(x\) is not in \(B\). Now
+	since we established previously that \(x\) is indeed in \(A\), we can
+	see by universal generalization that for all \(B\) in \(\metaset{B}\),
+	we know simultaneously that \(x\) is in \(A\) and \(x\) is not in \(B\).
+	By the definition of set difference, for all \(B\) in \(\metaset{B}\),
+	we see that \(x\) is in \(A \without B\). By the definition of
+	arbitrary intersection, we have that \(x\) is in
+	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\). So
+	\(A \without \arbitraryunion{B \in \metaset{B}}{B}\) is a subset of
+	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\).
+
+	\medskip{}
+	Second, we'll consider
+	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\). In the
+	trivial case that the set is empty, then it is a subset of
+	\(A \without \arbitraryunion{B \in \metaset{B}}{B}\) since the empty set
+	is a subset of all sets. Instead, let \(x\) be an arbitrary value in
+	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\). By the
+	definition of arbitrary set intersection, we know that \(x\) is in
+	\(A \without B\) for every \(B\) in \(\metaset{B}\). By the definition
+	of set difference, we know that \(x\) is in \(A\) and \(x\) is not in
+	\(B\) for every \(B\) in \(\metaset{B}\). By universal instantiation, we
+	have that \(x\) is in \(A\), and separately \(x\) is not in \(B\) for
+	every \(B\) in \(\metaset{B}\). Since~\ref{5a} (i.e.,~\thref{5at}) is
+	true, we know that~\ref{6a} is also true since a statement has the same
+	truth value as its contrapositive. Combined with the fact that we have
+	already established that for all \(B\) in \(\metaset{B}\) that \(x\) is
+	not in \(B\), modus ponens gives us that \(x\) is not in
+	\(\arbitraryunion{B \in \metaset{B}}{B}\). Since we previously
+	established that \(x\) is in \(A\), the definition of set difference
+	gives us \(x\) being in
+	\(A \without \arbitraryunion{B \in \metaset{B}}{B}\). So
+	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\) is a subset
+	of \(A \without \arbitraryunion{B \in \metaset{B}}{B}\).
+
+	\medskip{}
+	As we have demonstrated that
+	\(A \without \arbitraryunion{B \in \metaset{B}}{B}\) and
+	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\) are subsets
+	of each other, we have also demonstrated equality among these sets.
+\end{proof}
 
 \begin{thm}[De Morgan's Second Law]
 	Set difference across generalized set intersection is equivalent to

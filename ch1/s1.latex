@@ -37,6 +37,8 @@
 \newcommand{\isin}{\in}
 \newcommand{\thereexists}{\exists}
 \newcommand{\itisnothecasethat}[1]{\neg{} (#1)}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
 
 \begin{document}
 \title{Exercies for \S 1 Fundamental Concepts}
@@ -1525,7 +1527,7 @@ Also, determine which of the three statements is true.
 
 \subsection{\(x \isin \arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin A\) for at
 	least one \(A \in \metaset{A}\).}\label{5c}
-\begin{thm}[Implication holds in~\ref{5c}]
+\begin{thm}[Implication holds in~\ref{5c}]\thlabel{5ct}
 	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
 	in the generalized intersection over all sets in \(\metaset{A}\), there
 	exists some set \(A\) in \(\metaset{A}\) such that \(x\) is in \(A\).
@@ -1566,7 +1568,7 @@ Also, determine which of the three statements is true.
 
 \subsection{\(x \isin \arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin A\) for every
 	\(A \in \metaset{A}\).}\label{5d}
-\begin{thm}[Implication holds in~\ref{5d}]
+\begin{thm}[Implication holds in~\ref{5d}]\thlabel{5dt}
 	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
 	in the generalized intersection over all sets in \(\metaset{A}\), for
 	every \(A\) in \(\metaset{A}\), it is the case that \(x\) is in \(A\).
@@ -1772,10 +1774,10 @@ Also, determine which of the three statements is true.
 	basic set difference across these more generalized operators.
 \end{remark}
 \begin{thm}[De Morgan's First Law]
-	Set difference across generalized set union is equivalent to generalized
-	set intersection of set differences. Symbolically, given a set \(A\) and
-	a collection of sets \(\mathcal{B}\):
-	\[A \setminus \bigcup\limits_{B \in \mathcal{B}} B = \bigcap\limits_{B \in \mathcal{B}} (A \setminus B)\]
+	Set difference across arbitrary set union is equivalent to arbitrary set
+	intersection of set differences. Symbolically, given a set \(A\) and a
+	collection of sets \(\metaset{B}\):
+	\[A \without \Arbitraryunion{B \in \metaset{B}}{B} = \Arbitraryintersection{B \in \metaset{B}}{A \without B}\]
 \end{thm}
 \begin{proof}
 	We will establish set equality by demonstrating that each set it a
@@ -1785,26 +1787,26 @@ Also, determine which of the three statements is true.
 	\medskip{}
 	First we'll consider \(A \without \arbitraryunion{B \in \metaset{B}}{B}\).
 	In the trivial case that the set is empty, then it is a subset of
-	\(\arbitraryintersection{B \in \metaset{B}}{B}\) since the empty set is
-	a subset of all sets. Instead, let \(x\) be an arbitrary value in
-	\(A \without \arbitraryunion{B \in \metaset{B}}{B}\). By the definition
-	of set difference, we know that \(x\) is in \(A\) and \(x\) is not in
-	\(\arbitraryunion{B \in \metaset{B}}{B}\). Recall that the converse
-	of~\ref{5a} (i.e.,~\thref{5atc}) is true. Since the contrapositive of a
-	statement has the same truth value as the original statement, we know
-	that the contrapositive of~\ref{5a} (i.e.,~\ref{6b}) is also true. So we
-	have that \(x\) not being in \(\arbitraryunion{B \in \metaset{B}}{B}\)
-	implies that \(x\) is in
+	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\) since the
+	empty set is a subset of all sets. Instead, let \(x\) be an arbitrary
+	value in \(A \without \arbitraryunion{B \in \metaset{B}}{B}\). By the
+	definition of set difference, we know that \(x\) is in \(A\) and \(x\)
+	is not in \(\arbitraryunion{B \in \metaset{B}}{B}\). Recall that the
+	converse of~\ref{5a} (i.e.,~\thref{5atc}) is true. Since the
+	contrapositive of a statement has the same truth value as the original
+	statement, we know that the contrapositive of the converse of~\ref{5a}
+	(i.e.,~\ref{6b}) is also true. So we have that \(x\) not being in
+	\(\arbitraryunion{B \in \metaset{B}}{B}\) implies that \(x\) is in
 	\(\setbuild{x'}{\forall B \in \metaset{B}, x' \notin B}\). As we have
 	already established that \(x\) is not in
 	\(\arbitraryunion{B \in \metaset{B}}{B}\), modus ponens shows that for
 	all \(B\) in \(\metaset{B}\), we know that \(x\) is not in \(B\). Now
 	since we established previously that \(x\) is indeed in \(A\), we can
-	see by universal generalization that for all \(B\) in \(\metaset{B}\),
-	we know simultaneously that \(x\) is in \(A\) and \(x\) is not in \(B\).
-	By the definition of set difference, for all \(B\) in \(\metaset{B}\),
-	we see that \(x\) is in \(A \without B\). By the definition of
-	arbitrary intersection, we have that \(x\) is in
+	see that for all \(B\) in \(\metaset{B}\), we know simultaneously that
+	\(x\) is in \(A\) and \(x\) is not in \(B\). By the definition of set
+	difference, for all \(B\) in \(\metaset{B}\), we see that \(x\) is in
+	\(A \without B\). By the definition of arbitrary intersection, we have
+	that \(x\) is in
 	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\). So
 	\(A \without \arbitraryunion{B \in \metaset{B}}{B}\) is a subset of
 	\(\arbitraryintersection{B \in \metaset{B}}{A \without B}\).
@@ -1819,13 +1821,13 @@ Also, determine which of the three statements is true.
 	definition of arbitrary set intersection, we know that \(x\) is in
 	\(A \without B\) for every \(B\) in \(\metaset{B}\). By the definition
 	of set difference, we know that \(x\) is in \(A\) and \(x\) is not in
-	\(B\) for every \(B\) in \(\metaset{B}\). By universal instantiation, we
-	have that \(x\) is in \(A\), and separately \(x\) is not in \(B\) for
-	every \(B\) in \(\metaset{B}\). Since~\ref{5a} (i.e.,~\thref{5at}) is
-	true, we know that~\ref{6a} is also true since a statement has the same
-	truth value as its contrapositive. Combined with the fact that we have
-	already established that for all \(B\) in \(\metaset{B}\) that \(x\) is
-	not in \(B\), modus ponens gives us that \(x\) is not in
+	\(B\) for every \(B\) in \(\metaset{B}\). So we have that \(x\) is in
+	\(A\), and separately \(x\) is not in \(B\) for every \(B\) in
+	\(\metaset{B}\). Since~\ref{5a} (i.e.,~\thref{5at}) is true, we know
+	that~\ref{6a} is also true since a statement has the same truth value as
+	its contrapositive. Combined with the fact that we have already
+	established that for all \(B\) in \(\metaset{B}\) that \(x\) is not in
+	\(B\), modus ponens gives us that \(x\) is not in
 	\(\arbitraryunion{B \in \metaset{B}}{B}\). Since we previously
 	established that \(x\) is in \(A\), the definition of set difference
 	gives us \(x\) being in
@@ -1841,31 +1843,148 @@ Also, determine which of the three statements is true.
 \end{proof}
 
 \begin{thm}[De Morgan's Second Law]
-	Set difference across generalized set intersection is equivalent to
-	generalized set union of set differences. Symbolically, given a set
-	\(A\) and a collection of sets \(\mathcal{B}\):
-	\[A \setminus \bigcap\limits_{B \in \mathcal{B}} B = \bigcup\limits_{B \in \mathcal{B}} (A \setminus B)\]
+	Set difference across arbitrary set intersection is equivalent to
+	arbitrary set union of set differences. Symbolically, given a set \(A\)
+	and a collection of sets \(\metaset{B}\):
+	\[A \without \Arbitraryintersection{B \in \metaset{B}}{B} = \Arbitraryunion{B \in \metaset{B}}{A \setminus B}\]
 \end{thm}
-\todo{proof}
+\begin{proof}
+	We will establish set equality by demonstrating that each set it a
+	subset of the other. Let \(A\) be a set and \(\metaset{B}\) be a
+	collection of sets. Since demonstrating a subset relation is trivial
+	in the event of an empty set, we will instead proceed from an arbitrary
+	value in each set and demonstrate that such a value, if it exists, must
+	also exist in the other set.
+
+	\medskip{}
+	First, let \(x\) be an arbitrary value in
+	\(A \without \arbitraryintersection{B \in \metaset{B}}{B}\). By the
+	definition of set difference, we have that \(x\) is in \(A\) and \(x\)
+	is not in \(\arbitraryintersection{B \in \metaset{B}}{B}\). Since the
+	contrapositive of a true statement is also a true statement, we know
+	that \(x\) not being in \(\arbitraryintersection{B \in \metaset{B}}{B}\)
+	implies that \(x\) is in
+	\(\setbuild{x'}{\thereexists B \in \metaset{B} \suchthat x' \notin B}\)
+	since~\ref{6f} is the contrapositive of the true statement~\ref{5c}
+	(i.e.,~\thref{5ct}). So by modus ponens, we know that \(x\) is indeed
+	in
+	\(\setbuild{x'}{\thereexists B \in \metaset{B} \suchthat x' \notin B}\).
+	In other words, there exists \(B\) in \(\metaset{B}\) such that \(x\) is
+	not in \(B\). Since we have established that \(x\) is indeed in \(A\),
+	we can say that there exists \(B\) in \(\metaset{B}\) such that \(x\) is
+	in \(A\) and \(x\) is not in \(B\). By the definition of set difference,
+	we have that there exists \(B\) in \(\metaset{B}\) such that \(x\) is in
+	\(A \without B\). This then shows us that \(x\) is in
+	\(\arbitraryunion{B \in \metaset{B}}{A \without B}\) by the definition
+	of arbitrary set union. Thus
+	\(A \without \arbitraryintersection{B \in \metaset{B}}{B}\) is a subset
+	of \(\arbitraryunion{B \in \metaset{B}}{A \without B}\).
+
+	\medskip{}
+	Second, let \(x\) be an arbitrary value in
+	\(\arbitraryunion{B \in \metaset{B}}{A \without B}\). By the definition
+	of arbitrary set union, there exists some \(B\) in \(\metaset{B}\) such
+	that \(x\) is in \(A \without B\). Now by the definition of set
+	difference, we have that there exists some \(B\) in \(\metaset{B}\) such
+	that \(x\) is in \(A\) and \(x\) is not in \(B\). So \(x\) is in \(A\)
+	and there exists some \(B\) in \(\metaset{B}\) such that \(x\) is not in
+	\(B\). Recalling that~\ref{6g} is the contrapositive of the true
+	statement~\ref{5d} (i.e.,~\thref{5dt}), we know that \(x\) being in
+	\(\setbuild{x'}{\thereexists B \in \metaset{B} \suchthat x' \notin B}\)
+	implies that \(x\) is not in
+	\(\arbitraryintersection{B \in \metaset{B}}{B}\). By modus ponens, we
+	see that \(x\) is not in
+	\(\arbitraryintersection{B \in \metaset{B}}{B}\). Since \(x\) is in
+	\(A\), we are given \(x\) in
+	\(A \without \arbitraryintersection{B \in \metaset{B}}{B}\) by the
+	definition of set difference. Thus
+	\(\arbitraryunion{B \in \metaset{B}}{A \without B}\) is a subset of
+	\(A \without \arbitraryintersection{B \in \metaset{B}}{B}\).
+
+	\medskip{}
+	Therefore, as each set has been shown to be a subset of the other, we
+	have demonstrated equality between
+	\(A \without \arbitraryintersection{B \in \metaset{B}}{B}\) and
+	\(\arbitraryunion{B \in \metaset{B}}{A \without B}\).
+\end{proof}
 
 
 \section{Let \(\mathbb{R}\) denote the set of real numbers. For each of the
 	following subsets of \(\mathbb{R}\times\mathbb{R}\), determine whether
 	it is equal to the cartesian product of two subsets of \(\mathbb{R}\).}
 
-\subsection{\(\{(x, y) | x \in \mathbb{Z}\}\).}
-\todo{do it}
+\begin{remark}
+	The cartesian product of two sets would necessarilly include all
+	possible pairs by selecting one member from each set. So for example, a
+	cartesian product could not consist only of members of the form
+	\((x, f(x))\) if \(f(x_1) \neq f(x_2)\) for any \(x_1 \neq x_2\) since
+	that would imply that \((x_1, f(x_2))\) or \((x_2, f(x_1))\) (or both)
+	would not be in the set even though \((x_1, f(x_1))\) and
+	\((x_2, f(x_2))\) would be in the set.
+\end{remark}
+
+\subsection{\(\{(x, y) | x \in \mathbb{Z}\}\).}\label{10a}
+\begin{thm}
+	The set \(\setbuild{(x,y)}{x \isin \integers \land y \isin \reals}\) is
+	a cartesian product of two subsets of \(\reals\).
+\end{thm}
+\begin{proof}
+	First note that both \(\integers\) and \(\reals\) are subsets of
+	\(\reals\). Now since the particular values of \(x\) do not depend on
+	the particular values of \(y\), given any \((x_1, y_1)\) and
+	\((x_2, y_2)\) which are in the set, it must be that both \((x_1, y_2)\)
+	and \((x_2, y_1)\) are also in the set.
+\end{proof}
 
 \subsection{\(\{(x, y) | 0 < y \leq 1\}\).}
-\todo{do it}
+\begin{thm}
+	The set \(\setbuild{(x,y)}{0 < y \leq 1}\) is a cartesian product of two
+	subsets of \(\reals\).
+\end{thm}
+\begin{proof}
+	First note both \((0,1]\) and \(\reals\) are subsets of \(\reals\). Now
+	since the possible values of \(y\) do not depend on the values of \(x\),
+	we know that \((x_1,y_1)\) and \((x_2,y_2)\) being in the set imply both
+	\((x_1,y_2)\) and \((x_2,y_1)\) are also in the set.
+\end{proof}
 
 \subsection{\(\{(x, y) | y > x\}\).}
-\todo{do it}
+\begin{thm}
+	The set \(\setbuild{(x,y)}{y > x}\) is not a cartesian product of two
+	subsets of \(\reals\).
+\end{thm}
+\begin{proof}
+	Choose \(x_1 = 0\), \(y_1 = 1\), \(x_2 = 1\), and \(y_2 = 2\). Note that
+	\((x_1,y_1) = (0,1)\) is in the set, as is \((x_2,y_2) = (1,2)\).
+	However, the pair \((x_2,y_1) = (1,1)\) is not in the set. So the set
+	cannot be a cartesian product.
+\end{proof}
 
 \subsection{\(\{(x, y) | x \notin \mathbb{Z} \land y \in \mathbb{Z}\}\).}
-\todo{do it}
+\begin{thm}
+	The set \(\setbuild{(x,y)}{x \notin \integers \land y \isin \integers}\)
+	is a cartesian product of two subsets of \(\reals\).
+\end{thm}
+\begin{proof}
+	First note that both \(\reals \without \integers\) and \(\integers\) are
+	subsets of \(\reals\). Now since the values of \(x\) and \(y\) do not
+	depend on each other, we know that \((x_1,y_1)\) and \((x_2,y_2)\) being
+	in the set imply \((x_1,y_2)\) and \((x_2,y_1)\) are also in the set.
+\end{proof}
 
 \subsection{\(\{(x, y) | x^2 + y^2 < 1\}\).}
-\todo{do it}
+\begin{thm}
+	The set \(\setbuild{(x,y)}{x^2 + y^2 < 1}\) is not a cartesian product
+	of subsets of \(\reals\).
+\end{thm}
+\begin{proof}
+	Choose \(x_1 = 0.9\), \(y_1 = 0\), \(x_2 = 0\), and \(y_2 = 0.9\). Note
+	that \((x_1,y_1) = (0.9,0)\) is in the set since
+	\({x_1}^2 + {y_1}^2 = {0.9}^2 + {0}^2 = 0.81 < 1\). Also note that
+	\((x_2,y_2) = (0,0.9)\) is in the set since
+	\({x_2}^2 + {y_2}^2 = {0}^2 + {0.9}^2 = 0.81 < 1\). However, the pair
+	\((x_1,y_2) = (0.9,0.9)\) is not in the set, as
+	\({x_1}^2 + {y_2}^2 = {0.9}^2 + {0.9}^2 = 1.62 \centernot< 1\).
+\end{proof}
 
 \end{document}

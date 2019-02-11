@@ -1,0 +1,67 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2h}
+\[A \cup (B \setminus C) = (A \cup B) \setminus (A \cup C)\]
+\begin{thm}[Equality fails in~\ref{2h}]
+	Given sets \(A\), \(B\), and \(C\), it is not the case that the union of
+	\(A\) with the portion of \(B\) which does not overlap with \(C\) is
+	equal to the set resulting from removing the union of \(A\) and \(C\)
+	from the union of \(A\) and \(B\). Symbolically, that is
+	\[\neg [A \cup (B \setminus C) = (A \cup B) \setminus (A \cup C)]\]
+\end{thm}
+\begin{proof}
+	Choose \(A\) to be the set of multiples of 3, \(B\) to be the set of
+	multiples of 4, and \(C\) to be the set of multiples of 2. We can see
+	that \(B \setminus C\) is the empty set since all multiples of 4 are
+	also multiples of 2. So \(A \cup (B \setminus C)\) is just the multiples
+	of 3 given the behavior of set union with the empty set. Note that
+	\(A \cup (B \setminus C)\) is not empty since there really do exist
+	multiples of 3 (for example, 3 itself).
+
+	Given our choices, \(A \cup B\) is the set of all multiples of 3 or 4,
+	and \(A \cup C\) is the set of all multiples of 3 or 2. Since any
+	multiple of 3 or 4 (or both) would certainly be a multiple of either 3
+	or 2 or both, then \((A \cup B) \setminus (A \cup C)\) is the empty set.
+
+	Since \(A \cup (B \setminus C)\) is a non-empty set and
+	\((A \cup B) \setminus (A \cup C)\) is the empty set, it is certainly
+	not the case that \(A \cup (B \setminus C)\) is a subset of
+	\((A \cup B) \setminus (A \cup C)\). Therefore, we can say that equality
+	of the sets is not possible in this case.
+\end{proof}
+
+\begin{thm}[RHS is a subset of LHS in~\ref{2h}]
+	Given sets \(A\), \(B\), and \(C\), the set resulting from removing the
+	union of \(A\) and \(C\) from the union of \(A\) and \(B\) is a subset
+	of the union of \(A\) and the portion of \(B\) which does not overlap
+	with \(C\). Symbolically, that is
+	\[(A \cup B) \setminus (A \cup C) \subset A \cup (B \setminus C)\]
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets. Since the empty set is already
+	known to be a subset of all sets, we will simply examine whether some
+	arbitrary value which might exist in \((A \cup B) \setminus (A \cup C)\)
+	would necessarilly also be in \(A \cup (B \setminus C)\).
+
+	Let \(x\) be some arbitrary member of
+	\((A \cup B) \setminus (A \cup C)\). We know that \(x\) is in
+	\(A \cup B\) and that \(x\) is not in \(A \cup C\). Using the definition
+	of set union, we can say both that \(x\) is in \(A\) or \(B\) and that
+	it is not the case that \(x\) is in \(A\) or \(C\) (or both). De
+	Morgan's Law tells use that the latter is equivalent to the statement
+	that both \(x\) is not in \(A\) and \(x\) is not in \(C\). This combined
+	with the previously established statement that \(x\) is in \(A\) or
+	\(x\) is in \(B\) (or both), the disjunctive syllogism informs us that
+	it must be that \(x\) is in \(B\). Taking this together with \(x\) not
+	being in \(C\), by definition we can say \(x\) is in \(B \setminus C\).
+	It follows that \(x\) is in \(A \cup (B \setminus C)\) by disjunctive
+	introduction.
+
+	So \((A \cup B) \setminus (A \cup C)\) is a subset of
+	\(A \cup (B \setminus C)\).
+\end{proof}
+
+\end{document}
+

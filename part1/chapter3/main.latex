@@ -1,0 +1,12 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\chapter{Connectedness and Compactness}
+%\subfile{part1/chapter3/section23/main.latex}
+\todo{}
+
+\end{document}

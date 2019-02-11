@@ -1,0 +1,61 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{3b}
+If \(x > 0\), then \(x^2 - x > 0\).
+
+\begin{thm}[Implication fails in~\ref{3b}]
+	Given \(x\) is a postive real number, it is not necessarilly the case
+	that \(x^2 - x\) is a positive number. Symbolically, that is
+	\[\neg (\forall x \in \mathbb{R}: x > 0 \implies x^2 - x > 0)\]
+\end{thm}
+\begin{proof}
+	Choose \(x\) to be \(\frac{1}{2}\), which is a positive real number. Now
+	\(x^2\) is \(\frac{1}{4}\), and \(x^2 - x\) is \(-\frac{1}{4}\). Since
+	\(-\frac{1}{4}\) is not a positive number, having \(x\) be a positive
+	real number is insufficient for \(x^2 - x\) to be a positive number.
+\end{proof}
+
+\begin{remark}[Contrapositive of~\ref{3b}]
+	The statement
+	\[x^2 -x \leq 0 \implies x \leq 0\]
+	is the contrapositive of the statement
+	\[x > 0 \implies x^2 - x > 0\]
+\end{remark}
+\begin{thm}[Implication fails for the contrapositive of~\ref{3b}]
+	Given \(x\) is a real number such that \(x^2 - x\) is a non-positive
+	number, it is not necessarilly the case that \(x\) is a non-positive
+	number.
+\end{thm}
+\begin{proof}
+	Let \(x'\) be \(\frac{1}{2}\). Now \(x'^2\) is \(\frac{1}{4}\), and
+	\(x'^2 - x'\) is \(-\frac{1}{4}\). Note that \(-\frac{1}{4}\) is a
+	non-positive number. So we can choose \(x\) to be \(x'\) since \(x'\)
+	is indeed a real number that would yield a non-positive value for
+	\(x^2 - x\). However, note that \(\frac{1}{2}\) is a positive number,
+	and so it is not a non-positive number. Therefore having a real number
+	\(x\) such that \(x^2 - x\) is a non-positive number is insufficient for
+	\(x\) to also be a non-positive number.
+\end{proof}
+
+\begin{remark}[Converse of~\ref{3b}]
+	The statement
+	\[x^2 - x > 0 \implies x > 0\]
+	is the converse of the statement
+	\[x > 0 \implies x^2 - x > 0\]
+\end{remark}
+\begin{thm}[Implication fails for the converse of~\ref{3b}]
+	Given \(x\) is a real number such that \(x^2 - x\) is a positive number,
+	it is not necessarilly the case that \(x\) is also a positive number.
+	Symbolically, that is
+	\[\neg (\forall x \in \mathbb{R}: x^2 - x > 0 \implies x > 0)\]
+\end{thm}
+\begin{proof}
+	Let \(x'\) be \(-1\), which is a real number. Now \(x'^2\) is 1, and
+	\(x'^2 - x'\) is 2. Since 2 is a positive number, we can choose \(x\) to
+	be \(x'\). However, since \(x'\) is not a positive number, we have that
+	\(x\) is not a positive number.
+\end{proof}
+
+\end{document}

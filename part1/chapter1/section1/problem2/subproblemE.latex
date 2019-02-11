@@ -1,0 +1,60 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2e}
+\[A \setminus (A \setminus B) = B\]
+\begin{thm}[Equality fails in~\ref{2e}]
+	Given two sets \(A\) and \(B\), it is not the case that \(B\) is equal
+	to the portion of \(A\) removing the other portion of \(A\) which does
+	not overlap with \(B\). Symbolically, that is:
+	\[\neg [A \setminus (A \setminus B) = B]\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Specifically, given particular
+	choices for sets \(A\) and \(B\), we will explore whether \(B\) is a
+	subset of \(A \setminus (A \setminus B)\).
+
+	Choose set \(A\) to be the set of all even integers. Choose set \(B\) to
+	be the set of all odd integers. Since the set of all even integers does
+	not have any members that are also in the set of all odd integers,
+	removing \(B\) from \(A\) still leaves the whole of \(A\). That is, for
+	our particular choices for \(A\) and \(B\), we have that
+	\(A \setminus B = A\). By substitution, removing from \(A\) the portion
+	of \(A\) that does not overlap with \(B\) is simply removing all of
+	\(A\) from itself. Removing such a set from itself must result in the
+	empty set.
+
+	Continuing with our previous choices for sets \(A\) and \(B\), suppose
+	it really was the case that \(B\) is a subset of the portion of \(A\)
+	removing the other portion of \(A\) which does not overlap with \(B\).
+	Since we have previously demonstrated that
+	\(A \setminus (A \setminus B)\) is the empty set, that would mean that
+	the set of all odd integers is a subset of the empty set. However, that
+	is absurd, as there certainly do exist odd integers, and that would
+	contradict the notion that \(B\) is a subset of the empty set. Since we
+	have reached a contradiction, we can say that we were incorrect in our
+	supposition, and so it is not always the case that \(B\) is a subset of
+	the portion of \(A\) removing the other portion of \(A\) which does not
+	overlap with \(B\).
+\end{proof}
+
+\begin{thm}[LHS is a subset of RHS in~\ref{2e}]
+	Given two sets \(A\) and \(B\), it is the case that \(B\) is a subset of
+	the portion of \(A\) removing the other portion of \(A\) which does not
+	overlap with \(B\). Symbolically, that is:
+	\[A \setminus (A \setminus B) \subset B\]
+\end{thm}
+\begin{proof}
+	Assume there are two arbitrary sets \(A\) and \(B\). Note that removing
+	the portion of \(A\) which overlaps with \(B\) is equivalent to taking
+	the intesection of \(A\) and the complement of \(B\). Now removing from
+	\(A\) the intersection of \(A\) and the complement of \(B\) leaves only
+	the intersection of \(A\) and \(B\). Finally, it is the case that the
+	intersection of \(A\) and \(B\) is a subset of \(B\) given the
+	definition of set intersection.
+\end{proof}
+
+\end{document}
+

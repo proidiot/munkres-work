@@ -1,0 +1,12 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\section{Finite Sets}
+%\subfile{part1/chapter1/section6/problem1/main.latex}
+\todo{}
+
+\end{document}

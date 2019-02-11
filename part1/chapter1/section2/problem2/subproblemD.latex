@@ -1,0 +1,10 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2d}
+
+\[\inverse{f}(B_0 \without B_1) = \inverse{f}(B_0) \without \inverse{f}(B_1)\]
+\todo{}
+
+\end{document}

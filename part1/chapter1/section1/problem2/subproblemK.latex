@@ -1,0 +1,37 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2k}
+The converse of~\ref{2j}.
+\begin{remark}[The converse of~\ref{2j}]
+	The statement
+	\[(A \times B) \subset (C \times D) \implies A \subset C \land B \subset D\]
+	is the converse of
+	\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+\end{remark}
+
+\begin{thm}[Implication fails in~\ref{2k}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), it is not the case that the
+	cartesian product of \(A\) and \(B\) being a subset of the cartesian
+	product of \(C\) and \(D\) implies that both \(A\) is a subset of \(C\)
+	and \(B\) is a subset of \(D\). Symbolically, that is
+	\[\neg [(A \times B) \subset (C \times D) \implies A \subset C \land B \subset D]\]
+\end{thm}
+\begin{proof}
+	Choose \(A\) to be the empty set, \(B\) to be the odds, \(C\)
+	to be the integers, and \(D\) to be the evens. Since \(A\) is the empty
+	set, the cartesian product of \(A\) and \(B\) is also the empty set.
+	Since the empty set is a subset of all sets, \(A \times B\) is a subset
+	of \(C \times D\). Now suppose it was the case that \(A \times B\) being
+	a subset of \(C \times D\) really did imply that both \(A\) was a subset
+	of \(C\) and \(B\) was a subset of \(D\). Given our particular choices,
+	that would mean (among other things) that the set of all odds is a
+	subset of the set of all evens, which is absurd. So given our choices it
+	is not the case that \(A \times B\) being a subset of \(C \times D\)
+	implies that both \(A\) is a subset of \(C\) and \(B\) is a subset of
+	\(D\).
+\end{proof}
+
+\end{document}
+

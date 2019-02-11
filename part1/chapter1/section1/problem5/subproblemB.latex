@@ -1,0 +1,50 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{5b}
+
+\(x \isin \arbitraryunion{A \in \metaset{A}}{A} \implies x \isin A\) for every
+\(A \in \metaset{A}\).
+
+\begin{thm}[Implication fails in~\ref{5b}]
+	Given \(\metaset{A}\) is a nonempty collection of sets, it is not the
+	case that for every \(x\) in the generalized union over all sets in
+	\(\metaset{A}\), for every set \(A\) in \(\metaset{A}\) it must be that
+	\(x\) is in \(A\). Symbolically, that is
+	\[\itisnothecasethat{x \isin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A}}\]
+\end{thm}
+\begin{proof}
+	Choose \(\metaset{A}\) such that \(\metaset{A}_0\) is \(\{1\}\) and
+	\(\metaset{A}_1\) is \(\{2\}\). Now \(\arbitraryunion{A \in \metaset{A}}{A}\) is
+	\(\{1,2\}\) by the definition of generalized union. Choose \(x\) to be
+	2, which is in \(\arbitraryunion{A \in \metaset{A}}{A}\). Note that \(x\) is not
+	in \(\metaset{A}_0\). So given our choices, we see that there it is not
+	the case that for every \(x\) in \(\arbitraryunion{A \in \metaset{A}}{A}\) and
+	for every \(A\) in \(\metaset{A}\) that \(x\) is in \(A\).
+\end{proof}
+
+\begin{thm}[Implication holds for the converse of~\ref{5b}]
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	that is common to all sets in \(\metaset{A}\), it is certain that \(x\)
+	is in the generalized union over all sets in \(\metaset{A}\).
+	Symbolically, that is
+	\[x \isin \setbuild{x'}{\forall A \in \metaset{A}, x' \isin A} \implies x \isin \Arbitraryunion{A \in \metaset{A}}{A}\]
+\end{thm}
+\begin{proof}
+	Let \(\metaset{A}\) be a nonempty collection of sets. Consider the set
+	\(A'\) of members common among all the sets of \(\metaset{A}\). If
+	\(A'\) is empty, then it is a subset of the generalized union of
+	\(\metaset{A}\) since the empty set is a subset of all sets. Exploring
+	the case that \(A'\) is not empty, let \(x\) be an arbitrary member of
+	\(A'\). Note that since \(x\) is a member of every set in
+	\(\metaset{A}\) and since \(\metaset{A}\) is itself nonempty, we can say
+	that \(x\) is a member of at least one set in \(\metaset{A}\). By the
+	definition of generalized union, we know that \(x\) is also in
+	\(\arbitraryunion{A \in \metaset{A}}{A}\). So all members common among all the
+	sets of \(\metaset{A}\) are in the generalized union over
+	\(\metaset{A}\).
+\end{proof}
+
+
+\end{document}

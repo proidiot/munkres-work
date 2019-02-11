@@ -1,0 +1,33 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\problem{}
+Determine which of the following statements are true for all sets \(A\), \(B\),
+\(C\), and \(D\). If a double implication fails, determine whether one or the
+other of the possible implications holds. If an equality fails, determine
+whether the statement becomes true if the ``equals'' symbol is replaced by one
+or the other of the inclusion symbols \(\subset\) or \(\supset\).
+
+\subfile{part1/chapter1/section1/problem2/subproblemA.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemB.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemC.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemD.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemE.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemF.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemG.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemH.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemI.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemJ.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemK.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemL.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemM.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemN.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemO.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemP.latex}
+\subfile{part1/chapter1/section1/problem2/subproblemQ.latex}
+
+\end{document}

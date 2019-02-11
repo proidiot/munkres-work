@@ -1,0 +1,29 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\problem{}
+Let \(\mathbb{R}\) denote the set of real numbers. For each of the following
+subsets of \(\mathbb{R}\times\mathbb{R}\), determine whether it is equal to the
+cartesian product of two subsets of \(\mathbb{R}\).
+
+\begin{remark}
+	The cartesian product of two sets would necessarilly include all
+	possible pairs by selecting one member from each set. So for example, a
+	cartesian product could not consist only of members of the form
+	\((x, f(x))\) if \(f(x_1) \neq f(x_2)\) for any \(x_1 \neq x_2\) since
+	that would imply that \((x_1, f(x_2))\) or \((x_2, f(x_1))\) (or both)
+	would not be in the set even though \((x_1, f(x_1))\) and
+	\((x_2, f(x_2))\) would be in the set.
+\end{remark}
+
+\subfile{part1/chapter1/section1/problem10/subproblemA.latex}
+\subfile{part1/chapter1/section1/problem10/subproblemB.latex}
+\subfile{part1/chapter1/section1/problem10/subproblemC.latex}
+\subfile{part1/chapter1/section1/problem10/subproblemD.latex}
+\subfile{part1/chapter1/section1/problem10/subproblemE.latex}
+
+\end{document}

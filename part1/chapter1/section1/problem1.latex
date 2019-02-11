@@ -1,0 +1,347 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+\problem{Check the distributive laws for \(\sunion\) and \(\sintersect\) and De Morgan's laws.}
+
+\begin{thm}[\(\sintersect\) distributes over \(\cup\)]
+	Set intersection distributes across set union. That is, for any sets
+	\(A\), \(B\), and \(C\),
+	\(A \sintersect (B \sunion C) = (A \sintersect B) \sunion (A \sintersect C)\)
+\end{thm}
+\begin{proof}
+	Given that sets are said to be equal iff they are subsets of each other,
+	the goal can be shown directly by demonstrating both of the sets in
+	question are subsets of each other. Symbolically, that would be:
+	\begin{itemize}
+		\item \([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\)
+		\item \([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \sintersect (B \sunion C)\): either the
+	set is empty, or there exists at least one element in the set. We will
+	address these possibilities independently.
+
+	If \(A \sintersect (B \sunion C) = \emptyset\), then
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\) since the
+	empty set is a subset of all sets.
+
+	If \(\exists x \in A \sintersect (B \sunion C)\), then both \(x \in A\) and
+	\(x \in B \sunion C\) by the definition of set intersection. Further, by
+	the definition of set union, \(x \in B\) or \(x \in C\). Without loss of
+	generality, assume \(x \in B\). Since both \(x \in A\) and \(x \in B\),
+	the definition of set intersection gives us \(x \in A \sintersect B\). By
+	disjunctive introduction, \(x \in A \sintersect B \lor x \in A \sintersect C\), and
+	by the definition of set union, \(x \in (A \sintersect B) \sunion (A \sintersect C)\). So
+	\(\exists x \in A \sintersect (B \sunion C) \implies x \in (A \sintersect B) \sunion (A \sintersect C)\),
+	and by the definition of subset
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\).
+
+	Thus, regardless if \(A \sintersect (B \sunion C) = \emptyset\) or
+	\(\exists x \in A \sintersect (B \sunion C)\), it is certain that
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\).
+
+	\medskip
+	Second, let's consider the nature of \((A \sintersect B) \sunion (A \sintersect C)\):
+	either the set is empty, or there exists at least one element in the
+	set. We will address these possibilities independently.
+
+	If \((A \sintersect B) \sunion (A \sintersect C) = \emptyset\), then
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\) since the
+	empty set is a subset of all sets.
+
+	If \(\exists x \in (A \sintersect B) \sunion (A \sintersect C)\), then either
+	\(x \in A \sintersect B\) or \(x \in A \sintersect C\) by the definition of set union.
+	Without loss of generality, assume \(x \in A \sintersect B\). By the definition
+	of set intersection, \(x \in A\) and \(x \in B\). By disjunctive
+	introduction, \(x \in B \lor x \in C\), and by the definition of set
+	union, \(x \in B \sunion C\). By the definition of set intersection,
+	\(x \in A \sintersect (B \sunion C)\). So
+	\(\exists x \in (A \sintersect B) \sunion (A \sintersect C) \implies x \in A \sintersect (B \sunion C)\),
+	and by definition of subset
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\).
+
+	Thus, regardless if \((A \sintersect B) \sunion (A \sintersect C) = \emptyset\) or
+	\(\exists x \in (A \sintersect B) \sunion (A \sintersect C)\), it is certain that
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\).
+
+	\medskip
+	Since both
+	\([A \sintersect (B \sunion C)] \subset [(A \sintersect B) \sunion (A \sintersect C)]\) and
+	\([(A \sintersect B) \sunion (A \sintersect C)] \subset [A \sintersect (B \sunion C)]\) it is
+	therefore the case that
+	\(A \sintersect (B \sunion C) = (A \sintersect B) \sunion (A \sintersect C)\).
+\end{proof}
+
+\bigbreak{}
+
+\begin{thm}[\(\cup\) distributes over \(\cap\)]
+	Set union distributes across set intersection. That is, given sets
+	\(A\), \(B\), and \(C\),
+	\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)
+\end{thm}
+\begin{proof}
+	Given the definition of set equality, it is sufficent to demonstrate
+	equality by showing that each set is a subset of the other. Symbolically:
+	\begin{itemize}
+		\item \([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\)
+		\item \([(A \cup B) \cap (A \cup C)] \subset [A \cup (B \cap C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \cup (B \cap C)\). In the
+	trivial case that the set has no memebers (i.e., it is equal to the
+	empty set), then
+	\([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\) since the
+	empty set is a subset of all other sets. If instead
+	\(\exists x \in A \cup (B \cap C)\), then either \(x \in A\) or
+	\(x \in (B \cap C)\) (or both) by the definition of set union.
+
+	When \(x \in A\), then \(x \in A \lor x \in B\) and
+	\(x \in A \lor x \in C\) by disjunctive introduction, which gives
+	\(x \in A \cup B\) and \(x \in A \cup C\) by the definition of set
+	union.By the definition of set intersection,
+	\(x \in [(A \cup B) \cap (A \cup C)]\). So assuming \(x \in A\) gives
+	\([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\).
+
+	When \(x \in (B \cap C)\), then \(x \in B\) and \(x \in C\) by the
+	definition of set intersection. This gives both \(x \in A \cup B\) and
+	\(x \in A \cup C\) by disjunctive introduction and the definition of set
+	union. By the definition of set intersection, we get that
+	\(x \in (A \cup B) \cap (A \cup C)\). So assuming \(x \in (B \cap C)\)
+	gives \([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\).
+
+	So \(\exists x \in A \cup (B \cap C)\) also gives
+	\([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\) regardless
+	of the particular conditions when \(x \in A \cup (B \cap C)\). Thus it
+	is true that \([A \cup (B \cap C)] \subset [(A \cup B) \cap (A \cup C)]\)
+	in all circumstances.
+
+	\medskip
+	Second, let's consider the nature of \((A \cup B) \cap (A \cup C)\). In
+	the trivial case that the set has no members (i.e., it is equal to the
+	empty set), then
+	\([(A \cup B) \cap (A \cup C)] \subset [A \cup (B \cap C)]\) since the
+	empty set is a subset of all other sets. However, there is more to
+	consider if the set is non-empty.
+
+	When \((A \cup B) \cap (A \cup C) \neq \emptyset\), then
+	\(\exists x \in (A \cup B) \cap (A \cup C)\) by the negation of the
+	definition of the empty set. By the definition of set intersection,
+	\(x \in A \cup B \land x \in A \cup C\). By the definition of set union,
+	\((x \in A \lor x \in B) \land (x \in A \lor x \in C)\). We can proceed
+	by separately considering the cases that \(x \in A\),
+	\(x \notin A \land x \in B\), and \(x \notin A \land x \in C\). Note
+	that either \(x \notin A \land x \notin B\) or
+	\(x \notin A \land x \notin C\) would directly contradict
+	\((x \in A \lor x \in B) \land (x \in A \lor x \in C)\).
+
+	If \(x \in A\), then \((x \in A) \lor (x \in B \cap C)\) by disjunctive
+	introduction. By the definition of set union,
+	\(x \in A \cup (B \cap C)\).
+
+	Next, let's say \(x \notin A \land x \in B\). Now it would also seem
+	either \(x \in C\) or \(x \notin C\).
+
+	Suppose \(x \notin C\). With what is given, we would directly have that
+	\(x \notin A \land x \notin C\). But, as noted above, this contradicts
+	what has already been established. So it is not the case that
+	\(x \notin C\).
+
+	So we have reached \(x \notin A \land x \in B \land x \in C\). By the
+	definition of set intersection, we have
+	\(x \notin A \land x \in B \cap C\). By conjunctive elimination, we have
+	\(x \in B \cap C\). By disjunctive introduction, we have
+	\((x \in A) \lor (x \in B \cap C)\). By the definition of set union, we
+	have \(x \in A \cup (B \cap C)\).
+
+	The demonstration from \(x \notin A \land x \in C\) is equivalently
+	constructed as the demonstration from \(x \notin A \land x \in B\).
+
+	Since all cases descending from
+	\(\exists x \in (A \cup B) \cap (A \cup C)\) lead either to
+	contradiction or a demonstration that \(x \in A \cup (B \cap C)\), it is
+	certain that \((A \cup B) \cap (A \cup C) \neq \emptyset\) implies
+	\((A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)\). Thus, when
+	taken with the trivial case that was previously shown, it has been
+	demonstrated that
+	\((A \cup B) \cap (A \cup C) \subset A \cup (B \cap C)\).
+
+	\medskip
+	Therefore, since the relevant sets have been shown to be subsets of each
+	other, by the definition of set equality we have that
+	\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\).
+\end{proof}
+
+\bigbreak{}
+
+\begin{thm}[De Morgan's First Law]
+	Set difference across set union is equivalent to set intersection of set
+	differences. That is, given sets \(A\), \(B\), and \(C\),
+	\(A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)\)
+\end{thm}
+\begin{proof}
+	Given the definition of set equality, it is sufficent to demonstrate
+	equality by showing that each set is a subset of the other. Symbolically:
+	\begin{itemize}
+		\item \([A \setminus (B \cup C)] \subset [(A \setminus B) \cap (A \setminus C)]\)
+		\item \([(A \setminus B) \cap (A \setminus C)] \subset [A \setminus (B \cup C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \setminus (B \cup C)\). In the
+	trivial case that the set has no memebers (i.e., it is equal to the
+	empty set), then
+	\([A \setminus (B \cup C)] \subset [(A \setminus B) \cap (A \setminus C)]\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in A \setminus (B \cup C)\), then it is certain that
+	\(x \in A\) and \(x \notin (B \cup C)\) by the definition of set
+	difference. We can proceed by exploring whether or not \(x \in B\) or
+	\(x \in C\).
+
+	Suppose \(x \in B\). By disjunctive introduction,
+	\((x \in B) \lor (x \in C)\). By the definition of set union,
+	\(x \in (B \cup C)\). But this contradicts \(x \notin (B \cup C)\),
+	which has already been shown from our assumptions. So our supposition
+	is false, and it is certain that \(x \notin B\). A similar consturction
+	starting with a supposition of \(x \in C\) yields a similar
+	contradiction, so we also have that \(x \notin C\).
+
+	To recap, we have that \(x \in A\), \(x \notin (B \cup C)\),
+	\(x \notin B\), and \(x \notin C\). So we have both
+	\((x \in A) \land (x \notin B)\) and \((x \in A) \land (x \notin C)\).
+	By the definition of set difference, we have both
+	\(x \in (A \setminus B)\) and \(x \in (A \setminus C)\). By the
+	definition of set intersection, we have that
+	\(x \in (A \setminus B) \cap (A \setminus C)\). Thus we have shown
+	\(A \setminus (B \cup C) \subset (A \setminus B) \cap (A \setminus C)\)
+	in all circumstances.
+
+	\medskip
+	Second, let's consider the nature of
+	\((A \setminus B) \cap (A \setminus C)\). In the trivial case that the
+	set has no memebers (i.e., it is equal to the empty set), then
+	\((A \setminus B) \cap (A \setminus C) \subset A \setminus (B \cup C)\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in (A \setminus B) \cap (A \setminus C)\), then it is
+	certain that both \(x \in (A \setminus B)\) and
+	\(x \in (A \setminus C)\) by the definition of set intersection. By the
+	definition of set difference, we have \((x \in A) \land (x \notin B)\)
+	and \((x \in A) \land (x \notin C)\). So we have \(x \in A\),
+	\(x \notin B\), and \(x \notin C\).
+
+	Suppose \(x \in (B \cup C)\). Then either \(x \in B\) or \(x \in C\) or
+	both by the definition of set union. But each of these possibilities
+	contradicts what we have already established, so the supposition is
+	false and \(x \notin (B \cup C)\).
+
+	Since we have both \(x \in A\) and \(x \notin (B \cup C)\), then we have
+	\(x \in A \setminus (B \cup C)\) by the definition of set difference.
+	Thus we have shown
+	\((A \setminus B) \cap (A \setminus C) \subset A \setminus (B \cup C)\)
+	in all circumstances.
+
+	\medskip
+	Since we have demonstrated each set is a subset of the other, we have
+	therefore demonstrated that
+	\(A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)\).
+\end{proof}
+
+\bigbreak{}
+
+\begin{thm}[De Morgan's Second Law]
+	Set difference across set intersection is equivalent to set union of set
+	differences. That is, given sets \(A\), \(B\), and \(C\),
+	\(A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)\)
+\end{thm}
+\begin{proof}
+	Given the definition of set equality, it is sufficent to demonstrate
+	equality by showing that each set is a subset of the other. Symbolically:
+	\begin{itemize}
+		\item \([A \setminus (B \cap C)] \subset [(A \setminus B) \cup (A \setminus C)]\)
+		\item \([(A \setminus B) \cup (A \setminus C)] \subset [A \setminus (B \cap C)]\)
+	\end{itemize}
+
+	\medskip
+	First, let's consider the nature of \(A \setminus (B \cap C)\). In the
+	trivial case that the set has no members (i.e., it is equal to the
+	empty set), then
+	\([A \setminus (B \cap C)] \subset [(A \setminus B) \cup (A \setminus C)]\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in A \setminus (B \cap C)\), then \(x \in A\) and
+	\(x \notin (B \cap C)\) by the definition of set difference. We can
+	proceed by examining whether or not \(x \in B\) and \(x \in C\).
+
+	If \(x \notin B\), then combining with the already established fact that
+	\(x \in A\) gives \(x \in A \setminus B\) by the definition of set
+	intersection. By disjunctive introduction, we have that
+	\((x \in A \setminus B) \lor (x \in A \setminus C)\). By the definition
+	of set union, we have that
+	\(x \in (A \setminus B) \cup (A \setminus C)\). So
+	\(\exists x \in A \setminus (B \cap C) \land x \notin B\) is sufficent
+	to demonstrate that
+	\(A \setminus (B \cap C) \subset (A \setminus B) \cup (A \setminus C)\).
+	A similar construction assuming \(x \notin C\) yields
+	\(\exists x \in A \setminus (B \cap C) \land x \notin C \implies
+	x \in (A \setminus B) \cup (A \setminus C)\).
+
+	The previous cases admit the possibility that the alternate set in
+	question may or may not contain member \(x\) (i.e., the previous
+	demonstration in the case that \(x \notin B\) holds for both \(x \in C\)
+	and \(x \notin C\)). However, suppose both \(x \in B\) and \(x \in C\).
+	Then by the definition of set intersection, \(x \in (B \cap C)\). But
+	this contradicts \(x \notin (B \cap C)\), which has already been
+	established directly from our assumptions. So it is not the case that
+	both \(x \in B\) and \(x \in C\).
+
+	Since all cases eminating from \(\exists x \in A \setminus (B \cap C)\)
+	yield either contradictions or demonstrations that
+	\(x \in (A \setminus B) \cup (A \setminus C)\), and since the case that
+	\(A \setminus (B \cap C) = \emptyset\) has also given the particular
+	result, we can say that
+	\(A \setminus (B \cap C) \subset (A \setminus B) \cup (A \setminus C)\)
+	in all circumstances.
+
+	\medskip
+	Second, let's consider the nature of
+	\((A \setminus B) \cup (A \setminus C)\). In the trivial case that the
+	set has no members (i.e., it is equal to the empty set), then
+	\((A \setminus B) \cup (A \setminus C) \subset A \setminus (B \cap C)\)
+	since the empty set is a subset of all other sets. If instead
+	\(\exists x \in (A \setminus B) \cup (A \setminus C)\), then either
+	\(x \in A \setminus B\) or \(x \in A \setminus C\) or both by the
+	definition of set union.
+
+	If \(x \in A \setminus B\), then \(x \in A\) and \(x \notin B\) by the
+	definition of set difference. Suppose \(x \in (B \cap C)\). Then
+	\(x \in B\) and \(x \in C\) by the definition of set intersection. But
+	this contradicts that \(x \notin B\), which has already been established
+	by the assumptions we have made for this case. So
+	\(x \notin (B \cap C)\). Since we have already established that
+	\(x \in A\), we have that \(x \in A \setminus (B \cap C)\) by the
+	definition of set difference. So
+	\(\exists x \in (A \setminus B) \cup (A \setminus C) \land x \in (A \setminus B)
+	\implies x \in A \setminus (B \cap C)\). A similar construction
+	demonstrates that the case when \(x \in A \setminus C\) also yields
+	\(\exists x \in (A \setminus B) \cup (A \setminus C) \land x \in (A \setminus C)
+	\implies x \in A \setminus (B \cap C)\). Neither of these cases
+	precludes the possibility that both \(x \in A \setminus B\) and
+	\(x \in A \setminus C\), but the possibility that neither is true is
+	precluded by the assumption
+	\(\exists x \in (A \setminus B) \cup (A \setminus C)\).
+
+	Since all cases eminating from
+	\(\exists x \in (A \setminus B) \cup (A \setminus C)\) yield either
+	contradictions or demonstrations that \(x \in A \setminus (B \cap C)\),
+	and since the case that
+	\((A \setminus B) \cup (A \setminus C) = \emptyset\) has also given the
+	following result, we can say that
+	\((A \setminus B) \cup (A \setminus C) \subset A \setminus (B \cap C)\)
+	in all circumstances.
+
+	\medskip
+	Since we have demonstrated each set is a subset of the other, we have
+	therefore demonstrated that
+	\(A \setminus (B \cap C) = (A \setminus B) \cup (A \setminus C)\).
+\end{proof}
+\end{document}

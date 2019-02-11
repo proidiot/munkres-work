@@ -1,0 +1,10 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2a}
+
+\[B_0 \subset B_1 \implies \inverse{f}(B_0) \subset \inverse{f}(B_1)\]
+\todo{}
+
+\end{document}

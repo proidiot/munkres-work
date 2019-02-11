@@ -1,0 +1,12 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2h}
+
+\[f(A_0 \without A_1) = f(A_0) \without f(A_1)\]
+Show that equality holds if \(f\) is injective.
+
+\todo{}
+
+\end{document}

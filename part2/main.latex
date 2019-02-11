@@ -1,0 +1,12 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\part{ALGEBRAIC TOPOLOGY}
+%\subfile{part2/chapter9/main.latex}
+\todo{}
+
+\end{document}

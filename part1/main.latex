@@ -1,0 +1,18 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\part{GENERAL TOPOLOGY}
+\subfile{part1/chapter1/main.latex}
+\subfile{part1/chapter2/main.latex}
+\subfile{part1/chapter3/main.latex}
+\subfile{part1/chapter4/main.latex}
+\subfile{part1/chapter5/main.latex}
+\subfile{part1/chapter6/main.latex}
+\subfile{part1/chapter7/main.latex}
+\subfile{part1/chapter8/main.latex}
+
+\end{document}

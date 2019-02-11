@@ -3,7 +3,7 @@ distcleanfiles =
 recursive_cleanfiles = *.aux *.fdb_latexmk *.fls *.log
 recursive_distcleanfiles = *.dvi *.pdf
 
-all: ch1/s1.pdf
+all: main.pdf
 
 clean:
 	-if [ "x$(cleanfiles)" != 'x' ]; then \
@@ -12,6 +12,7 @@ clean:
 	-for f in $(recursive_cleanfiles); do \
 		find . -name "$$f" -delete; \
 	done
+	latexmk -C main.latex
 
 distclean: clean
 	-if [ "x$(distcleanfiles)" != 'x' ]; then \
@@ -21,6 +22,6 @@ distclean: clean
 		find . -name "$$f" -delete; \
 	done
 
-%.pdf: %.latex
+%.pdf: %.latex *.latex */*.latex */*/*.latex */*/*/*.latex */*/*/*/*.latex
 	latexmk -cd -pdf $<
 

@@ -1,0 +1,16 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\problem{}\label{s2p3}
+
+Show that \(\ref{s2p2b}\), \(\ref{s2p2c}\), \(\ref{s2p2f}\), and \(\ref{s2p2g}\)
+of \(\ref{s2p2}\) hold for arbitrary unions and intersections.
+
+%\subfile{part1/chapter1/section2/problem1/subproblemA.latex}
+\todo{}
+
+\end{document}

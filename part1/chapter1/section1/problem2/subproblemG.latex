@@ -1,0 +1,86 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2g}
+\[A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)\]
+\begin{thm}[Equality holds in~\ref{2g}]
+	Given sets \(A\), \(B\), and \(C\), the intersection of \(A\) and the
+	portion of \(B\) which does not overlap with \(C\) is equal to the
+	portion of the intersection of \(A\) and \(B\) without the portion
+	overlapping the intersection of \(A\) and \(C\). Symbolically, that is:
+	\[A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Let \(A\), \(B\), and \(C\) be sets.
+
+	\medskip
+	First, let's consider the intersection of \(A\) and the portion of \(B\)
+	which does not overlap with \(C\). Since the empty set is already known
+	to be a subset of all sets, in order to demonstrate this first subset
+	relationship it is only necessary to demonstrate that if some element
+	were indeed in \(A \cap (B \setminus C)\), then it would follow that the
+	element must also be in \((A \cap B) \setminus (A \cap C)\).
+
+	Let \(x\) be some arbitrary member of \(A \cap (B \setminus C)\). We
+	know that \(x\) must be in both \(A\) and \(B \setminus C\) due to the
+	definition of set intersection. We can also say that \(x\) must be in
+	\(B\) and that \(x\) must not be in \(C\) given the definition of set
+	difference. So since \(x\) must be in both \(A\) and \(B\), we know that
+	\(x\) is in \(A \cap B\) given the definition of set intersection. So
+	all that remains to demonstrate the subset relationship is to show that
+	\(x\) is not in \(A \cap C\).
+
+	Let's suppose for a bit that \(x\) really was somehow in \(A \cap C\).
+	That would imply that both \(x\) was in \(A\) and that \(x\) was in
+	\(C\), again by the definition of set intersection. However, this
+	contradicts the fact that \(x\) must not be in \(C\), which we had
+	already established before we made this absurd supposition. So it must
+	be the case that \(x\) is not in \(A \cap C\). As a result, we can say
+	with certainty that the intersection of \(A\) and the portion of \(B\)
+	which does not overlap with \(C\) is a subset of the portion of the
+	intersection of \(A\) and \(B\) without the portion overlapping the
+	intersection of \(A\) and \(C\).
+
+	So we have demonstrated that
+	\[A \cap (B \setminus C) \subset (A \cap B) \setminus (A \cap C)\]
+
+	\medskip
+	Second, let's consider the portion of the intersection of \(A\) and
+	\(B\) without the portion overlapping the intersection of \(A\) and
+	\(C\). Again, since the empty set is already known to be a subset of all
+	sets, we simply need to demonstrate that if some element were indeed to
+	exist in \((A \cap B) \setminus (A \cap C)\), then it would follow that
+	the element must also be in \(A \cap (B \setminus C)\).
+
+	Let \(x\) be some arbitrary member of the intersection of \(A\) and
+	\(B\) without the portion overlapping the intersection of \(A\) and
+	\(C\). We know that \(x\) must be in \(A \cap B\) and that \(x\) must
+	not be in \(A \cap C\) due to the definition of set difference. Further,
+	we know that \(x\) must be in both \(A\) and \(B\) given the definition
+	of set intersection. So since \(x\) is in \(A\), all that remains to
+	demonstrate the subset relationship is to show that \(x\) must in
+	\(B \setminus C\) in order to show that \(x\) in
+	\(A \cap (B \setminus C)\).
+
+	Recall that \(x\) is not in \(A \cap C\). In other words, it is not the
+	case that both \(x\) is in \(A\) and \(x\) is in \(C\). Using De
+	Morgan's Law, we can translate this statement into the equivalent
+	statement that either \(x\) is not in \(A\) or \(x\) is not in \(C\) (or
+	both). Since we have already established that \(x\) must be in \(A\), we
+	can say that \(x\) must not be in \(C\) using the disjunctive syllogism.
+	Combined with our previous demonstration that \(x\) must be in \(B\),
+	we can say that \(x\) must be in \(B \setminus C\) using the definition
+	of set difference.
+
+	So we have demonstrated that
+	\[(A \cap B) \setminus (A \cap C) \subset A \cap (B \setminus C)\]
+
+	\medskip
+	Finally, since we have demonstrated that each set is a subset of the
+	other, we can say that the sets are equal.
+\end{proof}
+
+\end{document}
+

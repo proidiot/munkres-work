@@ -1,0 +1,49 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2i}
+\[(A \cap B) \cup (A \setminus B) = A\]
+\begin{thm}[Equality holds in~\ref{2i}]
+	Given sets \(A\) and \(B\), the union between the intersection of \(A\)
+	and \(B\) with the portion of \(A\) not overlapping \(B\) is equal to
+	\(A\). Symbolically, that is
+	\[(A \cap B) \cup (A \setminus B) = A\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets. We will demonstrate equality by
+	demonstrating that \((A \cap B) \cup (A \setminus B)\) and \(A\) are
+	subsets of each other.
+
+	First, we will address \((A \cap B) \cup (A \setminus B)\). Since the
+	empty set is already known to be a subset of all sets, we will simply
+	examine whether some arbitrary value which might exist in the set would
+	necessarilly also be in \(A\). So let \(x\) be in
+	\((A \cap B) \cup (A \setminus B)\). We know that \(x\) is either in
+	\(A \cap B\) or in \(A \setminus B\) due to the definition of set union.
+	In the case that \(x\) is in \(A \cap B\), we would know that \(x\) is
+	in \(A\) and \(x\) is in \(B\) by the definition of set intersection,
+	and so we immediately have that \(x\) is necessarilly in \(A\). On the
+	other hand, if \(x\) is in \(A \setminus B\), then \(x\) is in \(A\) and
+	\(x\) is not in \(B\) given the definition of set difference. Since we
+	have shown that such an \(x\) is in \(A\) no matter what, it is certain
+	that \((A \cap B) \cup (A \setminus B)\) is a subset of \(A\).
+
+	Second, we will proceed from \(A\). Again, since the empty set is known
+	to be a subset of all sets, we only need to consider whether some
+	arbitrary value which might exist in \(A\) would necessarilly also exist
+	in \((A \cap B) \cup (A \setminus B)\). Let \(x\) be in \(A\). Notice
+	that it is either the case that \(x\) is also in \(B\) or it is not the
+	case that \(x\) is in \(B\). If \(x\) is indeed in \(B\), then the fact
+	that \(x\) is in both \(A\) and \(B\) means that \(x\) is in
+	\(A \cap B\) by the definition of set intersection, and by disjunctive
+	introduction we know that \(x\) is also in
+	\((A \cap B) \cup (A \setminus B)\). On the other hand, if \(x\) is not
+	in \(B\), then the definition of set difference tells us that \(x\) is
+	in \(A \setminus B\), and by extension \(x\) is also in
+	\((A \cap B) \cup (A \setminus B)\). So \(A\) is a subset of
+	\((A \cap B) \cup (A \setminus B)\).
+\end{proof}
+
+\end{document}
+

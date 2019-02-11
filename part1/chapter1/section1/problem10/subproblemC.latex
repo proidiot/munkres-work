@@ -1,0 +1,20 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{10c}
+
+\[\{(x, y) | y > x\}\]
+
+\begin{thm}
+	The set \(\setbuild{(x,y)}{y > x}\) is not a cartesian product of two
+	subsets of \(\reals\).
+\end{thm}
+\begin{proof}
+	Choose \(x_1 = 0\), \(y_1 = 1\), \(x_2 = 1\), and \(y_2 = 2\). Note that
+	\((x_1,y_1) = (0,1)\) is in the set, as is \((x_2,y_2) = (1,2)\).
+	However, the pair \((x_2,y_1) = (1,1)\) is not in the set. So the set
+	cannot be a cartesian product.
+\end{proof}
+
+\end{document}

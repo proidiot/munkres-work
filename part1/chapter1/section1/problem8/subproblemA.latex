@@ -1,0 +1,18 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{8a}
+
+\begin{thm}[\(\card{A} = 2 \implies \card{\powerset{A}} = 4\)]
+	The power set of a set with two elements has four elements.
+\end{thm}
+\begin{proof}
+	Let \(A\) be a set with two aribtrary elements which we will address as
+	\(A_0\) and \(A_1\). Constructing the power set of \(A\), the definition
+	of the power set gives \(\powerset{A}\) equal to
+	\(\{\emptyset, \{A_0\}, \{A_1\}, \{A_0, A_1\}\}\). We see that there are
+	four elements in \(\powerset{A}\).
+\end{proof}
+
+\end{document}

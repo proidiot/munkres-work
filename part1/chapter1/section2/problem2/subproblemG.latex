@@ -1,0 +1,12 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2g}
+
+\[f(A_0 \intersect A_1) = f(A_0) \intersect f(A_1)\]
+Show that equality holds if \(f\) is injective.
+
+\todo{}
+
+\end{document}

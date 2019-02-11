@@ -1,0 +1,15 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{4b}
+For at least one \(a \in A\), it is true that \(a^2 \in B\).
+
+\begin{remark}[Negation of~\ref{4b}]
+	The statement
+	\[\forall a \in A: a^2 \notin B\]
+	is the negation of the statement
+	\[\exists a \in A: a^2 \in B\]
+\end{remark}
+
+\end{document}

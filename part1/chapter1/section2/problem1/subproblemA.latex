@@ -1,0 +1,12 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p1a}
+
+Show that \(A_0 \subset \inverse{f}(f(A_0))\) and that equality holds if \(f\)
+is injective.
+
+\todo{}
+
+\end{document}

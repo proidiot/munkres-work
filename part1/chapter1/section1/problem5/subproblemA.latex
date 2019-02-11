@@ -1,0 +1,37 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{5a}
+
+\(x \isin \arbitraryunion{A \in \metaset{A}}{A} \implies x \isin A\) for at
+least one \(A \in \metaset{A}\).
+
+\begin{thm}[Implication holds in~\ref{5a}]\thlabel{5at}
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	in the generalized union over all sets in \(\metaset{A}\), there exists
+	some set \(A\) in \(\metaset{A}\) such that \(x\) is in \(A\).
+	Symbolically, that is
+	\[x \isin \Arbitraryunion{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\thereexists A \in \metaset{A} \suchthat x' \isin A}\]
+\end{thm}
+\begin{proof}
+	By the definition of the generalized union, every member of a
+	generalized union over a collection of sets is a member of at least one
+	of the constituent sets of the generalized union.
+\end{proof}
+
+\begin{thm}[Implication holds for the converse of~\ref{5a}]\thlabel{5atc}
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	such that there exists some set \(A\) in \(\metaset{A}\) where \(x\) is
+	in \(A\), it is the case that \(x\) is also in the generalized union
+	over all sets in \(\metaset{A}\). Symbolically, that is
+	\[x \isin \setbuild{x'}{\thereexists A \in \metaset{A} \suchthat x' \isin A} \implies x \isin \Arbitraryunion{A \in \metaset{A}}{A}\]
+\end{thm}
+\begin{proof}
+	By the definition of the generalized union, any item that is a member of
+	at least one constituent set of a generalized union is also a member of
+	the generalized union.
+\end{proof}
+
+
+\end{document}

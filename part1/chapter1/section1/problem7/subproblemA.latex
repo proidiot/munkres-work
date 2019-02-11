@@ -1,0 +1,15 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{7a}
+
+\[D = \{x | x \in A \land (x \in B \lor x \in C)\}\]
+\begin{remark}
+	The set
+	\[D = \{x | x \in A \land (x \in B \lor x \in C)\}\]
+	could also be expressed as
+	\[D = A \cap (B \cup C)\]
+\end{remark}
+
+\end{document}

@@ -1,0 +1,15 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\problem{}\label{s2p1}
+
+Let \(\mapping{f}{A}{B}\). Let \(A_0 \subset A\) and \(B_0 \subset B\).
+
+\subfile{part1/chapter1/section2/problem1/subproblemA.latex}
+\subfile{part1/chapter1/section2/problem1/subproblemB.latex}
+
+\end{document}

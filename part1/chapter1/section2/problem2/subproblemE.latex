@@ -1,0 +1,10 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2e}
+
+\[A_0 \subset A_1 \implies f(A_0) \subset f(A_1)\]
+\todo{}
+
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2j}
+\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+\begin{thm}[Implication holds in~\ref{2j}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), if \(A\) is a subset of \(C\)
+	and \(B\) is a subset of \(D\), then the cartesian product of \(A\) and
+	\(B\) is a subset of the cartesian product of \(C\) and \(D\).
+	Symbolically, that is
+	\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), \(C\), and \(D\) be sets such that \(A\) is a subset
+	of \(C\) and \(B\) is a subset of \(D\). Consider the nature of
+	\(A \times B\). If the set is empty, then it is of course a subset of
+	\(C \times D\) since the empty set is a subset of all sets. If instead
+	\(A \times B\) is not empty, we can let \((x, y)\) be some arbitrary
+	member of \(A \times B\) where \(x\) is in \(A\) and \(y\) is in \(B\).
+	Since we know that \(A\) is a subset of \(C\) and \(B\) is a subset of
+	\(D\), we can say that \(x\) is in \(C\) and that \(y\) is in \(D\).
+	Given the definition of cartesian product, we can say that \((x, y)\) is
+	also a member of \(C \times D\). Therefore \(A \times B\) must be a
+	subset of \(C \times D\).
+\end{proof}
+
+\end{document}
+

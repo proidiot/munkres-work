@@ -1,0 +1,10 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2f}
+
+\[f(A_0 \union A_1) = f(A_0) \union f(A_1)\]
+\todo{}
+
+\end{document}

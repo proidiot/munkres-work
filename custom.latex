@@ -1,0 +1,42 @@
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\thesection}{\S\arabic{section}}
+\renewcommand{\thesubsection}{Problem \arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection(\alph{subsubsection})}
+
+\newtheorem{thm}{Theorem}
+\newtheorem*{remark}{Remark}
+
+\counterwithout*{chapter}{part}
+\counterwithout*{section}{chapter}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+\newcommand{\card}[1] {\vert{} #1 \vert{}}
+\newcommand{\sunion}{\cup}
+\newcommand{\union}{\cup}
+\newcommand{\sintersect}{\cap}
+\newcommand{\intersect}{\cap}
+\newcommand{\sdiff}{\setminus}
+\newcommand{\powerset}[1]{\mathcal{P} (#1)}
+\newcommand{\metaset}[1]{\mathscr{#1}}
+\newcommand{\setbuild}[2]{\{#1|#2\}}
+\newcommand{\suchthat}{:}
+\newcommand{\cross}{\times}
+\newcommand{\without}{\setminus}
+\newcommand{\isasubsetof}{\subset}
+\newcommand{\generalizedunion}[2]{\bigcup_{#1} {#2}}
+\newcommand{\arbitraryunion}[2]{\bigcup_{#1} {#2}}
+\newcommand{\Arbitraryunion}[2]{\bigcup\limits_{#1} {#2}}
+\newcommand{\generalizedintersection}[2]{\bigcap_{#1} {#2}}
+\newcommand{\arbitraryintersection}[2]{\bigcap_{#1} {#2}}
+\newcommand{\Arbitraryintersection}[2]{\bigcap\limits_{#1} {#2}}
+\newcommand{\isin}{\in}
+\newcommand{\thereexists}{\exists}
+\newcommand{\itisnothecasethat}[1]{\neg{} (#1)}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\problem}{\subsection{}}
+\newcommand{\subproblem}{\subsubsection{}}
+\newcommand{\mapping}[3]{{#1}: {#2} \mapsto{} {#3}}
+\newcommand{\inverse}[1]{{#1}^{-1}}
+

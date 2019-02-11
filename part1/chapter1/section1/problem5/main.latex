@@ -1,0 +1,17 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.latex]{subfiles}
+
+\begin{document}
+
+\problem{}\label{s1p5}
+Let \(\metaset{A}\) be a nonempty collection of sets. Detemine the truth of each
+of the following statements and of their converses.
+
+\subfile{part1/chapter1/section1/problem5/subproblemA.latex}
+\subfile{part1/chapter1/section1/problem5/subproblemB.latex}
+\subfile{part1/chapter1/section1/problem5/subproblemC.latex}
+\subfile{part1/chapter1/section1/problem5/subproblemD.latex}
+
+\end{document}

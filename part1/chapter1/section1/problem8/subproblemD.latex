@@ -1,0 +1,17 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{8d}
+
+\begin{thm}[\(\card{A} = 0 \implies \card{\powerset{A}} = 1\)]
+	The power set of the empty set has one element.
+\end{thm}
+\begin{proof}
+	Constructing the power set of \(\emptyset\) (i.e., the empty set), the
+	definition of the power set gives \(\powerset{\emptyset}\) equal to
+	\(\{\emptyset\}\). We see that there is one element in
+	\(\powerset{\emptyset}\).
+\end{proof}
+
+\end{document}

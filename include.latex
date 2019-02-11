@@ -1,0 +1,13 @@
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{centernot}
+\usepackage{todo}
+\usepackage{theoremref}
+\usepackage{chngcntr}
+\usepackage{tikz}
+\usepackage[depth=4]{bookmark}

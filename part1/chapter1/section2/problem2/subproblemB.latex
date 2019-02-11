@@ -1,0 +1,10 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2b}
+
+\[\inverse{f}(B_0 \union B_1) = \inverse{f}(B_0) \union \inverse{f}(B_1)\]
+\todo{}
+
+\end{document}

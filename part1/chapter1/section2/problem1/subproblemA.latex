@@ -38,7 +38,7 @@ is injective.
 	\[A_0 = \inverse{f}(f(A_0))\]
 \end{thm}
 \begin{proof}
-	Let \(A\) and \(B\) be sets, let \(f\) be a function mapping \(A\) onto
+	Let \(A\) and \(B\) be sets, let \(f\) be a function mapping \(A\) to
 	\(B\), let \(A_0\) be a subset of \(A\), and let \(f\) be injective.
 	Note that \(A_0\) is a subset of \(\inverse{f}(f(A_0))\) since the
 	assumptions of~\thref{s2p1at1} are a weaker subset of our current

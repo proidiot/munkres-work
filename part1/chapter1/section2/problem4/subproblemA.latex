@@ -2,7 +2,9 @@
 
 \begin{document}
 
-\subproblem{}\label{1a}
+\subproblem{}\label{s2p4a}
+
+If \(C_0 \subset C\), show that \(\inverse{(\compose{g}{f})}(C_0) = \inverse{f}(\inverse{g}(C_0))\).
 
 \todo{}
 

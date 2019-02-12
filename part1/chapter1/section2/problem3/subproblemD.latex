@@ -1,0 +1,12 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p3d}
+
+Show that \(\ref{s2p2g}\) holds for arbitrary intersections. Symbolically, that is:
+\[f(\Arbitraryintersection{A_i \subset A}{A_i}) = \Arbitraryintersection{A_i \subset A}{f(A_i)}\]
+
+\todo{}
+
+\end{document}

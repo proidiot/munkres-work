@@ -1,0 +1,11 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p4d}
+
+If \(f\) and \(g\) are surjective, show that \(\compose{g}{f}\) is surjective.
+
+\todo{}
+
+\end{document}

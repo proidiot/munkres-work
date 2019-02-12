@@ -1,0 +1,11 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p5d}
+
+Can a function have more than one left inverse? More than one right inverse?
+
+\todo{}
+
+\end{document}

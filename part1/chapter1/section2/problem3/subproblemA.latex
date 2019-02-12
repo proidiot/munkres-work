@@ -2,7 +2,10 @@
 
 \begin{document}
 
-\subproblem{}\label{1a}
+\subproblem{}\label{s2p3a}
+
+Show that \(\ref{s2p2b}\) holds for arbitrary unions. Symbolically, that is:
+\[\inverse{f}(\Arbitraryunion{B_i \subset B}{B_i}) = \Arbitraryunion{B_i \subset B}{\inverse{f}(B_i)}\]
 
 \todo{}
 

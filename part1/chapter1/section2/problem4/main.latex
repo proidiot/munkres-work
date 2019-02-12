@@ -5,11 +5,15 @@
 
 \begin{document}
 
-\problem{}
+\problem{}\label{s2p4}
 
-\todo{}
+Let \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\).
 
-\subfile{part1/chapter1/section2/problem1/subproblemA.latex}
-\subfile{part1/chapter1/section2/problem1/subproblemB.latex}
+\subfile{part1/chapter1/section2/problem4/subproblemA.latex}
+\subfile{part1/chapter1/section2/problem4/subproblemB.latex}
+\subfile{part1/chapter1/section2/problem4/subproblemC.latex}
+\subfile{part1/chapter1/section2/problem4/subproblemD.latex}
+\subfile{part1/chapter1/section2/problem4/subproblemE.latex}
+\subfile{part1/chapter1/section2/problem4/subproblemF.latex}
 
 \end{document}

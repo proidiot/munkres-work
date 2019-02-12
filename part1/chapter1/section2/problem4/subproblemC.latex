@@ -1,0 +1,11 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p4c}
+
+If \(\compose{g}{f}\) is injective, what can you say about injectivity of \(f\) and \(g\)?
+
+\todo{}
+
+\end{document}

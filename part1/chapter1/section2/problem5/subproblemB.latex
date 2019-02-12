@@ -1,0 +1,11 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p5b}
+
+Give an example of a function that has a left inverse but no right inverse.
+
+\todo{}
+
+\end{document}

@@ -39,4 +39,7 @@
 \newcommand{\subproblem}{\subsubsection{}}
 \newcommand{\mapping}[3]{{#1}: {#2} \mapsto{} {#3}}
 \newcommand{\inverse}[1]{{#1}^{-1}}
+\newcommand{\compose}[2]{{#1} \circ{} {#2}}
+\newcommand{\thru}{-}
+\newcommand{\definedterm}[1]{\emph{\textbf{#1}}}
 

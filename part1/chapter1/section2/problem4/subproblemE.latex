@@ -1,0 +1,12 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p4e}
+
+If \(\compose{g}{f}\) is surjective, what can you say about surjectivity of
+\(f\) and \(g\)?
+
+\todo{}
+
+\end{document}

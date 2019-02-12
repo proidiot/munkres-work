@@ -1,0 +1,12 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p3b}
+
+Show that \(\ref{s2p2c}\) holds for arbitrary intersections. Symbolically, that is:
+\[\inverse{f}(\Arbitraryintersection{B_i \subset B}{B_i}) = \Arbitraryintersection{B_i \subset B}{\inverse{f}(B_i)}\]
+
+\todo{}
+
+\end{document}

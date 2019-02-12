@@ -7,6 +7,58 @@
 Show that \(f(\inverse{f}(B_0)) \subset B_0\) and that equality holds if \(f\)
 is surjective.
 
-\todo{}
+\begin{thm}\thlabel{s2p1bt1}
+	Given a function \(f\) which maps \(A\) to \(B\), and given a subset
+	\(B_0\) of \(B\), then the image of the preimage of \(B_0\) under \(f\)
+	is a subset of \(B_0\). Symbolically, that is:
+	\[f(\inverse{f}(B_0)) \subset B_0\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a function mapping \(A\) onto
+	\(B\), and let \(B_0\) be a subset of \(B\). For brevity, we'll refer to
+	\(\inverse{f}(B_0)\) as \(A'\) and \(f(\inverse{f}(B_0))\) as \(B'\) (so
+	\(A'\) is the preimage of \(B_0\) under \(f\) and \(B'\) is the image of
+	\(A'\) under \(f\)). Assume \(x\) is some arbitrary element of \(B'\).
+	By the definition of image, we know that \(B'\) is the set of all values
+	\(b\) such that \(b = f(a)\) for some value \(a\) in \(A'\). Since \(x\)
+	is in \(B'\), that must mean there is some value \(y\) in \(A'\) such
+	that \(x = f(y)\). Further, since \(y\) is in \(A'\), we know that there
+	exists some \(x'\) in \(B_0\) such that \(x' = f(y)\). As we have
+	already established that \(x = f(y)\), the rule of assignment gives us
+	that \(x = x'\). So \(x\) is in \(B_0\), and thus
+	\(f(\inverse{f}(B_0))\) is a subset of \(B_0\).
+\end{proof}
+
+\begin{thm}\thlabel{s2p1bt2}
+	Given a function \(f\) which maps \(A\) to \(B\), and given a subset
+	\(B_0\) of \(B\), and given the surjectivity of \(f\), then the image of
+	the preimage of \(B_0\) under \(f\) is a subset of \(B_0\).
+	Symbolically, that is:
+	\[f(\inverse{f}(B_0)) = B_0\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a function mapping \(A\) onto
+	\(B\), let \(B_0\) be a subset of \(B\), and let \(f\) be surjective.
+	Note that \(f(\inverse{f}(B_0))\) is a subset of \(B_0\) since the
+	assumptions of~\thref{s2p1bt1} are a weaker subset of the current
+	assumptions.
+
+	For brevity, we'll refer to \(\inverse{f}(B_0)\) as \(A'\) and
+	\(f(\inverse{f}(B_0))\) as \(B'\) (so \(A'\) is the preimage of \(B_0\)
+	under \(f\) and \(B'\) is the image of \(A'\) under \(f\)). Assume \(x\)
+	is an arbitrary member of \(B_0\). By the definition of surjectivity, we
+	have that \(x = f(a)\) for at least one value of \(a\) in \(A\); we'll
+	call the particular value \(y\) (i.e., \(x = f(y)\) and \(y\) is in
+	\(A\)). By the definition of preimage, \(y\) is in \(A'\) since \(x\) is
+	in \(B_0\). Now considering the value \(x' = f(y)\), the definition of
+	image gives us that \(x'\) is in \(B'\). Since \(x = f(y)\), the rule of
+	assignment gives us \(x = x'\). So \(x\) is in \(B'\), or more
+	explicitly, \(x\) is in \(f(\inverse{f}(B_0))\). Thus \(B_0\) is a
+	subset of \(f(\inverse{f}(B_0))\).
+
+	Since both \(f(\inverse{f}(B_0))\) is a subset of \(B_0\) and \(B_0\) is
+	a subset of \(f(\inverse{f}(B_0))\), we have established equality.
+\end{proof}
+
 
 \end{document}

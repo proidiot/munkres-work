@@ -7,6 +7,62 @@
 Show that \(A_0 \subset \inverse{f}(f(A_0))\) and that equality holds if \(f\)
 is injective.
 
-\todo{}
+\begin{thm}\thlabel{s2p1at1}
+	Given a function \(f\) which maps \(A\) to \(B\), and given a subset
+	\(A_0\) of \(A\), then \(A_0\) is a subset of the preimage of the image
+	of \(A_0\) under \(f\). Symbolically, that is:
+	\[A_0 \subset \inverse{f}(f(A_0))\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a function mapping \(A\) to
+	\(B\), and let \(A_0\) be a subset of \(A\). Assume \(x\) is some
+	arbitrary element of \(A_0\). Consider the image of \(A_0\) under \(f\);
+	we'll call it \(B'\). By definition, we know that \(B'\) is the set of
+	all values of \(b = f(a)\) for at least one \(a\) in \(A_0\). Since
+	\(x\) is in \(A_0\), we know that the value of \(f(x)\) is in \(B'\);
+	we'll call that value \(y\) (i.e., \(y = f(x) \in B'\)). Next, consider
+	the preimage of \(B'\) under \(f\); we'll call it \(A'\). By definition,
+	we know that \(A'\) is the set of all values \(a\) such that \(f(a)\) is
+	in \(B'\). Recall that \(y\) is in \(B'\). Since \(x\) is a value such
+	that \(y = f(x)\) is in \(B'\), we can see that \(x\) is in \(A'\). By
+	the definition of image and preimage, we have shown that \(x\) is in
+	\(\inverse{f}(f(A_0))\), and so \(A_0\) is a subset of
+	\(\inverse{f}(f(A_0))\).
+\end{proof}
+
+\begin{thm}\thlabel{s2p1at2}
+	Given a function \(f\) which maps \(A\) to \(B\), and given a subset
+	\(A_0\) of \(A\), and given injectivity of \(f\), then \(A_0\) is equal
+	to the preimage of the image of \(A_0\) under \(f\). Symbolically, that
+	is:
+	\[A_0 = \inverse{f}(f(A_0))\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a function mapping \(A\) onto
+	\(B\), let \(A_0\) be a subset of \(A\), and let \(f\) be injective.
+	Note that \(A_0\) is a subset of \(\inverse{f}(f(A_0))\) since the
+	assumptions of~\thref{s2p1at1} are a weaker subset of our current
+	assumptions.
+
+	For brevity, we'll refer to \(\inverse{f}(f(A_0))\) as \(A'\) and
+	\(f(A_0)\) as \(B'\) (so \(B'\) is the image of \(A_0\) under \(f\) and
+	\(A'\) is the preimage of \(B'\) under \(f\)). Assume \(x\) is an
+	arbitrary member of \(A'\). By the definition of preimage, we know that
+	\(f(x)\) is in \(B'\); we'll refer to the particular value of \(f(x)\)
+	as \(y\) (so \(y\) is in \(B'\)). Now the definition of the image of
+	\(A_0\) under \(f\) gives us that \(B'\) is the set of all values \(b\)
+	such that \(b = f(a)\) for at least one value of \(a\) in \(A_0\). Since
+	\(y\) is in \(B'\), we know there is at least one value \(x'\) in
+	\(A_0\) such that \(y = f(x')\), but considering only the definition of
+	image, we would not know if this particular value \(x'\) is unique.
+	However, since we have indeed established that \(f\) is injective, by
+	definition we know that \(f(x') = y = f(x)\) implies that \(x' = x\). So
+	we know that \(x = x'\) is in \(A_0\). Thus we see that
+	\(\inverse{f}(f(A_0))\) is a subset of \(A_0\).
+
+	Since we have established both that \(A_0\) is a subset of
+	\(\inverse{f}(f(A_0))\) and that \(\inverse{f}(f(A_0))\) is a subset of
+	\(A_0\), we have established equality.
+\end{proof}
 
 \end{document}

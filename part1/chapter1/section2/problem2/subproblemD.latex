@@ -4,6 +4,7 @@
 
 \subproblem{}\label{s2p2d}
 
+Show that function inversion preserves set difference. Symbolically, that is:
 \[\inverse{f}(B_0 \without B_1) = \inverse{f}(B_0) \without \inverse{f}(B_1)\]
 \todo{}
 

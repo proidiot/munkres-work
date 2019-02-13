@@ -4,7 +4,25 @@
 
 \subproblem{}\label{s2p2b}
 
+Show that function inversion preserves set union. Symbolically, that is:
 \[\inverse{f}(B_0 \union B_1) = \inverse{f}(B_0) \union \inverse{f}(B_1)\]
-\todo{}
+
+\begin{thm}
+	Set union distributes through the preimage of a function. Symbolically,
+	given \(\mapping{f}{A}{B}\) and \(B_0 \subset B\) and \(B_1 \subset B\),
+	that is:
+	\[\inverse{f}(B_0 \union B_1) = \inverse{f}(B_0) \union \inverse{f}(B_1)\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	and let \(B_0\) and \(B_1\) be a subsets of \(B\). Assume \(B_0\) is a
+	subset of \(B_1\), and assume \(x\) is in
+	\(\inverse{f}(B_0 \union B_1)\). By the definition of preimage, we know
+	there must be some \(y = f(x)\) in \(B_0 \union B_1\). With the
+	definition of set union, we can say that \(y\) is in \(B_0\) or in
+	\(B_1\) (or both).
+
+	\todo{}
+\end{proof}
 
 \end{document}

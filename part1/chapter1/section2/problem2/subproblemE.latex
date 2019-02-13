@@ -4,6 +4,7 @@
 
 \subproblem{}\label{s2p2e}
 
+Show that functions preserve inclusion. Symbolically, that is:
 \[A_0 \subset A_1 \implies f(A_0) \subset f(A_1)\]
 \todo{}
 

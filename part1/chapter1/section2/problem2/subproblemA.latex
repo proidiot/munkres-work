@@ -4,7 +4,28 @@
 
 \subproblem{}\label{s2p2a}
 
+Show that function inversion preserves inclusion. Symbolically, that is:
 \[B_0 \subset B_1 \implies \inverse{f}(B_0) \subset \inverse{f}(B_1)\]
-\todo{}
+
+\begin{thm}
+	The subset relation is preserved by the preimage of a function.
+	Symbolically, given \(\mapping{f}{A}{B}\) and \(B_0 \subset B\) and
+	\(B_1 \subset B\), that is:
+	\[B_0 \subset B_1 \implies \inverse{f}(B_0) \subset \inverse{f}(B_1)\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	let \(B_0\) be a subset of \(B\), let \(B_1\) also be a subset of \(B\).
+	Assume \(B_0\) is a subset of \(B_1\), and assume \(x\) is in
+	\(\inverse{f}(B_0)\). By the definition of preimage, we know there must
+	be some value \(y = f(x)\) in \(B_0\). As we have established that
+	\(B_0\) is a subset of \(B_1\), we know that \(y\) must also be a member
+	of \(B_1\). Recall that the definition of preimage of \(B_1\) under
+	\(f\) gives the set of all values \(a\) such that \(f(a)\) is in
+	\(B_1\). So since \(y = f(x)\) is in \(B_1\), then we can say \(x\) is
+	in \(\inverse{f}(B_1)\). Thus \(\inverse{f}(B_0)\) is a subset of
+	\(\inverse{f}(B_1)\). Therefore \(B_0\) being a subset of \(B_1\)
+	implies that \(\inverse{f}(B_0)\) is a subset of \(\inverse{f}(B_1)\).
+\end{proof}
 
 \end{document}

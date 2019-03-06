@@ -6,6 +6,24 @@
 
 Show that functions preserve inclusion. Symbolically, that is:
 \[A_0 \subset A_1 \implies f(A_0) \subset f(A_1)\]
-\todo{}
+
+\begin{thm}
+	The subset relation is preserved by the image of a function.
+	Symbolically, given \(\mapping{f}{A}{B}\) and \(A_0 \subset A\) and
+	\(A_1 \subset A\), that is:
+	\[A_0 \subset A_1 \implies f(A_0) \subset f(A_1)\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	let \(A_0\) be a subset of \(A\), let \(A_1\) also be a subset of \(A\).
+	Assume \(A_0\) is a subset of \(A_1\), and assume \(y\) is in
+	\(f(A_0)\). By the definition of image, we know there must be some value
+	\(x\) in \(A_0\) such that \(y = f(x)\). Since \(A_0\) is a subset of
+	\(A_1\), we have that \(x\) is also a member of \(A_1\). Recalling that
+	\(y = f(x)\), the definition of image gives us \(y = f(x)\) is in
+	\(f(A_1)\). Thus \(f(A_0)\) is a subset of \(f(A_1)\). Therefore \(A_0\)
+	being a subset of \(A_1\) is sufficient for \(f(A_0)\) to be a subset of
+	\(f(A_1)\).
+\end{proof}
 
 \end{document}

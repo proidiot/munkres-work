@@ -1,0 +1,21 @@
+\documentclass[main.latex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p3e}
+
+Show that the equality relation from \(\ref{s2p2g}\) holds for arbitrary
+intersections given an injective function.
+
+\begin{thm}
+	The image under some injective function of an arbitrary intersection is
+	equal to the arbitrary intersection of images under the function.
+	Symbolically, given \(\mapping{f}{A}{B}\) such that \(f(a) = f(a')\)
+	implies \(a = a'\), that is:
+	\[f\left(\Arbitraryintersection{\metaset{A}_i \subset A}{\metaset{A}_i}\right) = \Arbitraryintersection{\metaset{A}_i \subset A}{f\left(\metaset{A}_i\right)}\]
+\end{thm}
+\begin{proof}
+	\todo{}
+\end{proof}
+
+\end{document}

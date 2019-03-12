@@ -4,9 +4,14 @@
 
 \subproblem{}\label{s2p3c}
 
-Show that \(\ref{s2p2f}\) holds for arbitrary unions. Symbolically, that is:
-\[f(\Arbitraryunion{A_i \subset A}{A_i}) = \Arbitraryunion{A_i \subset A}{f(A_i)}\]
-
-\todo{}
+Show that \(\ref{s2p2f}\) holds for arbitrary unions.
+\begin{thm}
+	The image under some function of an arbitrary union is equal to the
+	arbitrary union of images under the function. Symbolically, that is:
+	\[f\left(\Arbitraryunion{\metaset{A}_i \subset A}{\metaset{A}_i}\right) = \Arbitraryunion{\metaset{A}_i \subset A}{f\left(\metaset{A}_i\right)}\]
+\end{thm}
+\begin{proof}
+	\todo{}
+\end{proof}
 
 \end{document}

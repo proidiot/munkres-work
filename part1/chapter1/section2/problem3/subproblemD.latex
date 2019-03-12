@@ -4,9 +4,17 @@
 
 \subproblem{}\label{s2p3d}
 
-Show that \(\ref{s2p2g}\) holds for arbitrary intersections. Symbolically, that is:
-\[f(\Arbitraryintersection{A_i \subset A}{A_i}) = \Arbitraryintersection{A_i \subset A}{f(A_i)}\]
+Show that the subset relation from \(\ref{s2p2g}\) holds for arbitrary
+intersections.
 
-\todo{}
+\begin{thm}
+	The image under some function of an arbitrary intersection is a subset
+	of the arbitrary intersection of images under the function.
+	Symbolically, that is:
+	\[f\left(\Arbitraryintersection{\metaset{A}_i \subset A}{\metaset{A}_i}\right) \subset \Arbitraryintersection{\metaset{A}_i \subset A}{f\left(\metaset{A}_i\right)}\]
+\end{thm}
+\begin{proof}
+	\todo{}
+\end{proof}
 
 \end{document}

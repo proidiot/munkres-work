@@ -6,6 +6,43 @@
 
 If \(C_0 \subset C\), show that \(\inverse{(\compose{g}{f})}(C_0) = \inverse{f}(\inverse{g}(C_0))\).
 
-\todo{}
+\begin{thm}
+	Given a function \(f\) mapping \(A\) to \(B\), a function \(g\) mapping
+	\(B\) to \(C\), and a subset \(C_0\) of \(C\), the preimage of \(C_0\)
+	under \(\compose{g}{f}\) is equal to the preimage under \(f\) of the
+	preimage of \(g\) of \(C_0\). Symbolically, that is:
+	\[\inverse{(\compose{g}{f})}(C_0) = \inverse{f}(\inverse{g}(C_0))\]
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets, let \(f\) be a mapping from \(A\)
+	to \(B\), let \(g\) be a mapping from \(B\) to \(C\), and let \(C_0\) be
+	a subset of \(C\).
+
+	First, assume \(x\) is in \(\inverse{(\compose{g}{f})}(C_0)\). With the
+	definition of preimage under a function, we know there exists \(z\) in
+	\(C_0\) such that \(z = (\compose{g}{f})(x)\). By the definition of
+	function composition, we know there exists \(y\) in \(B\) such that
+	\(z = g(y)\) and \(y = f(x)\). Recalling that \(z\) is in \(C_0\), we
+	know \(y\) is in \(\inverse{g}(C_0)\) by the definition of preimage
+	under a function. Recalling that \(y = f(x)\), we know \(x\) is in
+	\(\inverse{f}(\inverse{g}(C_0))\), also by the definition of preimage.
+	Thus \(\inverse{(\compose{g}{f})}(C_0)\) is a subset of
+	\(\inverse{f}(\inverse{g}(C_0))\).
+
+	Next, assume \(x\) is in \(\inverse{f}(\inverse{g}(C_0))\). With the
+	definition of preimage under a function, we know there exists \(y\) in
+	\(\inverse{g}(C_0)\) such that \(y = f(x)\), and there also exists
+	\(z\) in \(C_0\) such that \(z = g(y')\). We can construct
+	\(\compose{g}{f}\), which by definition would yield
+	\(z = (\compose{g}{f})(x)\) since both \(f(x) = y\) and \(g(y) = z\).
+	Recalling that \(z\) is in \(C_0\), we can say that \(x\) is in
+	\(\inverse{(\compose{g}{f})}(C_0)\) by the definition of preimage. Thus
+	\(\inverse{f}(\inverse{g}(C_0))\) is a subset of
+	\(\inverse{(\compose{g}{f})}(C_0)\).
+
+	As we have shown that \(\inverse{(\compose{g}{f})}(C_0)\) and
+	\(\inverse{f}(\inverse{g}(C_0))\) are subsets of each other, we have
+	established set equality.
+\end{proof}
 
 \end{document}

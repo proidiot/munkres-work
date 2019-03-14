@@ -6,6 +6,25 @@
 
 If \(f\) and \(g\) are surjective, show that \(\compose{g}{f}\) is surjective.
 
-\todo{}
+\begin{thm}
+	The composition of surjective functions is surjective. So, given
+	\(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\) are each surjective,
+	then \(\compose{g}{f}\) must also be surjective.
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets, let \(f\) be a surjective mapping
+	from \(A\) to \(B\), and let \(g\) be a surjective mapping from \(B\) to
+	\(C\).
+
+	Assume \(z\) is in \(C\). Since \(g\) is surjective, we know there
+	exists \(y\) in \(B\) such that \(z = g(y)\). Since \(f\) is surjective,
+	we know there exists \(x\) in \(A\) such that \(y = f(x)\). Recalling
+	that \(z = g(y)\), we have \(z = g(f(x))\) by substitution. By the
+	definition of function composition, we can say
+	\(z = (\compose{g}{f})(x)\). Since we have shown an arbitrary choice in
+	the image set of \(\compose{g}{f}\) implies the existence of a
+	corresponding element in the domain of \(\compose{g}{f}\), we have
+	demonstrated the surjectivity of \(\compose{g}{f}\).
+\end{proof}
 
 \end{document}

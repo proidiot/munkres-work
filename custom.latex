@@ -17,7 +17,7 @@
 \newcommand{\sintersect}{\cap}
 \newcommand{\intersect}{\cap}
 \newcommand{\sdiff}{\setminus}
-\newcommand{\powerset}[1]{\mathcal{P} (#1)}
+\newcommand{\powerset}[1]{\mathcal{P}\left(#1\right)}
 \newcommand{\metaset}[1]{\mathscr{#1}}
 \newcommand{\setbuild}[2]{\{#1|#2\}}
 \newcommand{\suchthat}{:}
@@ -33,6 +33,7 @@
 \newcommand{\isin}{\in}
 \newcommand{\thereexists}{\exists}
 \newcommand{\itisnothecasethat}[1]{\neg{} (#1)}
+\newcommand{\naturals}{\mathbb{N}}
 \newcommand{\integers}{\mathbb{Z}}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\problem}{\subsection{}}
@@ -42,4 +43,5 @@
 \newcommand{\compose}[2]{{#1} \circ{} {#2}}
 \newcommand{\thru}{-}
 \newcommand{\definedterm}[1]{\emph{\textbf{#1}}}
+\newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}
 

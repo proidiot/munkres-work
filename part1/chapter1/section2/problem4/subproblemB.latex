@@ -6,6 +6,24 @@
 
 If \(f\) and \(g\) are injective, show that \(\compose{g}{f}\) is injective.
 
-\todo{}
+\begin{thm}
+	The composition of injective functions is injective. Symbolically, given
+	\(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\) are injective, that is:
+	\[(\compose{g}{f})(x) = (\compose{g}{f})(x') \implies x = x'\]
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets, let \(f\) be an injective mapping
+	from \(A\) to \(B\), and let \(g\) be an injective mapping from \(B\) to
+	\(C\).
+
+	Assume \(x\) and \(x'\) in \(A\) such that
+	\((\compose{g}{f})(x) = (\compose{g}{f})(x')\). By the definition of
+	function composition, we know \(g(f(x)) = g(f(x'))\). As we know \(g\)
+	is injective, we can say that \(f(x) = f(x')\) since it is implied by
+	\(g(f(x)) = g(f(x'))\). Further, as we know \(f\) is injective, we can
+	say that \(x = x'\) since it is implied by \(f(x) = f(x')\).
+
+	Therefore \(\compose{g}{f}\) is injective.
+\end{proof}
 
 \end{document}

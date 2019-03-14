@@ -7,6 +7,12 @@
 If \(\compose{g}{f}\) is surjective, what can you say about surjectivity of
 \(f\) and \(g\)?
 
-\todo{}
+\begin{thm}
+	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), if
+	\(\compose{g}{f}\) is surjective, then \(g\) must alsot be surjective.
+\end{thm}
+\begin{proof}
+	\todo{}
+\end{proof}
 
 \end{document}

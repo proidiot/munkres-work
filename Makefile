@@ -12,7 +12,7 @@ clean:
 	-for f in $(recursive_cleanfiles); do \
 		find . -name "$$f" -delete; \
 	done
-	latexmk -C main.latex
+	latexmk -C main.tex
 
 distclean: clean
 	-if [ "x$(distcleanfiles)" != 'x' ]; then \
@@ -22,6 +22,6 @@ distclean: clean
 		find . -name "$$f" -delete; \
 	done
 
-%.pdf: %.latex *.latex */*.latex */*/*.latex */*/*/*.latex */*/*/*/*.latex
+%.pdf: %.tex *.tex */*.tex */*/*.tex */*/*/*.tex */*/*/*/*.tex
 	latexmk -cd -pdf $<
 

@@ -1,0 +1,32 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\problem{}
+Formulate and prove De Morgan's laws for arbitrary unions and intersections.
+
+\begin{remark}
+	All forms of De Morgan's Laws are about the distributivity of a form of
+	negation across the equivalent forms of disjunction and conjunction. In
+	the first order logical operator sense, that manifests in the
+	distribution behavior of \(\neg\) (i.e., logical not) across \(\land\)
+	(i.e., logical and) and \(\lor\) (i.e., logical or). As shown earlier in
+	this very assignment, the basic set operator sense describes the
+	distribution behavior of \(\setminus\) (i.e., basic set difference)
+	across \(\cap\) (i.e., basic set intersection) and \(\cup\) (i.e., basic
+	set union). When discussing the generalized form of set intersections
+	(i.e., \(\bigcap\)) and set unions (i.e., \(\bigcup\)), presumably we
+	would be interested in finding the distribution behavior of some
+	generalized form of set difference. As we have not discussed such a
+	thing to this point in the text or exercises, I will instead proceed
+	with the assumption that we want to address the distribution behavior of
+	basic set difference across these more generalized operators.
+\end{remark}
+
+\subfile{part1/chapter1/section1/problem9/subproblemA.tex}
+\subfile{part1/chapter1/section1/problem9/subproblemB.tex}
+
+\end{document}

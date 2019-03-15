@@ -1,0 +1,58 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2a}
+\[A \subset B \land A \subset C \iff A \subset (B \cup C)\]
+\begin{thm}[Double implication fails in~\ref{2a}]
+	\(A \subset B \land A \subset C \centernot\iff A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset (B \cup C) \implies A \subset B \land A \subset C\).
+
+	Consider \(A \subset (B \cup C)\). Choose
+	\(A = \{m | m = 3k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	3, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all integers are even or odd, we can say that it is
+	indeed the case that \(A \subset (B \cup C)\) holds for our choices of
+	\(A\), \(B\), and \(C\). Suppose
+	\(A \subset (B \cup C) \implies A \subset B \land A \subset C\). Since
+	we have already shown that the antecedent holds for our choices of
+	\(A\), \(B\), and \(C\), this would require the consequent to be true as
+	well. So both \(A \subset B\) and \(A \subset C\). Considerring just
+	\(A \subset B\), this would mean that the set of multiples of 3 is a
+	subset of the evens. This would imply that \(\forall x \in A, x \in B\).
+	Now note that \(3 = x \in A\) because 3 is a multiple of 3. However,
+	\(3 = x \notin B\) as 3 is not even. This contradicts our requirement
+	that for any \(x \in A\), it is also the case that \(x \in B\). So our
+	supposition is false, and
+	\(A \subset (B \cup C) \centernot\implies A \subset B \land A \subset C\).
+
+	Since we have demonstrated that one of the predicates does not imply the
+	other predicate, we have therefore established that the double
+	implication fails as well.
+\end{proof}
+
+\begin{thm}[LHS implies RHS in~\ref{2a}]
+	\(A \subset B \land A \subset C \implies A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	It is given that \(A \subset B\) and \(A \subset C\). Considerring just
+	\(A \subset B\), it is either the case that \(A = \emptyset\) or
+	\(\exists x \in A \implies x \in B\). In the trivial case that
+	\(A = \emptyset\), \(A \subset (B \cup C)\) since the empty set is a
+	subset of all sets. In the case that \(A\) is not empty, then we can say
+	that \(\exists x \in A \implies (x \in B \lor x \in C)\) by disjunctive
+	inclusion. By the definition of set union, we have that
+	\(x \in (B \cup C)\). So
+	\(A \neq \emptyset \implies A \subset (B \cup C)\). Since
+	\(A \subset (B \cup C)\) in all cases derived from our assumptions, we
+	have therefore demonstrated that
+	\(A \subset B \land A \subset C \implies A \subset (B \cup C)\).
+\end{proof}
+
+\end{document}

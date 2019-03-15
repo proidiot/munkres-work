@@ -1,0 +1,56 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2d}
+\[A \subset B \lor A \subset C \iff A \subset (B \cap C)\]
+\begin{thm}[Double implication fails in~\ref{2d}]
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cap C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset B \lor A \subset C \implies A \subset (B \cap C)\).
+
+	Consider \(A \subset B \lor A \subset C\). Choose
+	\(A = \{m | m = 4k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	4, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all multiples of 4 are even numbers, it is the case
+	that \(A \subset B\). By disjunctive introduction, we can say that
+	\(A \subset B \lor A \subset C\).
+
+	Now consider \(B \cap C\). Given our choices for \(B\) and \(C\), this
+	would be the intersection of the evens and the odds. Since no even
+	number is also an odd number (and vice-versa), we can say that
+	\(B \cap C = \emptyset\). Since our choice for \(A\) is the set of
+	multiples of 4, we know that \(\exists x \in A\) (for example,
+	\(4 = x \in A\)). Further, we can say that
+	\(\neg [A \subset (B \cap C)]\) since
+	\(\exists x \in A \land x \notin (B \cap C)\).
+
+	Suppose \(A \subset B \lor A \subset C \implies A \subset (B \cap C)\).
+	It has already been established that \(A \subset B \lor A \subset C\).
+	By modus ponens, \(A \subset (B \cap C)\). However, this contradicts
+	\(\neg [A \subset (B \cap C)]\), which has already been established. So
+	our supposition is false and
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cap C)\).
+\end{proof}
+
+\begin{thm}[RHS implies LHS in~\ref{2b}]
+	\(A \subset (B \cap C) \implies A \subset B \lor A \subset C\)
+\end{thm}
+\begin{proof}
+	Assume \(A \subset (B \cap C)\). By the definition of the subset
+	relation, \(\forall x \in A, x \in (B \cap C)\). By the definition of
+	set intersection, this can be extended to
+	\(\forall x \in A, x \in B \land x \in C\).  By conjunctive elimination,
+	we have that \(\forall x \in A, x \in B\). By the definition of the
+	subset relation, \(A \subset B\). By disjunctive introduction,
+	\(A \subset B \lor A \subset C\). Therefore
+	\(A \subset (B \cap C) \implies A \subset B \lor A \subset C\).
+\end{proof}
+
+\end{document}
+

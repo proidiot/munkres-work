@@ -1,0 +1,72 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p3b}
+
+Show that \(\ref{s2p2c}\) holds for arbitrary intersections.
+
+\begin{thm}
+	The preimage under some function of an arbitrary intersection is equal
+	to the arbitrary intersection of preimages under the function.
+	Symbolically, that is:
+	\[\inverse{f}\left(\Arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i}\right) = \Arbitraryintersection{\metaset{B}_i \subset B}{\inverse{f}\left(\metaset{B}_i\right)}\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	let \(\metaset{B}\) be a collection of subsets of \(B\), and let
+	\(\metaset{B}_i\) be the \(i\)-th member of \(\metaset{B}\).
+
+	First, assume \(x\) is in
+	\(\inverse{f}(\arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i})\).
+	By the definition of preimage, we know that there exists some \(y\) in
+	\(\arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i}\) such
+	that \(y = f(x)\). Rephrasing this in terms of \(\metaset{B}\), we can
+	equivalently say that \(y\) is in
+	\(\arbitraryintersection{\metaset{B}_i \in \metaset{B}}{\metaset{B}_i}\).
+	We know that \(y\) is in every set \(\metaset{B}_i\) in \(\metaset{B}\)
+	due to the definition of arbitrary intersection. By universal
+	instantiation, we'll say that \(y\) is in \(B'\). Recalling that
+	\(y = f(x)\), we can also say that \(x\) is in \(\inverse{f}(B')\) due
+	to the definition of preimage. By universal generalization, we can say
+	that \(x\) is in \(\inverse{f}(\metaset{B}_i)\) for every set
+	\(\metaset{B}_i\) in \(\metaset{B}\). By the definition of arbitrary
+	intersection, we know that \(x\) is in
+	\(\arbitraryintersection{\metaset{B}_i \in \metaset{B}}{\inverse{f}(\metaset{B}_i)}\).
+	Rephrasing this in terms of \(B\), we have that \(x\) is in
+	\(\arbitraryintersection{\metaset{B}_i \subset B}{\inverse{f}(\metaset{B}_i)}\).
+	Thus
+	\(\inverse{f}(\arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i})\)
+	is a subset of
+	\(\arbitraryintersection{\metaset{B}_i \subset B}{\inverse{f}(\metaset{B}_i)}\).
+
+	Next, assume \(x\) is in
+	\(\arbitraryintersection{\metaset{B}_i \subset B}{\inverse{f}(\metaset{B}_i)}\).
+	Equivalently, we can say that \(x\) is in
+	\(\arbitraryintersection{\metaset{B}_i \in \metaset{B}}{\inverse{f}(\metaset{B}_i)}\).
+	We know that \(x\) is in the set \(\inverse{f}(\metaset{B}_i)\) for
+	every set \(\metaset{B}_i\) in \(\metaset{B}\) due to the definition of
+	arbitrary intersection. By universal instantiation, we'll say that \(x\)
+	is in \(\inverse{f}(B')\). By the definition of preimage, we know there
+	must exist some \(y\) in \(B'\) such that \(y = f(x)\). By universal
+	generalization, we can say that \(y\) is in every set \(\metaset{B}_i\)
+	in \(\metaset{B}\). We can further say that \(y\) is in
+	\(\arbitraryintersection{\metaset{B}_i \in \metaset{B}}{\metaset{B}_i}\)
+	by the definition of arbitrary intersection. Rephrasing this in terms of
+	\(B\), we can say that \(y\) is in
+	\(\arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i}\).
+	Recalling that \(y = f(x)\), we can say that \(x\) is in
+	\(\inverse{f}(\arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i})\)
+	due to the definition of preimage. Thus
+	\(\arbitraryintersection{\metaset{B}_i \subset B}{\inverse{f}(\metaset{B}_i)}\)
+	is a subset of
+	\(\inverse{f}(\arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i})\).
+
+	As we have shown that
+	\(\inverse{f}(\arbitraryintersection{\metaset{B}_i \subset B}{\metaset{B}_i})\)
+	and
+	\(\arbitraryintersection{\metaset{B}_i \subset B}{\inverse{f}(\metaset{B}_i)}\)
+	are subsets of each other, we have demonstrated set equality.
+\end{proof}
+
+\end{document}

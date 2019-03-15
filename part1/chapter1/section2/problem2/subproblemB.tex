@@ -1,0 +1,49 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2b}
+
+Show that function inversion preserves set union. Symbolically, that is:
+\[\inverse{f}(B_0 \union B_1) = \inverse{f}(B_0) \union \inverse{f}(B_1)\]
+
+\begin{thm}
+	Set union distributes through the preimage of a function. Symbolically,
+	given \(\mapping{f}{A}{B}\) and \(B_0 \subset B\) and \(B_1 \subset B\),
+	that is:
+	\[\inverse{f}(B_0 \union B_1) = \inverse{f}(B_0) \union \inverse{f}(B_1)\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	and let \(B_0\) and \(B_1\) be a subsets of \(B\).
+
+	First, assume \(x\) is in \(\inverse{f}(B_0 \union B_1)\). By the
+	definition of preimage, we know there must be some \(y = f(x)\) in
+	\(B_0 \union B_1\). With the definition of set union, we can say that
+	\(y\) is in \(B_0\) or in \(B_1\) (or both). Without loss of generality,
+	say \(y = f(x)\) is in \(B_0\). By the definition of preimage, \(x\) is
+	in \(\inverse{f}(B_0)\). We can see that \(x\) is in
+	\(\inverse{f}(B_0)\) or \(x\) is in \(\inverse{f}(B_1)\) by disjunctive
+	introduction, and that yields \(x\) in
+	\(\inverse{f}(B_0) \union \inverse{f}(B_1)\) by definition. So
+	\(\inverse{f}(B_0 \union B_1)\) is a subset of
+	\(\inverse{f}(B_0) \union \inverse{f}(B_1)\).
+
+	Next, assume \(x\) is in \(\inverse{f}(B_0) \union \inverse{f}(B_1)\).
+	By the definition of set union, \(x\) is in \(\inverse{f}(B_0)\) or
+	\(x\) is in \(\inverse{f}(B_1)\) (or both). Without loss of generality,
+	say \(x\) is in \(\inverse{f}(B_0)\). By the definition of preimage,
+	there must be some \(y = f(x)\) in \(B_0\). We can expand this to \(y\)
+	being in \(B_0\) or \(y\) being in \(B_1\) using disjunctive
+	introduction, and by definition that means \(y = f(x)\) is in
+	\(B_0 \union B_1\). Finally, by the definition of preimage, we can say
+	\(x\) is in \(\inverse{f}(B_0 \union B_1)\). So
+	\(\inverse{f}(B_0) \union \inverse{f}(B_1)\) is a subset of
+	\(\inverse{f}(B_0 \union B_1)\).
+
+	As we have demonstrated that \(\inverse{f}(B_0 \union B_1)\) and
+	\(\inverse{f}(B_0) \union \inverse{f}(B_1)\) are subsets of each other,
+	we have therefore demonstrated equality among these sets.
+\end{proof}
+
+\end{document}

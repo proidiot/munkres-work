@@ -1,0 +1,38 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2l}
+The converse of~\ref{2j}, assuming that \(A\) and \(B\) are nonempty.
+\begin{remark}[The converse of~\ref{2j} with nonempty \(A\) and \(B\)]
+	The statement
+	\[A \neq \emptyset \land B \neq \emptyset \land (A \times B) \subset (C \times D) \implies A \subset C \land B \subset D\]
+	is the converse of
+	\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+	except with the added restriction that neither \(A\) nor \(B\) are empty.
+\end{remark}
+
+\begin{thm}[Implication holds in~\ref{2l}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), if \(A\) and \(B\) are
+	nonempty and the cartesian product of \(A\) and \(B\) is a subset of the
+	cartesian product of \(C\) and \(D\), then both \(A\) is a subset of \(C\)
+	and \(B\) is a subset of \(D\). Symbolically, that is
+	\[A \neq \emptyset \land B \neq \emptyset \land (A \times B) \subset (C \times D) \implies A \subset C \land B \subset D\]
+\end{thm}
+\begin{proof}
+	Assume \(A\), \(B\), \(C\), and \(D\) are sets such that neither \(A\)
+	nor \(B\) are the empty set and the cartesian product of \(A\) and \(B\)
+	is a subset of the cartesian product of \(C\) and \(D\). Since neither
+	\(A\) nor \(B\) are the empty set, we can say that the cartesian product
+	of \(A\) and \(B\) is also not the empty set. Let \((x, y)\) be in
+	\(A \times B\) where \(x\) is in \(A\) and \(y\) is in \(B\). Since we
+	have established that \(A \times B\) is a subset of \(C \times D\), we
+	know that \((x, y)\) is also in \(C \times D\). Given the definition of
+	the cartesian product, we can say that both \(x\) is in \(C\) and \(y\)
+	is in \(D\). As previously stated, \(x\) is an arbitrary member of \(A\)
+	and \(y\) is an arbitrary member of \(B\), so we can say that \(A\) is a
+	subset of \(C\) and \(B\) is a subset of \(D\).
+\end{proof}
+
+\end{document}
+

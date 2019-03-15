@@ -1,0 +1,49 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{5c}
+
+\(x \isin \arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin A\) for
+at least one \(A \in \metaset{A}\).
+
+\begin{thm}[Implication holds in~\ref{5c}]\thlabel{5ct}
+	Given \(\metaset{A}\) is a nonempty collection of sets, for every \(x\)
+	in the generalized intersection over all sets in \(\metaset{A}\), there
+	exists some set \(A\) in \(\metaset{A}\) such that \(x\) is in \(A\).
+	Symbolically, that is
+	\[x \isin \Arbitraryintersection{A \in \metaset{A}}{A} \implies x \isin \setbuild{x'}{\thereexists A \in \metaset{A} \suchthat x' \isin A}\]
+\end{thm}
+\begin{proof}
+	Let \(\metaset{A}\) be a nonempty collection of sets, and let
+	\(\metaset{A}_0\) be some set in \(\metaset{A}\). It is possible
+	that the generalized intersection over \(\metaset{A}\) is empty, but
+	instead we will consider the non-vacuous case. Let \(x\) be in the
+	generalized intersection over \(\metaset{A}\). By definition, we know
+	that \(x\) is a member of every set in \(\metaset{A}\), and so \(x\) is
+	in \(\metaset{A}_0\) in particular. So there exists at least one set
+	\(A\) in \(\metaset{A}\) for which \(x\) is in \(A\).
+\end{proof}
+
+\begin{thm}[Implication fails for the converse of~\ref{5c}]
+	Given \(\metaset{A}\) is a nonempty collection of sets, it is not the
+	case that for every \(x\) which is in at least one set of
+	\(\metaset{A}\), that \(x\) is also in the generalized intersection over
+	all sets in \(\metaset{A}\). Symbolically, that is
+	\[\itisnothecasethat{x \isin \setbuild{x'}{\exists A \in \metaset{A} \suchthat x' \isin A} \implies x \isin \Arbitraryintersection{A \in \metaset{A}}{A}}\]
+\end{thm}
+\begin{proof}
+	Choose \(\metaset{A}\) to be \(\{\{1\},\{1,2\}\}\), which is a nonempty
+	collection of sets. Note that the set \(\{1,2\}\) is in \(\metaset{A}\),
+	that 2 is in \(\{1,2\}\), and that there exists a set in \(\metaset{A}\)
+	such that 2 is in that set. So choose \(x\) to be 2. Using the
+	definition of the generalized intersection, we calculate the generalized
+	intersection of our choice for \(\metaset{A}\) in particular to be the
+	set \(\{1\}\). Despite there existing some set in \(\metaset{A}\) to
+	which \(x\) is a member, our choice of \(x\) is not in the generalized
+	intersection over \(\metaset{A}\). So it is not always the case that a
+	value being in some set in \(\metaset{A}\) is sufficient for that value
+	to also be in the generalized intersection over \(\metaset{A}\).
+\end{proof}
+
+\end{document}

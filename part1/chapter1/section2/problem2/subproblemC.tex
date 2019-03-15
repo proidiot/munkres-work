@@ -1,0 +1,48 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2c}
+
+Show that function inversion preserves intersection. Symbolically, that is:
+\[\inverse{f}(B_0 \intersect B_1) = \inverse{f}(B_0) \intersect \inverse{f}(B_1)\]
+
+\begin{thm}
+	Set intersection distributes through the preimage of a function.
+	Symbolically, given \(\mapping{f}{A}{B}\) and \(B_0 \subset B\) and
+	\(B_1 \subset B\), that is:
+	\[\inverse{f}(B_0 \intersect B_1) = \inverse{f}(B_0) \intersect \inverse{f}(B_1)\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	and let \(B_0\) and \(B_1\) be a subsets of \(B\).
+
+	First, assume \(x\) is in \(\inverse{f}(B_0 \intersect B_1)\). By the
+	definition of preimage, we know that there is some \(y = f(x)\) in
+	\(B_0 \intersect B_1\). Also, we know that both \(y\) is in \(B_0\) and
+	\(y\) is in \(B_1\) given the definition of set intersection. Recalling
+	that \(y = f(x)\), the definition of preimage gives us both \(x\) in
+	\(\inverse{f}(B_0)\) and \(x\) in \(\inverse{f}(B_1)\). So \(x\) is in
+	\(\inverse{f}(B_0) \intersect \inverse{f}(B_1)\) by the definition of
+	set intersection. Thus \(\inverse{f}(B_0 \intersect B_1)\) is a subset
+	of \(\inverse{f}(B_0) \intersect \inverse{f}(B_1)\).
+
+	Next, assume \(x\) is in
+	\(\inverse{f}(B_0) \intersect \inverse{f}(B_1)\). By the definition of
+	set intersection, we have that both \(x\) is in \(\inverse{f}(B_0)\) and
+	\(x\) is in \(\inverse{f}(B_1)\). By the definition of preimage, we know
+	that there is some \(y = f(x)\) in \(B_0\) and some \(y' = f(x)\) in
+	\(B_1\). Fortunately, we know that it is indeed the case that
+	\(y = f(x) = y'\) due to the rule of assignment. Since \(y\) is in both
+	\(B_0\) and \(B_1\), we can see that \(y\) is in \(B_0 \intersect B_1\)
+	by definition. Recalling that \(y = f(x)\), we have that \(x\) is in
+	\(\inverse{f}(B_0 \intersect B_1)\) by the definition of preimage. So
+	\(\inverse{f}(B_0) \intersect \inverse{f}(B_1)\) is a subset of
+	\(\inverse{f}(B_0 \intersect B_1)\).
+
+	As we have shown that \(\inverse{f}(B_0 \intersect B_1)\) and
+	\(\inverse{f}(B_0) \intersect \inverse{f}(B_1)\) are subsets of each
+	other, we have also demonstrated set equality.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2g}
+
+Show that injective functions preserve intersection. Symbolically, that is:
+\[([f(a) = f(a')] \implies [a = a']) \implies f(A_0 \intersect A_1) = f(A_0) \intersect f(A_1)\]
+
+\begin{thm}
+	Set intersection distributes through the image of an injective function.
+	Symbolically, given \(\mapping{f}{A}{B}\) such that
+	\(f(a) = f(a')\) implies \(a = a'\), and given \(A_0 \subset A\) and
+	\(A_1 \subset A\), that is:
+	\[f(A_0 \intersect A_1) = f(A_0) \intersect f(A_1)\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, and let \(f\) be a mapping from \(A\) to
+	\(B\) such that \(f(a) = f(a')\) implies \(a = a'\), and let \(A_0\) and
+	\(A_1\) be a subsets of \(A\).
+
+	First, assume \(y\) is in \(f(A_0 \intersect A_1)\). By the definition
+	of image, we know there exists some \(x\) in \(A_0 \intersect A_1\) such
+	that \(y = f(x)\). We see that \(x\) is both in \(A_0\) and in \(A_1\)
+	by the definition of set intersection. Recalling that \(y = f(x)\), we
+	have that \(y\) is in both \(f(A_0)\) and \(f(A_1)\) by the definition
+	of image. So \(y\) is in \(f(A_0) \intersect f(A_1)\) by the definition
+	of set intersection. Thus \(f(A_0 \intersect A_1)\) is a subset of
+	\(f(A_0) \intersect f(A_1)\).
+
+	Next, assume \(y\) is in \(f(A_0) \intersect f(A_1)\). By the definition
+	of set intersection, we have that \(y\) is in both \(f(A_0)\) and
+	\(f(A_1)\). We know that there exists some \(x\) in \(A_0\) such that
+	\(f(x) = y\) and there exists some \(x'\) in \(A_1\) such that
+	\(f(x') = y\) by the definition of image. Now since
+	\(f(x) = y = f(x')\), we know that \(x = x'\) by our assumption of the
+	injectivity of \(f\), and so \(x\) is also in \(A_1\). Since we have
+	shown that \(x\) is in \(A_0\) and \(x\) is in \(A_1\), we have that
+	\(x\) is in \(A_0 \intersect A_1\) by the definition of set
+	intersection. Recalling that \(y = f(x)\), we see that \(y\) is in
+	\(f(A_0 \intersect A_1)\) by the definition of image. Thus
+	\(f(A_0) \intersect f(A_1)\) is a subset of \(f(A_0 \intersect A_1)\).
+
+	As we have shown that \(f(A_0 \intersect A_1)\) and
+	\(f(A_0) \intersect f(A_1)\) are subsets of each other, we have
+	demonstrated set equality.
+\end{proof}
+
+\end{document}

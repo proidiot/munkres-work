@@ -1,0 +1,53 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2c}
+\[A \subset B \land A \subset C \iff A \subset (B \cap C)\]
+\begin{thm}[\ref{2c} holds]
+	\(A \subset B \land A \subset C \iff A \subset (B \cap C)\)
+\end{thm}
+\begin{proof}
+	To demonstrate double implication, it is sufficient to demonstrate each
+	implication.
+
+	\medskip{}
+	First, consider \(A \subset B \land A \subset C\). Now suppose
+	\(\neg [A \subset (B \cap C)]\). By the definition of the subset
+	relation, we have that
+	\(\neg (x \in A \implies [x \in (B \cap C)])\). By the definition of
+	set intersection, we have that
+	\(\neg (x \in A \implies [x \in B \land x \in C])\). By DeMorgan's Law,
+	we have that \(x \in A \land (x \notin B \lor x \notin C)\). By the
+	distribution of \(\land\) over \(\lor\), we have
+	\((x \in A \land x \notin B) \lor (x \in A \land x \notin C)\). By
+	DeMorgan's Law, we have that
+	\(\neg (x \in A \implies x \in B) \lor \neg (x \in A \implies x \in B)\).
+	By the definition of the subset relation, we have that
+	\(\neg (A \subset B) \lor \neg (A \subset C)\). However,
+	\(\neg (A \subset B)\) contradicts our assumption that \(A \subset B\),
+	and \(\neg (A \subset C)\) contradicts our assumption that
+	\(A \subset C\). Since both cases of the conditional result in
+	contradiction, the conditional as a whole also contradicts our
+	assumptions. So our supposition was false, and \(A \subset (B \cap C)\).
+	Thus \(A \subset B \land A \subset C \implies A \subset (B \cap C)\).
+
+	\medskip{}
+	Second, consider \(A \subset (B \cap C)\). By the definition of the
+	subset relation, we see \(x \in A \implies x \in (B \cap C)\). By the
+	definition of set intersection, we have
+	\(x \in A \implies (x \in B \land x \in C)\). By the distribution of
+	\(\lor\) over \(\land\), we have
+	\((x \in A \implies x \in B) \land (x \in A \implies x \in C)\). By the
+	definition of the subset relation, we have that
+	\(A \subset B \land A \subset C\). Thus
+	\(A \subset (B \cap C) \implies A \subset B \land A \subset C\).
+
+	\medskip{}
+	Therefore, since both implications have been shown, it is certain that
+	\(A \subset B \land A \subset C \iff A \subset (B \cap C)\).
+\end{proof}
+
+
+\end{document}
+

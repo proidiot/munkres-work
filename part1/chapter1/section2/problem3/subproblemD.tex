@@ -1,0 +1,38 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p3d}
+
+Show that the subset relation from \(\ref{s2p2g}\) holds for arbitrary
+intersections.
+
+\begin{thm}\thlabel{s2p3dt}
+	The image under some function of an arbitrary intersection is a subset
+	of the arbitrary intersection of images under the function.
+	Symbolically, given a collection \(\metaset{A}\) of subsets of \(A\),
+	that is:
+	\[f\left(\Arbitraryintersection{A_i \in \metaset{A}}{A_i}\right) \subset \Arbitraryintersection{A_i \in \metaset{A}}{f\left(A_i\right)}\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	and let \(\metaset{A}\) be a collection of subsets of \(A\).
+
+	Assume \(y\) is in
+	\(f(\arbitraryintersection{A_i \in \metaset{A}}{A_i})\). With the
+	definition of image under a function, we can say there must exist \(x\)
+	in \(\arbitraryintersection{A_i \in \metaset{A}}{A_i}\) such that
+	\(y = f(x)\). We know that \(x\) must be in every set \(A_i\) in
+	\(\metaset{A}\) due to the definition of arbitrary intersection. By
+	universal instantiation, we'll say \(x\) is in \(A'\). Recalling that
+	\(y = f(x)\), we can say that \(y\) is in \(f(A')\) due to the
+	definition of image under a function. By universal generalization, we
+	can also say that \(y\) is in \(f(A_i)\) for every \(A_i\) in
+	\(\metaset{A}\). By the definition of arbitrary intersection, we know
+	that \(y\) is in
+	\(\arbitraryintersection{A_i \in \metaset{A}}{f(A_i)}\). Therefore
+	\(f(\arbitraryintersection{A_i \in \metaset{A}}{A_i})\) is a subset of
+	\(\arbitraryintersection{A_i \in \metaset{A}}{f(A_i)}\).
+\end{proof}
+
+\end{document}

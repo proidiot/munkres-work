@@ -1,0 +1,54 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2n}
+\[(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)\]
+\begin{thm}[Equality holds in~\ref{2n}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), the intersection of the
+	cartesian products of \(A\) with \(B\) and \(C\) with \(D\) is equal to
+	the cartesian product of the intersections of \(A\) with \(C\) and \(B\)
+	with \(D\). Symbolically, that is
+	\[(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Let \(A\), \(B\), and \(C\) be sets.
+
+	\medskip
+	First consider \((A \times B) \cap (C \times D)\). In the trivial case
+	that the set is empty, we can say that it is also a subset of
+	\((A \cap C) \times (B \cap D)\) since the empty set is a subset of all
+	sets. So instead, let \((x,y)\) be some arbitrary member of the set.
+	Given the definition of set intersection, we can say that \((x,y)\) is
+	in \(A \times B\) and in \(C \times D\). So we know that \(x\) is in
+	\(A\), that \(y\) is in \(B\), that \(x\) is also in \(C\), and that
+	\(y\) is also in \(D\). By the definition of set intersection, we can
+	say that \(x\) is in \(A \cap C\) and that \(y\) is in \(B \cap D\).
+	So taking the cartesian product of these two new sets, we can say that
+	\((x,y)\) is in \((A \cap C) \times (B \cap D)\). Thus we know for
+	certain that \((A \times B) \cap (C \times D)\) is always a subset of
+	\((A \cap C) \times (B \cap D)\).
+
+	\medskip
+	Second consider \((A \cap C) \times (B \cap D)\). In the trivial case
+	that the set is empty, we can say that it is a subset of
+	\((A \times B) \cap (C \times D)\) since the empty set is a subset of
+	all sets. Instead, let \((x,y)\) be some arbitrary member of the set.
+	So \(x\) is in \(A \cap C\) and \(y\) is in \(B \cap D\). By the
+	definition of set intersection, we can say that \(x\) is in both \(A\)
+	and \(C\) and that \(y\) is in both \(B\) and \(D\). Constructing some
+	new cartesian products, we can say that \((x,y)\) is in \(A \times B\)
+	and that \((x,y)\) is in \(C \times D\). So by the definition of set
+	intersection, we have that \((x,y)\) is in
+	\((A \times B) \cap (C \times D)\). Thus we know that
+	\((A \cap C) \times (B \cap D)\) is a subset of
+	\((A \times B) \cap (C \times D)\).
+
+	\medskip
+	Therefore we have demonstrated that \((A \cap C) \times (B \cap D)\) is
+	equal to \((A \times B) \cap (C \times D)\).
+\end{proof}
+
+\end{document}
+

@@ -1,0 +1,916 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\problem{Determine which of the following statements are true for all sets
+	\(A\), \(B\), \(C\), and \(D\).}
+If a double implication fails, determine whether one or the other of the
+possible implications holds. If an equality fails, determine whether the
+statement becomes true if the ``equals'' symbol is replaced by one or the other
+of the inclusion symbols \(\subset\) or \(\supset\).
+
+\subproblem{}\label{2a}
+\[A \subset B \land A \subset C \iff A \subset (B \cup C)\]
+\begin{thm}[Double implication fails in~\ref{2a}]
+	\(A \subset B \land A \subset C \centernot\iff A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset (B \cup C) \implies A \subset B \land A \subset C\).
+
+	Consider \(A \subset (B \cup C)\). Choose
+	\(A = \{m | m = 3k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	3, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all integers are even or odd, we can say that it is
+	indeed the case that \(A \subset (B \cup C)\) holds for our choices of
+	\(A\), \(B\), and \(C\). Suppose
+	\(A \subset (B \cup C) \implies A \subset B \land A \subset C\). Since
+	we have already shown that the antecedent holds for our choices of
+	\(A\), \(B\), and \(C\), this would require the consequent to be true as
+	well. So both \(A \subset B\) and \(A \subset C\). Considerring just
+	\(A \subset B\), this would mean that the set of multiples of 3 is a
+	subset of the evens. This would imply that \(\forall x \in A, x \in B\).
+	Now note that \(3 = x \in A\) because 3 is a multiple of 3. However,
+	\(3 = x \notin B\) as 3 is not even. This contradicts our requirement
+	that for any \(x \in A\), it is also the case that \(x \in B\). So our
+	supposition is false, and
+	\(A \subset (B \cup C) \centernot\implies A \subset B \land A \subset C\).
+
+	Since we have demonstrated that one of the predicates does not imply the
+	other predicate, we have therefore established that the double
+	implication fails as well.
+\end{proof}
+
+\begin{thm}[LHS implies RHS in~\ref{2a}]
+	\(A \subset B \land A \subset C \implies A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	It is given that \(A \subset B\) and \(A \subset C\). Considerring just
+	\(A \subset B\), it is either the case that \(A = \emptyset\) or
+	\(\exists x \in A \implies x \in B\). In the trivial case that
+	\(A = \emptyset\), \(A \subset (B \cup C)\) since the empty set is a
+	subset of all sets. In the case that \(A\) is not empty, then we can say
+	that \(\exists x \in A \implies (x \in B \lor x \in C)\) by disjunctive
+	inclusion. By the definition of set union, we have that
+	\(x \in (B \cup C)\). So
+	\(A \neq \emptyset \implies A \subset (B \cup C)\). Since
+	\(A \subset (B \cup C)\) in all cases derived from our assumptions, we
+	have therefore demonstrated that
+	\(A \subset B \land A \subset C \implies A \subset (B \cup C)\).
+\end{proof}
+
+\subproblem{}\label{2b}
+\[A \subset B \lor A \subset C \iff A \subset (B \cup C)\]
+\begin{thm}[Double implication fails in~\ref{2b}]
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset (B \cup C) \implies A \subset B \lor A \subset C\).
+
+	Consider \(A \subset (B \cup C)\). Choose
+	\(A = \{m | m = 3k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	3, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all integers are even or odd, we can say that it is
+	indeed the case that \(A \subset (B \cup C)\) holds for our choices of
+	\(A\), \(B\), and \(C\). Suppose
+	\(A \subset (B \cup C) \implies A \subset B \lor A \subset C\). Since
+	we have already shown that the antecedent holds for our choices of
+	\(A\), \(B\), and \(C\), this would require the consequent to be true as
+	well. So either \(A \subset B\) or \(A \subset C\) or both.
+
+	First consider the possibility that \(A \subset B\). This would mean
+	that the set of multiples of 3 is a subset of the evens. This would
+	imply that \(\forall x \in A, x \in B\). Now note that \(3 = x \in A\)
+	because 3 is a multiple of 3. However, \(3 = x \notin B\) as 3 is not
+	even. This contradicts our requirement that for any \(x \in A\), it is
+	also the case that \(x \in B\). So our supposition would be false in the
+	case that \(A \subset B\), and the implication would not hold.
+
+	Next consider the possibility that \(A \subset C\). This would mean
+	that the set of multiples of 3 is a subset of the odds. This would imply
+	that \(\forall x \in A, x \in C\). Now note that \(6 = x \in A\) because
+	6 is a multiple of 3. However, \(6 = x \notin C\) as 6 is not odd. This
+	contradicts our requirement that for any \(x \in A\), it is also the
+	case that \(x \in C\). So our supposition would be false in the case
+	that \(A \subset C\), and the implication would not hold.
+
+	Since both cases derived from our supposition reach contradictions, our
+	supposition was false and the implication therefore does not hold. Since
+	we have demonstrated that one of the predicates does not imply the other
+	predicate, we have therefore established that the double implication
+	fails as well.
+\end{proof}
+
+\begin{thm}[LHS implies RHS in~\ref{2b}]
+	\(A \subset B \lor A \subset C \implies A \subset (B \cup C)\)
+\end{thm}
+\begin{proof}
+	It is given that either \(A \subset B\) or \(A \subset C\) or both.
+
+	Consider the possibility that \(A \subset B\). It is either the case
+	that \(A = \emptyset\) or \(\exists x \in A \implies x \in B\). In the
+	trivial case that \(A = \emptyset\), \(A \subset (B \cup C)\) since the
+	empty set is a subset of all sets. In the case that \(A\) is not empty,
+	then we can say that \(\exists x \in A \implies (x \in B \lor x \in C)\)
+	by disjunctive inclusion. By the definition of set union, we have that
+	\(x \in (B \cup C)\). So
+	\(A \neq \emptyset \implies A \subset (B \cup C)\) in this case. A
+	similar construction can be made given \(A \subset C\) to show that
+	\(A \subset (B \cup C)\) regardless of whether \(A = \emptyset\) as
+	well. Since \(A \subset (B \cup C)\) in all cases derived from our
+	assumptions, we have therefore demonstrated that
+	\(A \subset B \lor A \subset C \implies A \subset (B \cup C)\).
+\end{proof}
+
+\subproblem{}\label{2c}
+\[A \subset B \land A \subset C \iff A \subset (B \cap C)\]
+\begin{thm}[\ref{2c} holds]
+	\(A \subset B \land A \subset C \iff A \subset (B \cap C)\)
+\end{thm}
+\begin{proof}
+	To demonstrate double implication, it is sufficient to demonstrate each
+	implication.
+
+	\medskip{}
+	First, consider \(A \subset B \land A \subset C\). Now suppose
+	\(\neg [A \subset (B \cap C)]\). By the definition of the subset
+	relation, we have that
+	\(\neg (x \in A \implies [x \in (B \cap C)])\). By the definition of
+	set intersection, we have that
+	\(\neg (x \in A \implies [x \in B \land x \in C])\). By DeMorgan's Law,
+	we have that \(x \in A \land (x \notin B \lor x \notin C)\). By the
+	distribution of \(\land\) over \(\lor\), we have
+	\((x \in A \land x \notin B) \lor (x \in A \land x \notin C)\). By
+	DeMorgan's Law, we have that
+	\(\neg (x \in A \implies x \in B) \lor \neg (x \in A \implies x \in B)\).
+	By the definition of the subset relation, we have that
+	\(\neg (A \subset B) \lor \neg (A \subset C)\). However,
+	\(\neg (A \subset B)\) contradicts our assumption that \(A \subset B\),
+	and \(\neg (A \subset C)\) contradicts our assumption that
+	\(A \subset C\). Since both cases of the conditional result in
+	contradiction, the conditional as a whole also contradicts our
+	assumptions. So our supposition was false, and \(A \subset (B \cap C)\).
+	Thus \(A \subset B \land A \subset C \implies A \subset (B \cap C)\).
+
+	\medskip{}
+	Second, consider \(A \subset (B \cap C)\). By the definition of the
+	subset relation, we see \(x \in A \implies x \in (B \cap C)\). By the
+	definition of set intersection, we have
+	\(x \in A \implies (x \in B \land x \in C)\). By the distribution of
+	\(\lor\) over \(\land\), we have
+	\((x \in A \implies x \in B) \land (x \in A \implies x \in C)\). By the
+	definition of the subset relation, we have that
+	\(A \subset B \land A \subset C\). Thus
+	\(A \subset (B \cap C) \implies A \subset B \land A \subset C\).
+
+	\medskip{}
+	Therefore, since both implications have been shown, it is certain that
+	\(A \subset B \land A \subset C \iff A \subset (B \cap C)\).
+\end{proof}
+
+\subproblem{}\label{2d}
+\[A \subset B \lor A \subset C \iff A \subset (B \cap C)\]
+\begin{thm}[Double implication fails in~\ref{2d}]
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cap C)\)
+\end{thm}
+\begin{proof}
+	For double implication to hold, each predicate must imply the other. We
+	will explore whether
+	\(A \subset B \lor A \subset C \implies A \subset (B \cap C)\).
+
+	Consider \(A \subset B \lor A \subset C\). Choose
+	\(A = \{m | m = 4k, k \in \mathbb{Z}\}\),
+	\(B = \{e | e = 2k, k \in \mathbb{Z}\}\),
+	and \(C = \{o | o = 2k + 1, k \in \mathbb{Z}\}\) (i.e., \(A\) is the set
+	of multiples of	4, \(B\) is the set of all evens, and \(C\) is the set
+	of all odds). Since all multiples of 4 are even numbers, it is the case
+	that \(A \subset B\). By disjunctive introduction, we can say that
+	\(A \subset B \lor A \subset C\).
+
+	Now consider \(B \cap C\). Given our choices for \(B\) and \(C\), this
+	would be the intersection of the evens and the odds. Since no even
+	number is also an odd number (and vice-versa), we can say that
+	\(B \cap C = \emptyset\). Since our choice for \(A\) is the set of
+	multiples of 4, we know that \(\exists x \in A\) (for example,
+	\(4 = x \in A\)). Further, we can say that
+	\(\neg [A \subset (B \cap C)]\) since
+	\(\exists x \in A \land x \notin (B \cap C)\).
+
+	Suppose \(A \subset B \lor A \subset C \implies A \subset (B \cap C)\).
+	It has already been established that \(A \subset B \lor A \subset C\).
+	By modus ponens, \(A \subset (B \cap C)\). However, this contradicts
+	\(\neg [A \subset (B \cap C)]\), which has already been established. So
+	our supposition is false and
+	\(A \subset B \lor A \subset C \centernot\iff A \subset (B \cap C)\).
+\end{proof}
+
+\begin{thm}[RHS implies LHS in~\ref{2b}]
+	\(A \subset (B \cap C) \implies A \subset B \lor A \subset C\)
+\end{thm}
+\begin{proof}
+	Assume \(A \subset (B \cap C)\). By the definition of the subset
+	relation, \(\forall x \in A, x \in (B \cap C)\). By the definition of
+	set intersection, this can be extended to
+	\(\forall x \in A, x \in B \land x \in C\).  By conjunctive elimination,
+	we have that \(\forall x \in A, x \in B\). By the definition of the
+	subset relation, \(A \subset B\). By disjunctive introduction,
+	\(A \subset B \lor A \subset C\). Therefore
+	\(A \subset (B \cap C) \implies A \subset B \lor A \subset C\).
+\end{proof}
+
+\subproblem{}\label{2e}
+\[A \setminus (A \setminus B) = B\]
+\begin{thm}[Equality fails in~\ref{2e}]
+	Given two sets \(A\) and \(B\), it is not the case that \(B\) is equal
+	to the portion of \(A\) removing the other portion of \(A\) which does
+	not overlap with \(B\). Symbolically, that is:
+	\[\neg [A \setminus (A \setminus B) = B]\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Specifically, given particular
+	choices for sets \(A\) and \(B\), we will explore whether \(B\) is a
+	subset of \(A \setminus (A \setminus B)\).
+
+	Choose set \(A\) to be the set of all even integers. Choose set \(B\) to
+	be the set of all odd integers. Since the set of all even integers does
+	not have any members that are also in the set of all odd integers,
+	removing \(B\) from \(A\) still leaves the whole of \(A\). That is, for
+	our particular choices for \(A\) and \(B\), we have that
+	\(A \setminus B = A\). By substitution, removing from \(A\) the portion
+	of \(A\) that does not overlap with \(B\) is simply removing all of
+	\(A\) from itself. Removing such a set from itself must result in the
+	empty set.
+
+	Continuing with our previous choices for sets \(A\) and \(B\), suppose
+	it really was the case that \(B\) is a subset of the portion of \(A\)
+	removing the other portion of \(A\) which does not overlap with \(B\).
+	Since we have previously demonstrated that
+	\(A \setminus (A \setminus B)\) is the empty set, that would mean that
+	the set of all odd integers is a subset of the empty set. However, that
+	is absurd, as there certainly do exist odd integers, and that would
+	contradict the notion that \(B\) is a subset of the empty set. Since we
+	have reached a contradiction, we can say that we were incorrect in our
+	supposition, and so it is not always the case that \(B\) is a subset of
+	the portion of \(A\) removing the other portion of \(A\) which does not
+	overlap with \(B\).
+\end{proof}
+
+\begin{thm}[LHS is a subset of RHS in~\ref{2e}]
+	Given two sets \(A\) and \(B\), it is the case that \(B\) is a subset of
+	the portion of \(A\) removing the other portion of \(A\) which does not
+	overlap with \(B\). Symbolically, that is:
+	\[A \setminus (A \setminus B) \subset B\]
+\end{thm}
+\begin{proof}
+	Assume there are two arbitrary sets \(A\) and \(B\). Note that removing
+	the portion of \(A\) which overlaps with \(B\) is equivalent to taking
+	the intesection of \(A\) and the complement of \(B\). Now removing from
+	\(A\) the intersection of \(A\) and the complement of \(B\) leaves only
+	the intersection of \(A\) and \(B\). Finally, it is the case that the
+	intersection of \(A\) and \(B\) is a subset of \(B\) given the
+	definition of set intersection.
+\end{proof}
+
+\subproblem{}\label{2f}
+\[A \setminus (B \setminus A) = A \setminus B\]
+\begin{thm}[Equality fails in~\ref{2f}]
+	Given sets \(A\) and \(B\), it is not the case that the portion of \(A\)
+	without the portion of \(B\) which does not overlap with \(A\) is equal
+	to the portion of \(A\) which does not overlap with \(B\). Symbolically,
+	that is:
+	\[\neg [A \setminus (B \setminus A) = A \setminus B]\]
+\end{thm}
+\begin{proof}
+	Choose set \(A\) to be the set of integers. Choose set \(B\) to be the
+	set of all odd integers specificaly. Since the set of all odd integers
+	only includes members which are also in the set of all integers,
+	removing \(A\) from \(B\) leaves the empty set. That is, for our
+	particular choices of \(A\) and \(B\), we have that
+	\(B \setminus A = \emptyset\). By substitution, removing from \(A\) the
+	portion of \(B\) that does not overlap with \(A\) is simply removing the
+	empty set from \(A\). Removing the empty set leaves a set unchanged, so
+	our particular choices for \(A\) and \(B\) actually give
+	\(A \setminus (B \setminus A) = A\).
+
+	Continuing with our previous choices for sets \(A\) and \(B\), we can
+	see that removing the the set of all odd integers (i.e., \(B\)) from
+	the set of all integers (i.e., \(A\)) leaves the set of all even
+	integers. Now suppose it really was the case that the portion of \(A\)
+	without the portion of \(B\) which does not overlap with \(A\) is equal
+	to the portion of \(A\) which does not overlap with \(B\). Then that
+	would mean that the set of all integers is equal to the set of just the
+	even integers, which is absurd as there are certainly integers which are
+	not even (specifically, there are odd integers). Since we have reached a
+	contradiction, we can say that we were incorrect in our supposition, and
+	so it is not always the case that \(A\) without the portion of \(B\)
+	which does not overlap with \(A\) is equal to \(A\) without the
+	overlapping portion of \(B\).
+\end{proof}
+
+\begin{thm}[RHS is a subset of LHS in~\ref{2f}]
+	Given sets \(A\) and \(B\), the portion of \(A\) which does not overlap
+	with \(B\) is a subset of the portion of \(A\) without the portion of
+	\(B\) which does not overlap with \(A\). Symbolically, that is:
+	\[A \setminus B \subset A \setminus (B \setminus A)\]
+\end{thm}
+\begin{proof}
+	Assume there are two arbitrary sets \(A\) and \(B\). Note that removing
+	the portion of \(B\) which overlaps with \(A\) is equivalent to taking
+	the intesection of \(B\) and the complement of \(A\). Now removing from
+	\(A\) the intersection of \(B\) and the complement of \(A\) would only
+	remove portions of \(A\) that were also in the complement of \(A\) which
+	also happened to be in \(B\). As \(A\) and the complement of \(A\)
+	necessarilly do not overlap at all, this would remove nothing from \(A\)
+	regardless of the nature of \(B\). Finally, taking the portion of \(A\)
+	which does not overlap with \(B\) gives a subset of \(A\), and, by
+	substitution, a subset of the portion of \(A\) which does not overlap
+	with the portion of \(B\) which does not itself overlap with \(A\).
+\end{proof}
+
+\subproblem{}\label{2g}
+\[A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)\]
+\begin{thm}[Equality holds in~\ref{2g}]
+	Given sets \(A\), \(B\), and \(C\), the intersection of \(A\) and the
+	portion of \(B\) which does not overlap with \(C\) is equal to the
+	portion of the intersection of \(A\) and \(B\) without the portion
+	overlapping the intersection of \(A\) and \(C\). Symbolically, that is:
+	\[A \cap (B \setminus C) = (A \cap B) \setminus (A \cap C)\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Let \(A\), \(B\), and \(C\) be sets.
+
+	\medskip
+	First, let's consider the intersection of \(A\) and the portion of \(B\)
+	which does not overlap with \(C\). Since the empty set is already known
+	to be a subset of all sets, in order to demonstrate this first subset
+	relationship it is only necessary to demonstrate that if some element
+	were indeed in \(A \cap (B \setminus C)\), then it would follow that the
+	element must also be in \((A \cap B) \setminus (A \cap C)\).
+
+	Let \(x\) be some arbitrary member of \(A \cap (B \setminus C)\). We
+	know that \(x\) must be in both \(A\) and \(B \setminus C\) due to the
+	definition of set intersection. We can also say that \(x\) must be in
+	\(B\) and that \(x\) must not be in \(C\) given the definition of set
+	difference. So since \(x\) must be in both \(A\) and \(B\), we know that
+	\(x\) is in \(A \cap B\) given the definition of set intersection. So
+	all that remains to demonstrate the subset relationship is to show that
+	\(x\) is not in \(A \cap C\).
+
+	Let's suppose for a bit that \(x\) really was somehow in \(A \cap C\).
+	That would imply that both \(x\) was in \(A\) and that \(x\) was in
+	\(C\), again by the definition of set intersection. However, this
+	contradicts the fact that \(x\) must not be in \(C\), which we had
+	already established before we made this absurd supposition. So it must
+	be the case that \(x\) is not in \(A \cap C\). As a result, we can say
+	with certainty that the intersection of \(A\) and the portion of \(B\)
+	which does not overlap with \(C\) is a subset of the portion of the
+	intersection of \(A\) and \(B\) without the portion overlapping the
+	intersection of \(A\) and \(C\).
+
+	So we have demonstrated that
+	\[A \cap (B \setminus C) \subset (A \cap B) \setminus (A \cap C)\]
+
+	\medskip
+	Second, let's consider the portion of the intersection of \(A\) and
+	\(B\) without the portion overlapping the intersection of \(A\) and
+	\(C\). Again, since the empty set is already known to be a subset of all
+	sets, we simply need to demonstrate that if some element were indeed to
+	exist in \((A \cap B) \setminus (A \cap C)\), then it would follow that
+	the element must also be in \(A \cap (B \setminus C)\).
+
+	Let \(x\) be some arbitrary member of the intersection of \(A\) and
+	\(B\) without the portion overlapping the intersection of \(A\) and
+	\(C\). We know that \(x\) must be in \(A \cap B\) and that \(x\) must
+	not be in \(A \cap C\) due to the definition of set difference. Further,
+	we know that \(x\) must be in both \(A\) and \(B\) given the definition
+	of set intersection. So since \(x\) is in \(A\), all that remains to
+	demonstrate the subset relationship is to show that \(x\) must in
+	\(B \setminus C\) in order to show that \(x\) in
+	\(A \cap (B \setminus C)\).
+
+	Recall that \(x\) is not in \(A \cap C\). In other words, it is not the
+	case that both \(x\) is in \(A\) and \(x\) is in \(C\). Using De
+	Morgan's Law, we can translate this statement into the equivalent
+	statement that either \(x\) is not in \(A\) or \(x\) is not in \(C\) (or
+	both). Since we have already established that \(x\) must be in \(A\), we
+	can say that \(x\) must not be in \(C\) using the disjunctive syllogism.
+	Combined with our previous demonstration that \(x\) must be in \(B\),
+	we can say that \(x\) must be in \(B \setminus C\) using the definition
+	of set difference.
+
+	So we have demonstrated that
+	\[(A \cap B) \setminus (A \cap C) \subset A \cap (B \setminus C)\]
+
+	\medskip
+	Finally, since we have demonstrated that each set is a subset of the
+	other, we can say that the sets are equal.
+\end{proof}
+
+\subproblem{}\label{2h}
+\[A \cup (B \setminus C) = (A \cup B) \setminus (A \cup C)\]
+\begin{thm}[Equality fails in~\ref{2h}]
+	Given sets \(A\), \(B\), and \(C\), it is not the case that the union of
+	\(A\) with the portion of \(B\) which does not overlap with \(C\) is
+	equal to the set resulting from removing the union of \(A\) and \(C\)
+	from the union of \(A\) and \(B\). Symbolically, that is
+	\[\neg [A \cup (B \setminus C) = (A \cup B) \setminus (A \cup C)]\]
+\end{thm}
+\begin{proof}
+	Choose \(A\) to be the set of multiples of 3, \(B\) to be the set of
+	multiples of 4, and \(C\) to be the set of multiples of 2. We can see
+	that \(B \setminus C\) is the empty set since all multiples of 4 are
+	also multiples of 2. So \(A \cup (B \setminus C)\) is just the multiples
+	of 3 given the behavior of set union with the empty set. Note that
+	\(A \cup (B \setminus C)\) is not empty since there really do exist
+	multiples of 3 (for example, 3 itself).
+
+	Given our choices, \(A \cup B\) is the set of all multiples of 3 or 4,
+	and \(A \cup C\) is the set of all multiples of 3 or 2. Since any
+	multiple of 3 or 4 (or both) would certainly be a multiple of either 3
+	or 2 or both, then \((A \cup B) \setminus (A \cup C)\) is the empty set.
+
+	Since \(A \cup (B \setminus C)\) is a non-empty set and
+	\((A \cup B) \setminus (A \cup C)\) is the empty set, it is certainly
+	not the case that \(A \cup (B \setminus C)\) is a subset of
+	\((A \cup B) \setminus (A \cup C)\). Therefore, we can say that equality
+	of the sets is not possible in this case.
+\end{proof}
+
+\begin{thm}[RHS is a subset of LHS in~\ref{2h}]
+	Given sets \(A\), \(B\), and \(C\), the set resulting from removing the
+	union of \(A\) and \(C\) from the union of \(A\) and \(B\) is a subset
+	of the union of \(A\) and the portion of \(B\) which does not overlap
+	with \(C\). Symbolically, that is
+	\[(A \cup B) \setminus (A \cup C) \subset A \cup (B \setminus C)\]
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets. Since the empty set is already
+	known to be a subset of all sets, we will simply examine whether some
+	arbitrary value which might exist in \((A \cup B) \setminus (A \cup C)\)
+	would necessarilly also be in \(A \cup (B \setminus C)\).
+
+	Let \(x\) be some arbitrary member of
+	\((A \cup B) \setminus (A \cup C)\). We know that \(x\) is in
+	\(A \cup B\) and that \(x\) is not in \(A \cup C\). Using the definition
+	of set union, we can say both that \(x\) is in \(A\) or \(B\) and that
+	it is not the case that \(x\) is in \(A\) or \(C\) (or both). De
+	Morgan's Law tells use that the latter is equivalent to the statement
+	that both \(x\) is not in \(A\) and \(x\) is not in \(C\). This combined
+	with the previously established statement that \(x\) is in \(A\) or
+	\(x\) is in \(B\) (or both), the disjunctive syllogism informs us that
+	it must be that \(x\) is in \(B\). Taking this together with \(x\) not
+	being in \(C\), by definition we can say \(x\) is in \(B \setminus C\).
+	It follows that \(x\) is in \(A \cup (B \setminus C)\) by disjunctive
+	introduction.
+
+	So \((A \cup B) \setminus (A \cup C)\) is a subset of
+	\(A \cup (B \setminus C)\).
+\end{proof}
+
+\subproblem{}\label{2i}
+\[(A \cap B) \cup (A \setminus B) = A\]
+\begin{thm}[Equality holds in~\ref{2i}]
+	Given sets \(A\) and \(B\), the union between the intersection of \(A\)
+	and \(B\) with the portion of \(A\) not overlapping \(B\) is equal to
+	\(A\). Symbolically, that is
+	\[(A \cap B) \cup (A \setminus B) = A\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets. We will demonstrate equality by
+	demonstrating that \((A \cap B) \cup (A \setminus B)\) and \(A\) are
+	subsets of each other.
+
+	First, we will address \((A \cap B) \cup (A \setminus B)\). Since the
+	empty set is already known to be a subset of all sets, we will simply
+	examine whether some arbitrary value which might exist in the set would
+	necessarilly also be in \(A\). So let \(x\) be in
+	\((A \cap B) \cup (A \setminus B)\). We know that \(x\) is either in
+	\(A \cap B\) or in \(A \setminus B\) due to the definition of set union.
+	In the case that \(x\) is in \(A \cap B\), we would know that \(x\) is
+	in \(A\) and \(x\) is in \(B\) by the definition of set intersection,
+	and so we immediately have that \(x\) is necessarilly in \(A\). On the
+	other hand, if \(x\) is in \(A \setminus B\), then \(x\) is in \(A\) and
+	\(x\) is not in \(B\) given the definition of set difference. Since we
+	have shown that such an \(x\) is in \(A\) no matter what, it is certain
+	that \((A \cap B) \cup (A \setminus B)\) is a subset of \(A\).
+
+	Second, we will proceed from \(A\). Again, since the empty set is known
+	to be a subset of all sets, we only need to consider whether some
+	arbitrary value which might exist in \(A\) would necessarilly also exist
+	in \((A \cap B) \cup (A \setminus B)\). Let \(x\) be in \(A\). Notice
+	that it is either the case that \(x\) is also in \(B\) or it is not the
+	case that \(x\) is in \(B\). If \(x\) is indeed in \(B\), then the fact
+	that \(x\) is in both \(A\) and \(B\) means that \(x\) is in
+	\(A \cap B\) by the definition of set intersection, and by disjunctive
+	introduction we know that \(x\) is also in
+	\((A \cap B) \cup (A \setminus B)\). On the other hand, if \(x\) is not
+	in \(B\), then the definition of set difference tells us that \(x\) is
+	in \(A \setminus B\), and by extension \(x\) is also in
+	\((A \cap B) \cup (A \setminus B)\). So \(A\) is a subset of
+	\((A \cap B) \cup (A \setminus B)\).
+\end{proof}
+
+\subproblem{}\label{2j}
+\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+\begin{thm}[Implication holds in~\ref{2j}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), if \(A\) is a subset of \(C\)
+	and \(B\) is a subset of \(D\), then the cartesian product of \(A\) and
+	\(B\) is a subset of the cartesian product of \(C\) and \(D\).
+	Symbolically, that is
+	\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), \(C\), and \(D\) be sets such that \(A\) is a subset
+	of \(C\) and \(B\) is a subset of \(D\). Consider the nature of
+	\(A \times B\). If the set is empty, then it is of course a subset of
+	\(C \times D\) since the empty set is a subset of all sets. If instead
+	\(A \times B\) is not empty, we can let \((x, y)\) be some arbitrary
+	member of \(A \times B\) where \(x\) is in \(A\) and \(y\) is in \(B\).
+	Since we know that \(A\) is a subset of \(C\) and \(B\) is a subset of
+	\(D\), we can say that \(x\) is in \(C\) and that \(y\) is in \(D\).
+	Given the definition of cartesian product, we can say that \((x, y)\) is
+	also a member of \(C \times D\). Therefore \(A \times B\) must be a
+	subset of \(C \times D\).
+\end{proof}
+
+\subproblem{}\label{2k}
+The converse of~\ref{2j}.
+\begin{remark}[The converse of~\ref{2j}]
+	The statement
+	\[(A \times B) \subset (C \times D) \implies A \subset C \land B \subset D\]
+	is the converse of
+	\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+\end{remark}
+
+\begin{thm}[Implication fails in~\ref{2k}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), it is not the case that the
+	cartesian product of \(A\) and \(B\) being a subset of the cartesian
+	product of \(C\) and \(D\) implies that both \(A\) is a subset of \(C\)
+	and \(B\) is a subset of \(D\). Symbolically, that is
+	\[\neg [(A \times B) \subset (C \times D) \implies A \subset C \land B \subset D]\]
+\end{thm}
+\begin{proof}
+	Choose \(A\) to be the empty set, \(B\) to be the odds, \(C\)
+	to be the integers, and \(D\) to be the evens. Since \(A\) is the empty
+	set, the cartesian product of \(A\) and \(B\) is also the empty set.
+	Since the empty set is a subset of all sets, \(A \times B\) is a subset
+	of \(C \times D\). Now suppose it was the case that \(A \times B\) being
+	a subset of \(C \times D\) really did imply that both \(A\) was a subset
+	of \(C\) and \(B\) was a subset of \(D\). Given our particular choices,
+	that would mean (among other things) that the set of all odds is a
+	subset of the set of all evens, which is absurd. So given our choices it
+	is not the case that \(A \times B\) being a subset of \(C \times D\)
+	implies that both \(A\) is a subset of \(C\) and \(B\) is a subset of
+	\(D\).
+\end{proof}
+
+\subproblem{}\label{2l}
+The converse of~\ref{2j}, assuming that \(A\) and \(B\) are nonempty.
+\begin{remark}[The converse of~\ref{2j} with nonempty \(A\) and \(B\)]
+	The statement
+	\[A \neq \emptyset \land B \neq \emptyset \land (A \times B) \subset (C \times D) \implies A \subset C \land B \subset D\]
+	is the converse of
+	\[A \subset C \land B \subset D \implies (A \times B) \subset (C \times D)\]
+	except with the added restriction that neither \(A\) nor \(B\) are empty.
+\end{remark}
+
+\begin{thm}[Implication holds in~\ref{2l}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), if \(A\) and \(B\) are
+	nonempty and the cartesian product of \(A\) and \(B\) is a subset of the
+	cartesian product of \(C\) and \(D\), then both \(A\) is a subset of \(C\)
+	and \(B\) is a subset of \(D\). Symbolically, that is
+	\[A \neq \emptyset \land B \neq \emptyset \land (A \times B) \subset (C \times D) \implies A \subset C \land B \subset D\]
+\end{thm}
+\begin{proof}
+	Assume \(A\), \(B\), \(C\), and \(D\) are sets such that neither \(A\)
+	nor \(B\) are the empty set and the cartesian product of \(A\) and \(B\)
+	is a subset of the cartesian product of \(C\) and \(D\). Since neither
+	\(A\) nor \(B\) are the empty set, we can say that the cartesian product
+	of \(A\) and \(B\) is also not the empty set. Let \((x, y)\) be in
+	\(A \times B\) where \(x\) is in \(A\) and \(y\) is in \(B\). Since we
+	have established that \(A \times B\) is a subset of \(C \times D\), we
+	know that \((x, y)\) is also in \(C \times D\). Given the definition of
+	the cartesian product, we can say that both \(x\) is in \(C\) and \(y\)
+	is in \(D\). As previously stated, \(x\) is an arbitrary member of \(A\)
+	and \(y\) is an arbitrary member of \(B\), so we can say that \(A\) is a
+	subset of \(C\) and \(B\) is a subset of \(D\).
+\end{proof}
+
+\subproblem{}\label{2m}
+\[(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)\]
+\begin{thm}[Equality fails in~\ref{2m}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), it is not the case that the
+	set union of the cartesian products of \(A\) with \(B\) and \(C\) with
+	\(D\) is equal to the cartesian product of the set unions of \(A\) with
+	\(C\) and \(B\) with \(D\). Symbolically, that is
+	\[\neg [(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)]\]
+\end{thm}
+\begin{proof}
+	Choose \(A\) to be the set of just 1, \(B\) to be the set of just 2,
+	\(C\) to be the set of just 3, and \(D\) to be the set of just 4. So the
+	cartesian product of \(A\) and \(B\) is the set of just \((1, 2)\) and
+	the cartesian product of \(C\) and \(D\) is the set of just \((3, 4)\).
+	The union of \(A \times B\) and \(C \times D\) is the set
+	\(\{(1, 2), (3, 4)\}\). Now the union of \(A\) and \(C\) is the set
+	\(\{1, 3\}\), and the union of \(B\) and \(D\) is the set \(\{2, 4\}\).
+	The cartesian product of \(A \cup C\) and \(B \cup D\) is the set
+	\(\{(1, 2), (1, 4), (3, 2), (3, 4)\}\). Since
+	\((A \cup C) \times (B \cup D)\) has members that
+	\((A \times B) \cup (C \times D)\) does not, the two sets are not equal.
+\end{proof}
+
+\begin{thm}[LHS is a subset of RHS in~\ref{2m}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), the set union of the
+	cartesian products of \(A\) with \(B\) and \(C\) with \(D\) is a subset
+	of the cartesian product of the set unions of \(A\) with \(C\) and \(B\)
+	with \(D\). Symbolically, that is
+	\[(A \times B) \cup (C \times D) \subset (A \cup C) \times (B \cup D)\]
+\end{thm}
+\begin{proof}
+	Assume \(A\), \(B\), \(C\), and \(D\) are sets. If the set union of the
+	cartesian products of \(A\) with \(B\) and \(C\) with \(D\) is an empty
+	set, then we know it must be a subset of the cartesian product of the
+	set unions of \(A\) with \(C\) and \(B\) with \(D\) since the empty set
+	is a subset of all sets. So instead we will explore the possibility that
+	there is an arbitrary member of \((A \times B) \cup (C \times D)\). This
+	member would either be in \(A \times B\) or \(C \times D\) or both.
+
+	First, let \((x, y)\) be in \(A \times B\) where \(x\) is in \(A\) and
+	\(y\) is in \(B\). We can say that both \(x\) is in \(A \cup C\) and
+	\(y\) is in \(B \cup D\) by disjunctive introduction. As a result, we
+	can say that \((x, y)\) is in the cartesian product of \(A \cup C\) and
+	\(B \cup D\).
+
+	Second, let \((x, y)\) be in \(C \times D\) where \(x\) is in \(C\) and
+	\(y\) is in \(D\). We can say that both \(x\) is in \(A \cup C\) and
+	\(y\) is in \(B \cup D\) by disjunctive introduction. As a result, we
+	can say that \((x, y)\) is in the cartesian product of \(A \cup C\) and
+	\(B \cup D\).
+\end{proof}
+
+\subproblem{}\label{2n}
+\[(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)\]
+\begin{thm}[Equality holds in~\ref{2n}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), the intersection of the
+	cartesian products of \(A\) with \(B\) and \(C\) with \(D\) is equal to
+	the cartesian product of the intersections of \(A\) with \(C\) and \(B\)
+	with \(D\). Symbolically, that is
+	\[(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Let \(A\), \(B\), and \(C\) be sets.
+
+	\medskip
+	First consider \((A \times B) \cap (C \times D)\). In the trivial case
+	that the set is empty, we can say that it is also a subset of
+	\((A \cap C) \times (B \cap D)\) since the empty set is a subset of all
+	sets. So instead, let \((x,y)\) be some arbitrary member of the set.
+	Given the definition of set intersection, we can say that \((x,y)\) is
+	in \(A \times B\) and in \(C \times D\). So we know that \(x\) is in
+	\(A\), that \(y\) is in \(B\), that \(x\) is also in \(C\), and that
+	\(y\) is also in \(D\). By the definition of set intersection, we can
+	say that \(x\) is in \(A \cap C\) and that \(y\) is in \(B \cap D\).
+	So taking the cartesian product of these two new sets, we can say that
+	\((x,y)\) is in \((A \cap C) \times (B \cap D)\). Thus we know for
+	certain that \((A \times B) \cap (C \times D)\) is always a subset of
+	\((A \cap C) \times (B \cap D)\).
+
+	\medskip
+	Second consider \((A \cap C) \times (B \cap D)\). In the trivial case
+	that the set is empty, we can say that it is a subset of
+	\((A \times B) \cap (C \times D)\) since the empty set is a subset of
+	all sets. Instead, let \((x,y)\) be some arbitrary member of the set.
+	So \(x\) is in \(A \cap C\) and \(y\) is in \(B \cap D\). By the
+	definition of set intersection, we can say that \(x\) is in both \(A\)
+	and \(C\) and that \(y\) is in both \(B\) and \(D\). Constructing some
+	new cartesian products, we can say that \((x,y)\) is in \(A \times B\)
+	and that \((x,y)\) is in \(C \times D\). So by the definition of set
+	intersection, we have that \((x,y)\) is in
+	\((A \times B) \cap (C \times D)\). Thus we know that
+	\((A \cap C) \times (B \cap D)\) is a subset of
+	\((A \times B) \cap (C \times D)\).
+
+	\medskip
+	Therefore we have demonstrated that \((A \cap C) \times (B \cap D)\) is
+	equal to \((A \times B) \cap (C \times D)\).
+\end{proof}
+
+\subproblem{}\label{2o}
+\[A \times (B \setminus C) = (A \times B) \setminus (A \times C)\]
+\begin{thm}[Equality holds in~\ref{2o}]
+	Given sets \(A\), \(B\), and \(C\), the cartesian product of \(A\) with
+	the portion of \(B\) that does not overlap with \(C\) is equal to the
+	portion of the cartesian product of \(A\) with \(B\) which does not
+	overlap with the cartesian product of \(A\) with \(C\). Symbolically,
+	that is
+	\[(A \times (B \setminus C) = (A \times B) \setminus (A \times C)\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Let \(A\), \(B\), and \(C\) be sets.
+
+	\medskip
+	First consider \(A \times (B \setminus C)\). In the trivial case that
+	the set is empty, it is a subset of
+	\((A \times B) \setminus (A \times C)\) since the empty set is a subset
+	of all sets. So instead, let's explore the case that there is some
+	arbitrary \((x,y)\) in \(A \times (B \setminus C)\). We know that \(x\)
+	is in \(A\) and \(y\) is in \(B \setminus C\), and given the definition
+	of set difference, we can also say both that \(y\) is in \(B\) and that
+	\(y\) is not in \(C\). Constructing cartesian products, we can say that
+	\((x,y)\) is in \(A \times B\), and we would like to explore whether or
+	not \((x,y)\) is also in \(A \times C\).
+
+	Suppose \((x,y)\) really is in \(A \times C\). So we know both that
+	\(x\) is in \(A\) and that \(y\) is in \(C\). However this is absurd, as
+	we have already established that \(y\) is not in \(C\) using only our
+	initial assumptions. So our supposition is false, and \((x,y)\) is not
+	in \(A \times C\). Combining this fact with the previously established
+	\((x,y)\) being in \(A \times B\), by definition we know that \((x,y)\)
+	is in \((A \times B) \setminus (A \times C)\). Thus
+	\(A \times (B \setminus C)\) is a subset of
+	\((A \times B) \setminus (A \times C)\).
+
+	\medskip
+	Second consider \((A \times B) \setminus (A \times C)\). In the trivial
+	case that the set is empty, it is a subset of
+	\(A \times (B \setminus C)\) since the empty set is a subset of all
+	sets. So instead, we'll explore the case that there exists some
+	arbitrary \((x,y)\) in \((A \times B) \setminus (A \times C)\). We know
+	that \((x,y)\) is in \(A \times B\) and not in \(A \times C\) by the
+	definition of set difference. So we have that \(x\) is in \(A\) and
+	\(y\) is in \(B\), but we need to determine if \(y\) is also in \(C\).
+
+	Suppose \(y\) is indeed in \(C\). Since we have already established that
+	\(x\) is in \(A\), we would see that \((x,y)\) is in \(A \times C\).
+	However, this contradicts our previous statement that \((x,y\) is not in
+	\(A \times C\). So it must be that \(y\) is not in \(C\). Taken together
+	with the previously stated fact that \(y\) is in \(B\), the definition
+	of set difference gives us \(y\) in \(B \setminus C\). So \((x,y)\) is
+	in \(A \times (B \setminus C)\). Thus
+	\((A \times B) \setminus (A \times C)\) is a subset of
+	\(A \times (B \setminus C)\).
+
+	\medskip
+	Therefore \(A \times (B \setminus C)\) is equal to
+	\((A \times B) \setminus (A \times C)\).
+\end{proof}
+
+\subproblem{}\label{2p}
+\[(A \setminus B) \times (C \setminus D) = (A \times C \setminus B \times C) \setminus (A \times D)\]
+\begin{thm}[Equality holds in~\ref{2p}]
+	Given sets \(A\), \(B\), \(C\), and \(D\), the cartesian product of the
+	portion of \(A\) which does not overlap with \(B\) with the portion of
+	\(C\) which does not overlap with \(D\) is equal to the portion of the
+	cartesian product of \(A\) with \(C\) which does not overlap with the
+	cartesian product of \(B\) with \(C\), except the portion that overlaps
+	with the cartesian product of \(A\) with \(D\). Symbolically, that is
+	\[(A \setminus B) \times (C \setminus D) = (A \times C \setminus B \times C) \setminus (A \times D)\]
+\end{thm}
+\begin{proof}
+	For equality among sets to hold, it is necessary that both sets are
+	demonstrably subsets of each other. Let \(A\), \(B\), \(C\), and \(D\)
+	be sets.
+
+	\medskip
+	First consider \((A \setminus B) \times (C \setminus D)\). In the
+	trivial case that the set is empty, it is a subset of
+	\((A \times C \setminus B \times C) \setminus (A \times D)\) since the
+	empty set is a subset of all sets. Instead, let's consider the case that
+	there exists some arbitrary \((x,y)\) in
+	\((A \setminus B) \times (C \setminus D)\). We know that \(x\) is in
+	\(A \setminus B\) and that \(y\) is in \(C \setminus D\). Given the
+	definition of set difference, we know that \(x\) is in \(A\), that \(x\)
+	is not in \(B\), that \(y\) is in \(C\), and that \(y\) is not in \(D\).
+	By the definition of the cartesian product, we have that \((x,y)\) is in
+	\(A \times C\), but we need to determine if \((x,y)\) is in either
+	\(B \times C\) or \(A \times D\).
+
+	Suppose \((x,y)\) is in \(B \times C\). Then \(x\) is in \(B\) and \(y\)
+	is in \(C\). However, we have already established that \(x\) is not in
+	\(B\). So it is not the case that \((x,y)\) is in \(B \times C\). Since
+	\((x,y)\) is in \(A \times C\), the definition of set difference gives
+	us \((x,y)\) in \(A \times C \setminus B \times C\).
+
+	Now suppose \((x,y)\) is in \(A \times D\). Then \(x\) is in \(A\) and
+	\(y\) is in \(D\). However, we have already established that \(y\) is
+	not in \(D\), so it must be that \((x,y\) is not in \(A \times D\).
+	Combined with the previously established statement that \((x,y)\) is in
+	\(A \times C \setminus B \times C\), we can say that \((x,y)\) is in
+	\((A \times C \setminus B \times C) \setminus (A \times D)\). Thus
+	\((A \setminus B) \times (C \setminus D)\) is a subset of
+	\((A \times C \setminus B \times C) \setminus (A \times D)\).
+
+	\medskip
+	Second consider
+	\((A \times C \setminus B \times C) \setminus (A \times D)\). In the
+	trivial case that this set is empty, it must be a subset of
+	\((A \setminus B) \times (C \setminus D)\) since the empty set is a
+	subset of all sets. So we will instead consider the situation that there
+	is some \((x,y)\) in
+	\((A \times C \setminus B \times C) \setminus (A \times D)\). Given the
+	definition of set difference, we know that \((x,y)\) is in
+	\(A \times C \setminus B \times C\), that \((x,y)\) is not in
+	\(A \times D\), that \((x,y)\) is in \(A \times C\), and that \((x,y)\)
+	is not in \(B \times C\). So we know that \(x\) is in \(A\) and that
+	\(y\) is in \(C\) by the definition of cartesian product. We have yet
+	to determine if \(x\) is in \(B\) or if \(y\) is in \(D\).
+
+	Suppose \(x\) is in \(B\). Then \((x,y)\) is in \(B \times C\) since we
+	know that \(y\) is in \(C\). However, we have already established that
+	\((x,y)\) is not in \(B \times C\). So it cannot possibly be the case
+	that \(x\) is in \(B\). Further, we can say that \(x\) is in
+	\(A \setminus B\) by the definition of set difference.
+
+	Next, suppose \(y\) is in \(D\). That would mean \((x,y)\) is in
+	\(A \times D\). Yet that contradicts that \((x,y)\) is not in
+	\(A \times D\), which was demonstrated from our assumptions. So our
+	supposition must be false, and \(y\) is not in \(D\). As we have already
+	established that \(y\) is in \(C\), we can say that \(y\) is in
+	\(C \setminus D\) by definition.
+
+	Finally, by constructing a cartesian product of other sets we have
+	constructed, we can say that \((x,y)\) is in
+	\((A \setminus B) \times (C \setminus D)\). Thus
+	\((A \times C \setminus B \times C) \setminus (A \times D)\) is a subset
+	of \((A \setminus B) \times (C \setminus D)\).
+
+	\medskip
+	Therefore \((A \setminus B) \times (C \setminus D)\) is equal to
+	\((A \times C \setminus B \times C) \setminus (A \times D)\).
+\end{proof}
+
+\subproblem{}\label{2q}
+\[(A \times B) \setminus (C \times D) = (A \setminus C) \times (B \setminus D)\]
+\begin{thm}[Equality fails in~\ref{2q}]
+	Given sets of \(A\), \(B\), \(C\), and \(D\), it is not the case that
+	the portion of the cartesian product of \(A\) with \(B\) wihtout the
+	portion of the cartesian product of \(C\) with \(D\) is equal to the
+	cartesian product of the portion of \(A\) which does not overlap with
+	\(C\) with the portion of \(B\) which does not overlap with \(D\).
+	Symbolically, that is
+	\[\neg [(A \times B) \setminus (C \times D) = (A \setminus C) \times (B \setminus D)]\]
+\end{thm}
+\begin{proof}
+	Choose \(A\) to be the set \(\{1\}\), choose \(B\) to be the set
+	\(\{2\}\), choose \(C\) to also be the set \(\{1\}\), and choose \(D\)
+	to be the empty set. So \(A \setminus C\) is the empty set and
+	\(B \setminus D\) is the same as \(B\). Now constructing some cartesian
+	products, we have that \(A \times B\) is \(\{(1,2)\}\), that
+	\(C \times D\) is the empty set, and that
+	\((A \setminus C) \times (B \setminus D)\) is also the empty set. By the
+	definition of set difference, we can see that
+	\((A \times B) \setminus (C \times D)\) is \(\{(1,2)\}\). Since
+	\(\{(1,2)\}\) is not empty, our choices have demonstrated that it is not
+	always the case that \((A \times B) \setminus (C \times D)\) is equal to
+	\((A \setminus C) \times (B \setminus D)\).
+\end{proof}
+
+\begin{thm}[RHS is a subset of LHS in~\ref{2q}]
+	Given sets of \(A\), \(B\), \(C\), and \(D\), the cartesian product of
+	the portion of \(A\) which does not overlap with \(C\) with the portion
+	of \(B\) which does not overlap with \(D\) is a subset of the portion of
+	the cartesian product of \(A\) with \(B\) wihtout the portion of the
+	cartesian product of \(C\) with \(D\). Symbolically, that is
+	\[(A \setminus C) \times (B \setminus D) \subset (A \times B) \setminus (C \times D)\]
+\end{thm}
+\begin{proof}
+	Assume \(A\), \(B\), \(C\), and \(D\) are sets. Since
+	\((A \setminus C) \times (B \setminus D)\) being empty immediately
+	demonstrates that it would be a subset of
+	\((A \times B) \setminus (C \times D)\), we will instead consider
+	whether some arbitrary value in the set would also imply that such a
+	value would also be in \((A \times B) \setminus (C \times D)\). So let
+	\((x,y)\) be in \((A \setminus C) \times (B \setminus D)\). We know that
+	\(x\) must be in \(A \setminus C\) and \(y\) must be in
+	\(B \setminus D\) given the nature of the cartesian product. Now the
+	definition of set difference gives us that \(x\) is in \(A\), that \(x\)
+	is not in \(C\), that \(y\) is in \(B\), and that \(y\) is not in \(D\).
+	We can construct \(A \times B\), which will have \((x,y)\) as a member
+	given the definition of the cartesian product. We can also construct
+	\(C \times D\), but we need to establish whether or not it contains
+	\((x,y)\).
+
+	Suppose \((x,y)\) is in \(C \times D\). Then \(x\) is in \(C\) and \(y\)
+	is in \(D\). However this is absurd, as we have already shown that \(x\)
+	is not in \(C\) (without even going into the matter of the nature of
+	\(y\)). So it must be the case that \((x,y)\) is not in \(C \times D\),
+	and thus we also know that \((x,y)\) is in
+	\((A \times B) \setminus (C \times D)\) by definition.
+
+	Therefore \((A \setminus C) \times (B \setminus D)\) is a subset of
+	\((A \times B) \setminus (C \times D)\).
+\end{proof}
+
+
+\end{document}

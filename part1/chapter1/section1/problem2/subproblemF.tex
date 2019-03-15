@@ -1,0 +1,62 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{2f}
+\[A \setminus (B \setminus A) = A \setminus B\]
+\begin{thm}[Equality fails in~\ref{2f}]
+	Given sets \(A\) and \(B\), it is not the case that the portion of \(A\)
+	without the portion of \(B\) which does not overlap with \(A\) is equal
+	to the portion of \(A\) which does not overlap with \(B\). Symbolically,
+	that is:
+	\[\neg [A \setminus (B \setminus A) = A \setminus B]\]
+\end{thm}
+\begin{proof}
+	Choose set \(A\) to be the set of integers. Choose set \(B\) to be the
+	set of all odd integers specificaly. Since the set of all odd integers
+	only includes members which are also in the set of all integers,
+	removing \(A\) from \(B\) leaves the empty set. That is, for our
+	particular choices of \(A\) and \(B\), we have that
+	\(B \setminus A = \emptyset\). By substitution, removing from \(A\) the
+	portion of \(B\) that does not overlap with \(A\) is simply removing the
+	empty set from \(A\). Removing the empty set leaves a set unchanged, so
+	our particular choices for \(A\) and \(B\) actually give
+	\(A \setminus (B \setminus A) = A\).
+
+	Continuing with our previous choices for sets \(A\) and \(B\), we can
+	see that removing the the set of all odd integers (i.e., \(B\)) from
+	the set of all integers (i.e., \(A\)) leaves the set of all even
+	integers. Now suppose it really was the case that the portion of \(A\)
+	without the portion of \(B\) which does not overlap with \(A\) is equal
+	to the portion of \(A\) which does not overlap with \(B\). Then that
+	would mean that the set of all integers is equal to the set of just the
+	even integers, which is absurd as there are certainly integers which are
+	not even (specifically, there are odd integers). Since we have reached a
+	contradiction, we can say that we were incorrect in our supposition, and
+	so it is not always the case that \(A\) without the portion of \(B\)
+	which does not overlap with \(A\) is equal to \(A\) without the
+	overlapping portion of \(B\).
+\end{proof}
+
+\begin{thm}[RHS is a subset of LHS in~\ref{2f}]
+	Given sets \(A\) and \(B\), the portion of \(A\) which does not overlap
+	with \(B\) is a subset of the portion of \(A\) without the portion of
+	\(B\) which does not overlap with \(A\). Symbolically, that is:
+	\[A \setminus B \subset A \setminus (B \setminus A)\]
+\end{thm}
+\begin{proof}
+	Assume there are two arbitrary sets \(A\) and \(B\). Note that removing
+	the portion of \(B\) which overlaps with \(A\) is equivalent to taking
+	the intesection of \(B\) and the complement of \(A\). Now removing from
+	\(A\) the intersection of \(B\) and the complement of \(A\) would only
+	remove portions of \(A\) that were also in the complement of \(A\) which
+	also happened to be in \(B\). As \(A\) and the complement of \(A\)
+	necessarilly do not overlap at all, this would remove nothing from \(A\)
+	regardless of the nature of \(B\). Finally, taking the portion of \(A\)
+	which does not overlap with \(B\) gives a subset of \(A\), and, by
+	substitution, a subset of the portion of \(A\) which does not overlap
+	with the portion of \(B\) which does not itself overlap with \(A\).
+\end{proof}
+
+\end{document}
+

@@ -1,0 +1,48 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\subproblem{}\label{s2p2d}
+
+Show that function inversion preserves set difference. Symbolically, that is:
+\[\inverse{f}(B_0 \without B_1) = \inverse{f}(B_0) \without \inverse{f}(B_1)\]
+
+\begin{thm}
+	Set difference distributes through the preimage of a function.
+	Symbolically, given \(\mapping{f}{A}{B}\) and \(B_0 \subset B\) and
+	\(B_1 \subset B\), that is:
+	\[\inverse{f}(B_0 \without B_1) = \inverse{f}(B_0) \without \inverse{f}(B_1)\]
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	and let \(B_0\) and \(B_1\) be a subsets of \(B\).
+
+	First, assume \(x\) is in \(\inverse{f}(B_0 \without B_1)\). By the
+	definition of preimage, we know that there is some \(y = f(x)\) in
+	\(B_0 \without B_1\). We know that \(y\) is in \(B_0\) and that \(y\) is
+	not in \(B_1\) given the definition of set difference. Recalling that
+	\(y = f(x)\), the definition of preimage gives both \(x\) in
+	\(\inverse{f}(B_0)\) and \(x\) not in \(\inverse{f}(B_1)\). So \(x\) is
+	in \(\inverse{f}(B_0) \without \inverse{f}(B_1)\) by the definition of
+	set difference. Thus \(\inverse{f}(B_0 \without B_1)\) is a subset of
+	\(\inverse{f}(B_0) \without \inverse{f}(B_1)\).
+
+	Next, assume \(x\) is in \(\inverse{f}(B_0) \without \inverse{f}(B_1)\).
+	By the definition of set difference, we have that \(x\) is in
+	\(\inverse{f}(B_0)\) and \(x\) is not in \(\inverse{f}(B_1)\). By the
+	definition of preimage, we know that there is some \(y = f(x)\) in
+	\(B_0\), and we know that there is no value \(y' = f(x)\) such that
+	\(y'\) is in \(B_1\). Since we have established that \(y = f(x)\), we
+	can further say that \(y\) is not in \(B_1\). So \(y\) is in
+	\(B_0 \without B_1\) by the definition of set difference. Recalling that
+	\(y = f(x)\), we have that \(x\) is in \(\inverse{f}(B_0 \without B_1)\)
+	by the definition of preimage. Thus
+	\(\inverse{f}(B_0) \without \inverse{f}(B_1)\) is a subset of
+	\(\inverse{f}(B_0 \without B_1)\).
+
+	As we have shown that \(\inverse{f}(B_0 \without B_1)\) and
+	\(\inverse{f}(B_0) \without \inverse{f}(B_1)\) are subsets of each
+	other, we have therefore established set equality.
+\end{proof}
+
+\end{document}

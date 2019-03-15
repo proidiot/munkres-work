@@ -7,7 +7,7 @@
 If \(\compose{g}{f}\) is injective, what can you say about injectivity of \(f\)
 and \(g\)?
 
-\begin{thm}
+\begin{thm}\thlabel{s2p4ct1}
 	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), if
 	\(\compose{g}{f}\) is injective, then \(f\) must also be injective.
 \end{thm}
@@ -71,7 +71,28 @@ and \(g\)?
 	\(A\) under \(f\).
 \end{thm}
 \begin{proof}
-	\todo{}
+	Let \(A\), \(B\), and \(C\) be sets. Let \(f\) be a mapping from \(A\)
+	to \(B\) and let \(g\) be a mapping from \(B\) to \(C\) such that
+	\(\compose{g}{f}\) is injective. Note that, for \(x\) and \(x'\) in
+	\(A\), if \(x \neq x'\) then
+	\((\compose{g}{f})(x) \neq (\compose{g}{f})(x')\) as this is the
+	contrapositive of the injectivity of \(\compose{g}{f}\).
+
+	Assume \(x\) and \(x'\) are in \(A\) such that \(f(x) \neq f(x')\). Now
+	\(x = x'\) would contradict \(f(x) \neq f(x')\) by the rule of
+	assignment, so we know \(x \neq x'\). Recalling the note about the
+	contrapositive of injectivity, we have that
+	\((\compose{g}{f})(x) \neq (\compose{g}{f})(x')\) by modus ponens.
+
+	Suppose \(g(f(x)) = g(f(x'))\). By the definition of function
+	composition, we see \((\compose{g}{f})(x) = (\compose{g}{f})(x')\).
+	However, this contradicts
+	\((\compose{g}{f})(x) \neq (\compose{g}{f})(x')\), which we showed
+	follows from our assumptions. So our supposition is false, and
+	\(g(f(x)) \neq g(f(x'))\). Since we have shown that \(f(x) \neq f(x')\)
+	implies \(g(f(x)) \neq g(f(x'))\), we also know \(g(f(x)) = g(f(x'))\)
+	implies \(f(x) = f(x')\) by contraposition. Therefore \(g\) is
+	injective on the image of \(A\) under \(f\).
 \end{proof}
 
 \end{document}

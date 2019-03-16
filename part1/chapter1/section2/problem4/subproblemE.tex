@@ -9,7 +9,26 @@ If \(\compose{g}{f}\) is surjective, what can you say about surjectivity of
 
 \begin{thm}
 	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), if
-	\(\compose{g}{f}\) is surjective, then \(g\) must also be surjective.
+	\(\compose{g}{f}\) is surjective, then the restriction of \(g\) to the
+	image of \(A\) under \(f\) (i.e. \(\restrict{g}{f(A)}\)) must also be
+	surjective.
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets. Let \(f\) be a mapping from \(A\)
+	to \(B\) and let \(g\) be a mapping from \(B\) to \(C\) such that
+	\(\compose{g}{f}\) is surjective.
+
+	Assume \(z\) is in \(C\). Since \(\compose{g}{f}\) is surjective, we
+	know there exists \(x\) in \(A\) such that \(z = (\compose{g}{f})(x)\).
+	By the definition of function composition, we know \(z = g(f(x))\).
+	Since \(f(x)\) is in the image of \(A\) under \(f\), we know
+	\(\restrict{g}{f(A)}\) is also surjective.
+\end{proof}
+
+\begin{thm}
+	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), if
+	\(\compose{g}{f}\) is surjective, then \(f\) is not necessarilly also
+	surjective.
 \end{thm}
 \begin{proof}
 	\todo{}

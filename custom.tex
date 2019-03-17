@@ -11,6 +11,15 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
+% from https://tex.stackexchange.com/questions/194798/change-vertical-space-in-overset
+% new \oset macro
+\makeatletter
+\newcommand{\oset}[3][0ex]{%
+  \mathrel{\mathop{#3}\limits^{
+    \vbox to#1{\kern-2\ex@
+    \hbox{$\scriptstyle#2$}\vss}}}}
+\makeatother
+
 \newcommand{\card}[1] {\vert{} #1 \vert{}}
 \newcommand{\sunion}{\cup}
 \newcommand{\union}{\cup}
@@ -41,8 +50,14 @@
 \newcommand{\mapping}[3]{{#1}: {#2} \mapsto{} {#3}}
 \newcommand{\inverse}[1]{{#1}^{-1}}
 \newcommand{\compose}[2]{{#1} \circ{} {#2}}
+\newcommand{\composeapply}[3]{(\compose{#1}{#2})({#3})}
 \newcommand{\thru}{-}
 \newcommand{\definedterm}[1]{\emph{\textbf{#1}}}
 \newcommand{\ceil}[1]{\left \lceil #1 \right \rceil}
 \newcommand{\restrict}[2]{{#1}\restriction_{#2}}
+\newcommand{\true}{\mbox{TRUE}}
+\newcommand{\false}{\mbox{FALSE}}
+\newcommand{\booleans}{\{\true,\false\}}
+\newcommand{\eqmod}[3]{{#1} \equiv {#2} \mod {#3}}
+\newcommand{\maybeeqmod}[3]{{#1} \oset{?}{\equiv} {#2} \mod {#3}}
 

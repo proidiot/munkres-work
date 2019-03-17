@@ -19,10 +19,10 @@ If \(\compose{g}{f}\) is surjective, what can you say about surjectivity of
 	\(\compose{g}{f}\) is surjective.
 
 	Assume \(z\) is in \(C\). Since \(\compose{g}{f}\) is surjective, we
-	know there exists \(x\) in \(A\) such that \(z = (\compose{g}{f})(x)\).
-	By the definition of function composition, we know \(z = g(f(x))\).
-	Since \(f(x)\) is in the image of \(A\) under \(f\), we know
-	\(\restrict{g}{f(A)}\) is also surjective.
+	know there exists \(x\) in \(A\) such that
+	\(z = \composeapply{g}{f}{x}\). By the definition of function
+	composition, we know \(z = g(f(x))\). Since \(f(x)\) is in the image of
+	\(A\) under \(f\), we know \(\restrict{g}{f(A)}\) is also surjective.
 \end{proof}
 
 \begin{thm}
@@ -31,7 +31,40 @@ If \(\compose{g}{f}\) is surjective, what can you say about surjectivity of
 	surjective.
 \end{thm}
 \begin{proof}
-	\todo{}
+	Let \(A\) be \({2,3}\), let \(B\) be \({4,5,6}\), and let \(C\) be
+	\(\booleans\). Also, let \(f\) be defined by \(f(x) = 2x\) and let \(g\)
+	be defined by \(g(x) = \maybeeqmod{x}{0}{3}\). Note that \(f(2) = 4\) is
+	in \(B\) and \(f(3) = 6\) is also in \(B\); since \(2\) and \(3\) are
+	the only values in \(A\), we know \(f\) does indeed map from \(A\) to
+	\(B\). So we can construct \(\compose{g}{f}\), which is by definition
+	\(g(f(x))\) for \(x\) in \(A\). Now let \(z\) be in \(C\). So either
+	\(z = \true\) or \(z = \false\), and we will explore these cases
+	separately.
+
+	First, assume \(z = \true\). Choose \(x = 3\), which is in \(A\). Now
+	\(f(x) = 2 \times 3 = 6\). By substitution, we see that
+	\(\composeapply{g}{f}{x} = g(f(x)) = g(6) = \maybeeqmod{6}{0}{3} = \true\).
+	So there exists \(x\) in \(A\) such that \(z = \composeapply{g}{f}{x}\).
+
+	Next, assume \(z = \false\). Choose \(x = 2\), which is in \(A\). Now
+	\(f(x) = 2 \times 2 = 4\). By substitution, we see that
+	\(\composeapply{g}{f}{x} = g(f(x)) = g(4) = \maybeeqmod{4}{0}{3} = \false\).
+	So there exists \(x\) in \(A\) such that \(z = \composeapply{g}{f}{x}\).
+
+	Since for every \(z\) in \(C\) there exists \(x\) in \(A\) such that
+	\(z = \composeapply{g}{f}{x}\), we have demonstrated that
+	\(\compose{g}{f}\) is surjective.
+
+	Now assume \(y = 5\), which is in \(B\). Suppose there was an \(x\) in
+	\(A\) such that \(y = f(x)\). By substitution, we see that
+	\(5 = f(x) = 2x\). Solving for \(x\), we get \(x = \frac{5}{2}\).
+	However, observe that \(\frac{5}{2}\) is not in \(A\), which contradicts
+	our assumption that the domain of \(f\) is \(A\). So our supposition is
+	false, and there is no \(x\) in \(A\) such that \(y = 5 = f(x)\). Thus
+	\(f\) is not surjective.
+
+	Therefore it is possible for \(\compose{g}{f}\) to be surjective even
+	though \(f\) is not surjective.
 \end{proof}
 
 \end{document}

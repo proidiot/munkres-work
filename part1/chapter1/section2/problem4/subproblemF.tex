@@ -7,6 +7,46 @@
 Summarize your answers to \(\ref{s2p4b} \thru~\ref{s2p4e}\) in the form of a
 theorem.
 
-\todo{}
+\begin{thm}\thlabel{s2p4ft1}
+	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), if
+	\(f\) is injective and the restrictuon of \(g\) to the image of \(A\)
+	under \(f\) is also injective, then \(\compose{g}{f}\) is injective.
+\end{thm}
+\begin{proof}
+	\todo{}
+\end{proof}
+
+\begin{thm}
+	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), we can
+	say that \(\compose{g}{f}\) is injective iff \(f\) is injective and the
+	restrictuon of \(g\) to the image of \(A\) under \(f\) is also
+	injective.
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets, let \(f\) be a mapping from \(A\)
+	to \(B\), and let \(g\) be a mapping from \(B\) to \(C\).
+
+	First, assume \(\compose{g}{f}\) is injective. By \thref{s2p4ct1}, we
+	have that \(f\) is injective. Also, by \thref{s2p4ct3}, we have that
+	the restriction of \(g\) to the image of \(A\) under \(f\) is injective.
+	Thus by conjunction, we have that \(f\) is injective and
+	\(\restrict{g}{f(A)}\) is injective.
+
+	Next, assume \(f\) is injective and \(\restrict{g}{f(A)}\) is injective.
+	Thus by \thref{s2p4ft1}, we have that \(\compose{g}{f}\) is injective.
+
+	As we have demonstrated that each implies the other, we have therefore
+	demonstrated that \(\compose{g}{f}\) is injective iff \(f\) is injective
+	and \(\restrict{g}{f(A)}\) is injective.
+\end{proof}
+
+\begin{thm}
+	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), we can
+	say that \(\compose{g}{f}\) is surjective iff the restrictuon of \(g\)
+	to the image of \(A\) under \(f\) is surjective.
+\end{thm}
+\begin{proof}
+	\todo{}
+\end{proof}
 
 \end{document}

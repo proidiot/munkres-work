@@ -7,6 +7,51 @@
 Show that if \(f\) has a left inverse, \(f\) is injective; and if \(f\) has a
 right inverse, \(f\) is surjective.
 
-\todo{}
+\begin{thm}\thlabel{s2p5at1}
+	The identity function is injective.
+\end{thm}
+\begin{proof}
+	Let \(i_C\) be the identity function of a set \(C\). Assume \(x\) and
+	\(x'\) are in \(C\) such that \(i_C(x) = i_C(x')\). By the definition of
+	the identity function, we see that \(x = i_C(x) = i_C(x') = x'\). So
+	\(i_C(x) = i_C(x')\) implies \(x = x'\), and therefore \(i_C\) is
+	injective.
+\end{proof}
+
+\begin{thm}\thlabel{s2p5at2}
+	The identity function is surjective.
+\end{thm}
+\begin{proof}
+	Let \(i_C\) be the identity function of a set \(C\). Assume \(x\) is in
+	\(C\). By the definition of the identity function, we know that
+	\(x = i_C(x)\). So given \(x\) in the co-domain of \(i_C\), we see there
+	exists \(x\) in the domain of \(i_C\) such that \(x = i_C(x)\).
+	Therefore \(i_C\) is surjective.
+\end{proof}
+
+\begin{thm}
+	A function with a left inverse is injective.
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	and let \(g\) be a left inverse of \(f\). By the definition of left
+	inverse, we know that \(\compose{g}{f} = i_A\). Since \(i_A\) is
+	injective by \thref{s2p5at1}, we can say that \(\compose{g}{f}\) is
+	injective.  Finally, by \thref{s2p4ct1}, we know that \(f\) is
+	injective.
+\end{proof}
+
+\begin{thm}
+	A function with a right inverse is surjective.
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, let \(f\) be a mapping from \(A\) to \(B\),
+	and let \(g\) be a rightt inverse of \(f\). By the definition of right
+	inverse, we know that \(\compose{f}{g} = i_B\). Since \(i_B\) is
+	surjective by \thref{s2p5at2}, we can say that \(\compose{f}{g}\) is
+	surjective. By \thref{s2p4et1}, we can say that \(\restrict{f}{g(B)}\)
+	is surjective. Finally, since \(g(B)\) is a subset of \(A\), we can also
+	say \(f\) is also surjective.
+\end{proof}
 
 \end{document}

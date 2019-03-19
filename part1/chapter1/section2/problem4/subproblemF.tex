@@ -13,7 +13,44 @@ theorem.
 	under \(f\) is also injective, then \(\compose{g}{f}\) is injective.
 \end{thm}
 \begin{proof}
-	\todo{}
+	Let \(A\), \(B\), and \(C\) be sets, let \(f\) be an injective mapping
+	from \(A\) to \(B\), and let \(g\) be a mapping from \(B\) to \(C\) such
+	that \(\restrict{g}{f(A)}\) is injective.
+
+	Assume \(x\) and \(x'\) are in \(A\) such that \(x \neq x'\). We know
+	that \(f(x) \neq f(x')\) by the contraposition of the definition of
+	the injectivity of \(f\). Further, since \(f(x)\) and \(f(x')\) are in
+	\(f(A)\) by the definition of image under a function, we know that
+	\(g(f(x)) \neq g(f(x'))\) by the contraposition of the definition of
+	the injectivity of \(\restrict{g}{f(A)}\). By the definition of function
+	composition, we know that
+	\(\composeapply{g}{f}{x} \neq \composeapply{g}{f}{x'}\). Thus, as we
+	have shown that \(x \neq x'\) implies
+	\(\composeapply{g}{f}{x} \neq \composeapply{g}{f}{x'}\), we know that
+	\(\composeapply{g}{f}{x} = \composeapply{g}{f}{x'}\) implies \(x = x'\)
+	by contraposition. Therefore if \(f\) and \(\restrict{g}{f(A)}\) are
+	injective, then \(\compose{g}{f}\) is injective.
+\end{proof}
+
+\begin{thm}\thlabel{s2p4ft2}
+	Given functions \(\mapping{f}{A}{B}\) and \(\mapping{g}{B}{C}\), if the
+	restrictuon of \(g\) to the image of \(A\) under \(f\) is surjective,
+	then \(\compose{g}{f}\) is surjective.
+\end{thm}
+\begin{proof}
+	Let \(A\), \(B\), and \(C\) be sets, let \(f\) be a mapping from \(A\)
+	to \(B\), and let \(g\) be a mapping from \(B\) to \(C\) such that
+	\(\restrict{g}{f(A)}\) is surjective.
+
+	Assume \(z\) is in \(C\). We know that there exists \(y\) in \(f(A)\)
+	such that \(z = g(y)\) due to the definition of surjectivity. Further,
+	we know there exists \(x\) in \(A\) such that \(y = f(x)\) by the
+	definition of the image of a set under a function. By substitution, we
+	see that \(z = g(f(x))\). Finally, by the definition of function
+	composition, we see that \(z = \composeapply{g}{f}{x}\). Thus if \(z\)
+	is in \(C\) we can say there exists \(x\) in \(A\) such that
+	\(z = \composeapply{g}{f}{x}\). Therefore if \(\restrict{g}{f(A)}\) is
+	surjective, then \(\compose{g}{f}\) is surjective.
 \end{proof}
 
 \begin{thm}
@@ -46,7 +83,18 @@ theorem.
 	to the image of \(A\) under \(f\) is surjective.
 \end{thm}
 \begin{proof}
-	\todo{}
+	Let \(A\), \(B\), and \(C\) be sets, let \(f\) be a mapping from \(A\)
+	to \(B\), and let \(g\) be a mapping from \(B\) to \(C\).
+
+	First, assume \(\compose{g}{f}\) is surjective. Thus by \thref{s2p4et1},
+	we have that \(\restrict{g}{f(A)}\) is also surjective.
+
+	Next, assume \(\restrict{g}{f(A)}\) is surjective. Thus by
+	\thref{s2p4ft2}, we have that \(\compose{g}{f}\) is surjective.
+
+	As we have demonstrated that each implies the other, we have therefore
+	demonstrated that \(\compose{g}{f}\) is surjective iff
+	\(\restrict{g}{f(A)}\) is surjective.
 \end{proof}
 
 \end{document}

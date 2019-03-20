@@ -6,6 +6,41 @@
 
 Give an example of a function that has a left inverse but no right inverse.
 
-\todo{}
+\begin{thm}
+	A function with a left inverse does not necessarilly have a right
+	inverse.
+\end{thm}
+\begin{proof}
+	Let \(A\) be the set \(\{1\}\), let \(B\) be the set \(\{1,2\}\), and
+	let \(f\) be a mapping from \(A\) to \(B\) such that \(f(x) = x\) for
+	all \(x\) in \(A\).
+
+	Let the mapping \(\mapping{g}{B}{A}\) be defined by \(g(y) = 1\) for all
+	\(y\) in \(B\). Assume \(x\) is in \(A\). Since \(A\) has only one
+	member, we know that \(x = 1\). We see that \(f(x) = f(1) = 1\) by the
+	definition of \(f\). Further, we see that
+	\(g(f(x)) = g(f(1)) = g(1) = 1\) by the definition of \(g\). Recalling
+	that there is only one value \(x\) in \(A\), we see that
+	\(g(f(x)) = x = i_A(x)\) for all \(x\) in \(A\). So \(g\) is, by
+	definition, a left inverse of \(f\). Thus \(f\) has a left inverse.
+
+	Next, suppose there exists some mapping \(\mapping{h}{B}{A}\) such that
+	\(h\) is a right inverse of \(f\). By definition, we have that
+	\(\composeapply{f}{h}{y} = i_B(y) = y\) for all \(y\) in \(B\). By the
+	definition of function composition, we know
+	\(\composeapply{f}{h}{y} = f(h(y))\), so we have that \(f(h(y)) = y\)
+	for all \(y\) in \(B\). Choose \(y' = 2\), which is in \(B\). By
+	substitution, we have that \(f(h(y')) = f(h(2)) = 2\), and so there must
+	exist some value \(x'\) in \(A\) such that \(x' = h(2)\) and
+	\(f(x') = 2\). However, note that the only possible value of \(x'\) in
+	\(A\) is \(1\), and \(f(1) = 1 \neq 2\). So there does not exist a value
+	\(x'\) in \(A\) such that \(f(x') = 2\), contradicting the statement
+	\(f(h(y')) = f(h(2)) = 2\) which was derived from our supposition. Thus
+	our supposition is false, and there is no right inverse of \(f\).
+
+	As we have constructed such a counterexample, we have therefore shown
+	that it is not necessarilly the case that a function with a left inverse
+	also has a right inverse.
+\end{proof}
 
 \end{document}

@@ -6,6 +6,41 @@
 
 Give an example of a function that has a right inverse but no left inverse.
 
-\todo{}
+\begin{thm}
+	A function with a right inverse does not necessarilly have a left
+	inverse.
+\end{thm}
+\begin{proof}
+	Let \(A\) be the set \(\{1,2\}\), let \(B\) be the set \(\{1\}\), and
+	let \(f\) be a mapping from \(A\) to \(B\) such that \(f(x) = 1\) for
+	all \(x\) in \(A\).
+
+	First, let the mapping \(\mapping{h}{B}{A}\) be defined by \(h(y) = 1\)
+	for all \(y\) in \(B\). Assume \(y'\) is in \(B\). Since \(B\) has only
+	one member, we know that \(y' = 1\). We see that
+	\(f(h(y')) = f(h(1)) = f(1) = 1\) by the definitions of \(f\) and \(h\).
+	Recalling that there is only one value \(y\) in \(B\), we see that
+	\(f(h(y)) = y = i_B(y)\) for all \(y\) in \(B\). So \(h\) is, by
+	definition, a roght inverse of \(f\). Thus \(f\) has a right inverse.
+
+	Next, suppose there exists some mapping \(\mapping{g}{B}{A}\) such that
+	\(g\) is a left inverse of \(f\). By definition, we have that
+	\(\composeapply{g}{f}{x} = i_A(x) = x\) for all \(x\) in \(A\). By the
+	definition of function composition, we know
+	\(\composeapply{g}{f}{x} = g(f(x))\), so we have that \(g(f(x)) = x\)
+	for all \(x\) in \(A\). Choose \(x' = 1\) and \(x'' = 2\), which are
+	each in \(A\). By the definition of \(f\), we know that
+	\(f(x') = f(1) = 1\) and \(f(x'') = f(2) = 1\). Recalling that
+	\(g(f(x)) = x\) for all \(x\) in \(A\), we have that
+	\(g(f(x')) = g(f(1)) = g(1) = 1\) and also
+	\(g(f(x'')) = g(f(2)) = g(1) = 2\) by substitution. However, this would
+	imply both \(g(1) = 1\) and \(g(1) = 2\), which contradicts the rule of
+	assignment. Thus our supposition is false, and there is no left inverse
+	of \(f\).
+
+	As we have constructed such a counterexample, we have therefore shown
+	that it is not necessarilly the case that a function with a right
+	inverse also has a left inverse.
+\end{proof}
 
 \end{document}

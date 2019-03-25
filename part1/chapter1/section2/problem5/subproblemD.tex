@@ -7,17 +7,127 @@
 Can a function have more than one left inverse? More than one right inverse?
 
 \begin{thm}
-	A function can have more than one left inverse?\todo{}
+	A function can have more than one left inverse.
 \end{thm}
 \begin{proof}
-	\todo{}
+	Let \(A\) be the set \(\{0,1\}\), let \(B\) be the set \(\{0,1,3\}\),
+	let \(\mapping{f}{A}{B}\) be defined by \(f(x) = x\), let
+	\(\mapping{g}{B}{A}\) be defined by \(g(y) = y \mod 2\), and let
+	\(\mapping{h}{B}{A}\) be defined by \(h(y) = y \mod 3\). Note that for
+	their given domains, each of these functions produce only outputs in
+	their given codomains.
+
+	First, let's determine if \(g\) is a left inverse of \(f\). Assume \(x\)
+	is in \(A\). We know \(\composeapply{g}{f}{x} = g(f(x))\) by definition.
+	By substitution, we have that
+	\(\composeapply{g}{f}{x} = g(f(x)) = (f(x)) \mod 2 = x \mod 2\).
+	Noting that \(x < 2\) for all \(x\) in \(A\), we can simplify this
+	expression to \(\composeapply{g}{f}{x} = x\). So we know
+	\(\compose{g}{f} = i_A\) by the definition of the identity function, and
+	thus \(g\) is a left inverse of \(f\).
+
+	Next, let's determine if \(h\) is a left inverse of \(f\). Assume \(x\)
+	is in \(A\). We know \(\composeapply{h}{f}{x} = h(f(x))\) by definition.
+	By substitution, we have that
+	\(\composeapply{h}{f}{x} = h(f(x)) = (f(x)) \mod 3 = x \mod 3\).
+	Noting that \(x < 3\) for all \(x\) in \(A\), we can simplify this
+	expression to \(\composeapply{h}{f}{x} = x\). So we know
+	\(\compose{h}{f} = i_A\) by the definition of the identity function, and
+	thus \(h\) is a left inverse of \(f\).
+
+	Finally, we must determine if \(g\) and \(h\) are distinct. We have
+	prevously shown that \(g(y)\) and \(h(y)\) have the same behavior for
+	\(y = 0\) and \(y = 1\), but \(y = 3\) is also in \(B\), so choose
+	\(y' = 3\). Now \(g(y') = g(3) = 3 \mod 2 = 1\) and
+	\(h(y') = h(3) = 3 \mod 3 = 0\). Since \(g(y') = 1 \neq 0 = h(y')\) for
+	a valid choice of \(y'\) in \(B\), we see that \(g\) and \(h\) are
+	distinct. As we have already demonstrated that each of \(g\) and \(h\)
+	are left inverses of \(f\) despite \(g\) and \(h\) being distinct, it is
+	therefore the case that a function can have more than one left inverse.
+\end{proof}
+
+\begin{thm}\thlabel{s2p5dt2}
+	A surjective function cannot have more than one left inverse.
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, and let \(\mapping{f}{A}{B}\) be a
+	surjective function with a left inverse \(g\).
+
+	Suppose there is another left inverse \(h\) of \(f\) such that
+	\(g \neq h\). By the definition of left inverse, we know
+	\(\composeapply{h}{f}{x} = x\) for all \(x\) in \(A\). By the definition
+	of function composition, we have that \(h(f(x)) = x\) for all \(x\) in
+	\(A\). Recalling that \(g\) is also a left inverse of \(f\), we see that
+	\(h(f(x)) = x = g(f(x))\) for all \(x\) in \(A\). So we see that
+	\(h(f(A)) = g(f(A))\) by the definition of image under a function. Since
+	\(g \neq h\), there must be some \(y\) in \(B\) such that
+	\(g(y) \neq h(y)\), and as we have established that
+	\(g(f(A)) = h(f(A))\), it must be that \(y\) is in \(B \without f(A)\).
+	However, we have assumed that \(f\) is surjective, we know there is no
+	\(y\) in \(B \without f(A)\). Therefore our supposition is false, and a
+	surjective function \(f\) with a left inverse \(g\) has no additional
+	left inverse \(h\) which is distinct from \(g\).
 \end{proof}
 
 \begin{thm}
 	A function can have more than one right inverse.
 \end{thm}
 \begin{proof}
-	\todo{}
+	Let \(A\) be the set \(\{0,1,2,3\}\), let \(B\) be the set \(\{0,1\}\),
+	let \(\mapping{f}{A}{B}\) be defined by \(f(x) = x \mod 2\), let
+	\(\mapping{g}{B}{A}\) be defined by \(g(y) = y\), and let
+	\(\mapping{h}{B}{A}\) be defined by \(h(y) = y + 2\).  Note that for
+	their given domains, each of these functions produce only outputs in
+	their given codomains.
+
+	First, let's determine if \(g\) is a right inverse of \(f\). Assume
+	\(y\) is in \(B\). We know \(\composeapply{f}{g}{y} = f(g(y))\) by
+	definition. By substitution we have that
+	\(\composeapply{f}{g}{y} = f(g(y)) = (g(y)) \mod 2 = y \mod 2\). Noting
+	that \(y < 2\) for all \(y\) in \(B\), we can simplify this expression
+	to \(\composeapply{f}{g}{y} = y\). So we know \(\compose{f}{g} = i_B\)
+	by the definition of the identity function, and thus \(g\) is a right
+	inverse of \(f\).
+
+	Next, let's determine if \(h\) is a right inverse of \(f\). Assume \(y\)
+	is in \(B\). We know \(\composeapply{f}{h}{y} = f(h(y))\) by definition.
+	By substitution we have that
+	\(\composeapply{f}{h}{y} = f(h(y)) = (h(y)) \mod 2 = (y + 2) \mod 2\).
+	By the definition of the modulus, we know \(\eqmod{y + 2}{y}{2}\), and
+	so we can simplify the previous equation to
+	\(\composeapply{f}{h}{y} = y \mod 2\). Again, since \(y < 2\) for all
+	\(y\) in \(B\), we can further simplify to
+	\(\composeapply{f}{h}{y} = y\). So we know \(\compose{f}{h} = i_B\) by
+	the definition of the identity function, and thus \(h\) is a right
+	inverse of \(f\).
+
+	Finally, we must determine if \(g\) and \(h\) are distinct. Choose
+	\(y = 0\), which is in \(B\). We see that \(g(y) = g(0) = 0\) and
+	\(h(y) = h(0) = 0 + 2 = 2\). Since \(g(y) = 0 \neq 2 = h(y)\) for some
+	valid choice of \(y\) in \(B\), we have that \(g\) and \(h\) are
+	distinct. Therefore it is possible for a function to have more than one
+	right inverse.
+\end{proof}
+
+\begin{thm}\thlabel{s2p5dt4}
+	An injective function cannot have more than one right inverse.
+\end{thm}
+\begin{proof}
+	Let \(A\) and \(B\) be sets, and let \(\mapping{f}{A}{B}\) be an
+	injective function with a right inverse \(g\).
+
+	Suppose there is another right inverse \(h\) of \(f\) such that
+	\(g \neq h\). So there exists some \(y\) in \(B\) such that
+	\(g(y) \neq h(y)\). By the definition of right inverse, we know
+	\(\composeapply{f}{h}{y} = y\). By the definition of function
+	composition, we have that \(f(h(y)) = y\). Recalling that \(g\) is also
+	a right inverse of \(f\), we see that \(f(h(y)) = y = f(g(y))\).
+	However, since \(f\) is injective, we see that \(f(h(y)) = f(g(y))\)
+	implies \(h(y) = g(y)\), contradicting \(g(y) \neq h(y)\) which was
+	shown from our supposition. Therefore our supposition is false, and
+	given an injective function \(f\) with a right inverse \(g\), there does
+	not exist a right inverse \(h\) of \(f\) such that \(h\) is distinct
+	from \(g\).
 \end{proof}
 
 \end{document}

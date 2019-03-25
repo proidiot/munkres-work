@@ -22,7 +22,21 @@ Show that if \(f\) has both a left inverse \(g\) and a right inverse \(h\), then
 	are equal and the inverse is unique.
 \end{thm}
 \begin{proof}
-	\todo{}
+	Let \(A\) and \(B\) be sets, and let \(\mapping{f}{A}{B}\) be a function
+	with both a left inverse \(g\) and a right inverse \(h\). By
+	\thref{s2p5at3} we know \(f\) is injective, and so by \thref{s2p5dt4} we
+	know \(h\) is the distinct right inverse. By \thref{s2p5at4} we know
+	\(f\) is surjective, and so by \thref{s2p5dt2} we know \(g\) is the
+	distinct left inverse.
+
+	Assume \(y\) is in \(B\). Since \(f\) is surjective, we know there
+	exists \(x\) in \(A\) such that \(y = f(x)\). Recalling that the
+	definition of right inverse gives that \(f(h(y)) = y\), we know
+	\(h(y) = x\) by the injectivity of \(f\). Also, recalling that the
+	definition of left inverse gives that \(g(f(x)) = x\), we have that
+	\(g(y) = x\) by substitution. So we have that \(g(y) = x = h(y)\) for
+	arbitrary \(y\) in \(B\). Thus \(g = h\). Therefore
+	\(g = h = \inverse{f}\) is the unique inverse of \(f\).
 \end{proof}
 
 \end{document}

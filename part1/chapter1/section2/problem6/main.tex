@@ -12,6 +12,68 @@ restricting the domain and range of \(f\) appropriately, obtain from \(f\) a
 bijective function \(g\). Draw the graphs of \(g\) and \(\inverse{g}\). (There
 are several possible choices for \(g\).)
 
-\todo{}
+\begin{thm}
+	Let \(\mapping{f}{\reals}{\reals}\) be defined by \(f(x) = x^3 - x\).
+	Given \(A\) and \(B\) are closed intervals on \(\reals\) such that
+	\(A = [-1/\sqrt{3},1/\sqrt{3}]\) and \(B = [-2/3\sqrt{3},2/3\sqrt{3}]\),
+	it is the case that \(\mapping{g}{A}{B}\) defined by the restriction of
+	\(f\) to \(A\) is bijective.
+\end{thm}
+\begin{proof}
+	Let \(f\) be a mapping from \(\reals\) to \(\reals\) defined by
+	\(f(x) = x^3 - x\), let \(A\) be the set consisting of the closed
+	interval of \(\reals\) between \(-1/\sqrt{3}\) and \(1/\sqrt{3}\),
+	let \(B\) be the set consisting of the closed interval of \(\reals\)
+	between \(-2/{3\sqrt{3}}\) and \(2/{3\sqrt{3}}\), and let \(g\) be a
+	mapping from \(A\) to \(B\) defined by the restriction of \(f\) to
+	\(A\).
+
+	First, we will determine if \(g\) is injective. \todo{}
+
+	Next, we will determine if \(g\) is surjective. \todo{}
+
+	As we have demonstrated that \(g\) is both injective and surjective, we
+	have therefore shown that \(g\) is bijective by definition.
+\end{proof}
+
+\begin{figure}[H]
+\centering{}
+\resizebox {\textwidth} {!} {
+\begin{tikzpicture}[baseline]
+	\begin{axis}[
+		xlabel={\(x\)},
+		ylabel={\(y\)},
+		axis lines=middle,
+		xmin=-0.66, xmax=0.66,
+		ymin=-0.66, ymax=0.66,
+		minor y tick num=0.2,
+	]
+		\addplot
+		[black, domain=-1/sqrt(3):1/sqrt(3), samples=200]
+			{x^3 - x}
+		node[below right, pos=0]
+			{\(g(x)\)};
+	\end{axis}
+\end{tikzpicture} %
+\hskip 10 pt %
+\begin{tikzpicture}[baseline]
+	\begin{axis}[
+		xlabel={\(x\)},
+		ylabel={\(y\)},
+		axis lines=middle,
+		xmin=-0.66, xmax=0.66,
+		ymin=-0.66, ymax=0.66,
+		minor y tick num=0.2,
+	]
+		\addplot
+		[black, domain=-1/sqrt(3):1/sqrt(3), samples=200]
+			({x^3 - x},{x})
+		node[below left, pos=1]
+			{\(\inverse{g}(x)\)};
+	\end{axis}
+\end{tikzpicture}
+}
+\caption{The bijective function \(g\) defined by the restriction of \(f\) to the closed interval bounded by \(\pm 1/\sqrt{3}\), and the inverse of \(g\).}
+\end{figure}
 
 \end{document}

@@ -19,26 +19,83 @@ are several possible choices for \(g\).)
 	it is the case that \(\mapping{g}{A}{B}\) defined by the restriction of
 	\(f\) to \(A\) is bijective.
 \end{thm}
-\begin{proof}
-	Let \(f\) be a mapping from \(\reals\) to \(\reals\) defined by
-	\(f(x) = x^3 - x\), let \(A\) be the set consisting of the closed
-	interval of \(\reals\) between \(-1/\sqrt{3}\) and \(1/\sqrt{3}\),
-	let \(B\) be the set consisting of the closed interval of \(\reals\)
-	between \(-2/{3\sqrt{3}}\) and \(2/{3\sqrt{3}}\), and let \(g\) be a
-	mapping from \(A\) to \(B\) defined by the restriction of \(f\) to
-	\(A\).
-
-	First, we will determine if \(g\) is injective. \todo{}
-
-	Next, we will determine if \(g\) is surjective. \todo{}
-
-	As we have demonstrated that \(g\) is both injective and surjective, we
-	have therefore shown that \(g\) is bijective by definition.
-\end{proof}
+%\begin{proof}
+%	Let \(f\) be a mapping from \(\reals\) to \(\reals\) defined by
+%	\(f(x) = x^3 - x\), let \(A\) be the set consisting of the closed
+%	interval of \(\reals\) between \(-1/\sqrt{3}\) and \(1/\sqrt{3}\),
+%	let \(B\) be the set consisting of the closed interval of \(\reals\)
+%	between \(-2/(3\sqrt{3})\) and \(2/(3\sqrt{3})\), and let \(g\) be a
+%	mapping from \(A\) to \(B\) defined by the restriction of \(f\) to
+%	\(A\).
+%
+%	First, we will determine if \(g\) is injective. Assume \(x_0\) and
+%	\(x_1\) are in \(A\) such that \(f(x_0)\) and \(f(x_1)\) are equal. Note
+%	that we immediately have \(f(x_1) - f(x_0) = 0\) by algebraic
+%	manipulation. To demonstrate the injectivity of \(g\), we simply need to
+%	show that the equality of \(x_0\) and \(x_1\) follows. Suppose \(x_0\)
+%	and \(x_1\) are not equal. By the closure of \(\reals\) under
+%	subtraction, there exists \(d\) in \(\reals\) such that
+%	\(d = x_1 - x_0\). Since we have supposed that \(x_0 \neq x_1\), it
+%	follows that \(d\) is non-zero. By algebraic manipulation, we see that
+%	\(x_0 + d = x_1\). Recall that \(f(x_1) = {x_1}^3 - {x_1}\) by the
+%	definition of \(f\). By substitution, we have that
+%	\begin{align*}
+%		f(x_1) &= {x_1}^3 - {x_1} \\
+%		       &= (x_0 + d) ({(x_0 + d)}^2 - 1) \\
+%		       &= {(x_0 + d)}^3 - (x_0 + d) \\
+%		       &= ({x_0}^3 + 3 {x_0}^2 d + 3 {x_0} d^2 + d^3) - (x_0 + d) \\
+%		       &= ({x_0}^3 - {x_0}) + (3 {x_0}^2 d + 3 {x_0} d^2 + d^3 - d) \\
+%		       &= f(x_0) + (d^3 + 3 {x_0} d^2 + 3 {x_0}^2 d - d) \\
+%		       &= f(x_0) + d (d^2 + 3 {x_0} d + 3 {x_0}^2 - 1)
+%	\end{align*}. Note that \begin{align*}
+%		f(x_1) - f(x_0) &= f(x_0) + d (d^2 + 3 {x_0} d + 3 {x_0}^2 - 1) - f(x_0) \\
+%		                &= d (d^2 + 3 {x_0} d + 3 {x_0}^2 - 1)
+%	\end{align*}. Since we already know that \(f(x_1) - f(x_0) = 0\), it
+%	must be that \(d (d^2 + 3 {x_0} d + 3 {x_0}^2 - 1) = 0\). Since a zero
+%	mulitplicative product requires at least one multiplicand to be zero,
+%	and since we have already established that \(d\) is non-zero, it must be
+%	that \(d^2 + 3 {x_0} d + 3 {x_0}^2 - 1 = 0\). By algebraic manipulation,
+%	we immediately see \(d^2 + 3 {x_0} d + 3 {x_0}^2 = 1\).
+%	
+%	In order to
+%	determine whether \(x_0\) and \(x_1\) are equal, we can consider the
+%	difference \(d = x_0 - x_1\) (which would be in \(\reals\) by closure
+%	under subtraction), noting that \(d = 0\) would imply equality. Also
+%	note that \(x_0 = x_1 + d\) by algebraic manipulation. Now applying
+%	\(f\), we have that \(f(x_0) = {x_0}^3 - x_0\) and
+%	\(f(x_1) = {x_1}^3 - x_1\).  and so \({x_0}^3 - x_0 = {x_1}^3 - x_1\) by
+%
+%
+%
+%
+%
+%
+%
+%	\(f(x_1) = {x_1}^3 - x_1\), and so \({x_0}^3 - x_0 = {x_1}^3 - x_1\) by
+%	substitution. Further, we see that
+%	\({x_0}^3 - x_0 = (x_1 + d)^3 - (x_1 + d) = {x_1}^3 + {x_1}^2 d + {x_1} d^2 + d^3 - x_1 - d\).
+%	Since \({x_0}^3 - x_0 = {x_1}^3 - x_1\), substitution gives us
+%	\({x_1}^3 + {x_1}^2 d + {x_1} d^2 + d^3 - x_1 - d = {x_1}^3 - x_1\).
+%	Subtracting \({x_1}^3 - {x_1}\) from both sides of this equation, we see
+%	that \({x_1}^2 d + {x_1} d^2 + d^3 - d = 0\). Suppose \(d \neq 0\).
+%	Factoring out \(d\), we have that \(d (d^2 + {x_1} d + {x_1}^2 - 1) = 0\).
+%	As a product with zero value implies at least one multiplicand is zero,
+%	and since we have stated that \(d \neq 0\), it must be the case that
+%	\(d^2 + {x_1} d + {x_1}^2 - 1 = 0\). Using the
+%	quadratic formula, we have that
+%	\(d = (-{x_1} \plusorminus \sqrt{{x_1}^2 - 4(1)({x_1}^2 - 1)})/(2(1))\).
+%	By simplification, we have that \(d = (-{x_1} \plusorminus \sqrt{-3{x_1}^2 + 4})/2 = (-{x_1} \plusorminus \sqrt{-1({x_1}+2)({x_1}-2)})/2\).\todo{}
+%
+%	Next, we will determine if \(g\) is surjective. Assume \(y\) is in
+%	\(B\). \todo{}
+%
+%	As we have demonstrated that \(g\) is both injective and surjective, we
+%	have therefore shown that \(g\) is bijective by definition.
+%\end{proof}
 
 \begin{figure}[H]
 \centering{}
-\resizebox {\textwidth} {!} {
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[baseline]
 	\begin{axis}[
 		xlabel={\(x\)},
@@ -71,7 +128,7 @@ are several possible choices for \(g\).)
 		node[below left, pos=1]
 			{\(\inverse{g}(x)\)};
 	\end{axis}
-\end{tikzpicture}
+\end{tikzpicture}%
 }
 \caption{The bijective function \(g\) defined by the restriction of \(f\) to the closed interval bounded by \(\pm 1/\sqrt{3}\), and the inverse of \(g\).}
 \end{figure}

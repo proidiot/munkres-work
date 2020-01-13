@@ -5,12 +5,107 @@
 
 \begin{document}
 
-\problem{}\label{s3p1}
+\problem{}\label{s03p01}
 
 Define two points \((x_0,y_0)\) and \((x_1,y_1)\) of the plane to be equivalent
 if \(y_0 - {x_0}^2 = y_1 - {x_1}^2\). Check that this is an equivalence relation
 and describe the equivalence classes.
 
-%\subfile{part1/chapter1/section2/problem1/subproblemA.tex}
+\begin{thm}\thlabel{s03p01t1}
+	The relation \(\thicksim\) on \({\reals}^2\) such that
+	\(({x_0},{y_0})\thicksim({x_1},{y_1})\) if and only if
+	\({y_0}-{{x_0}^2}={y_1}-{{x_1}^2}\) is reflexive.
+\end{thm}
+\begin{proof}
+	Let \(\thicksim\) be a relation on \({\reals}^2\) such that
+	\(({x_0},{y_0})\thicksim({x_1},{y_1})\) if and only if
+	\({y_0}-{{x_0}^2}={y_1}-{{x_1}^2}\). Now consider some arbitrary
+	element \((a,b) \in {\reals}^2\). Note that \(a\) and \(b\) are members
+	of \(\reals\). By the closure of \(\reals\) under multiplication, we
+	have that \({a}^2 \isin \reals\), and by the closure of \(\reals\) under
+	subtraction, we have that \(b-{{a}^2} \isin \reals\). By the reflexivity
+	of the equivalence relation \(=\) of \(\reals\), we have that
+	\(b-{{a}^2} = b-{{a}^2}\). Thus \((a,b)\thicksim(a,b)\) by the
+	definition of \(\thicksim\). Therefore \(\thicksim\) is reflexive.
+\end{proof}
+
+\begin{thm}\thlabel{s03p01t2}
+	The relation \(\thicksim\) on \({\reals}^2\) such that
+	\(({x_0},{y_0})\thicksim({x_1},{y_1})\) if and only if
+	\({y_0}-{{x_0}^2}={y_1}-{{x_1}^2}\) is symmetric.
+\end{thm}
+\begin{proof}
+	Let \(\thicksim\) be a relation on \({\reals}^2\) such that
+	\(({x_0},{y_0}) \thicksim ({x_1},{y_1})\) if and only if
+	\({y_0} - {{x_0}^2} = {y_1} - {{x_1}^2}\). Now consider elements
+	\((a,b)\) and \((c,d)\) in \({\reals}^2\) such that
+	\((a,b) \thicksim (c,d)\). By the definition of \(\thicksim\), we know
+	that \(b - {{a}^2} = d - {{c}^2}\). Note that each of \(a\), \(b\),
+	\(c\), and \(d\) are members of \(\reals\). By the closure of \(\reals\)
+	under multiplication, we have that \({a}^2 \isin \reals\) and
+	\({c}^2 \isin \reals\). By the closure of \(\reals\) under subtraction,
+	we have that \(b-{{a}^2} \isin \reals\) and \(d-{{c}^2} \isin \reals\).
+	Since we have already shown that \(b - {{a}^2} = d - {{c}^2}\), the
+	symmetry of the equivalence relation \(=\) of \(\reals\) gives us that
+	\(d-{{c}^2} = b-{{a}^2}\). Thus \((c,d)\thicksim(a,b)\) by the
+	definition of \(\thicksim\). Therefore \(\thicksim\) is symmetric.
+\end{proof}
+
+\begin{thm}\thlabel{s03p01t3}
+	The relation \(\thicksim\) on \({\reals}^2\) such that
+	\(({x_0},{y_0})\thicksim({x_1},{y_1})\) if and only if
+	\({y_0}-{{x_0}^2}={y_1}-{{x_1}^2}\) is transative.
+\end{thm}
+\begin{proof}
+	Let \(\thicksim\) be a relation on \({\reals}^2\) such that
+	\(({x_0},{y_0}) \thicksim ({x_1},{y_1})\) if and only if
+	\({y_0} - {{x_0}^2} = {y_1} - {{x_1}^2}\). Now consider elements
+	\((a,b)\), \((c,d)\), and \((e,f)\) in \({\reals}^2\) such that
+	\((a,b) \thicksim (c,d)\) and \((c,d) \thicksim (e,f)\). By the
+	definition of \(\thicksim\), we know that \(b - {{a}^2} = d - {{c}^2}\)
+	and \(d - {{c}^2} = f - {{e}^2}\). Note that each of \(a\), \(b\),
+	\(c\), \(d\), \(e\), and \(f\) are members of \(\reals\). By the closure
+	of \(\reals\) under multiplication, we have that \({a}^2 \isin \reals\),
+	\({c}^2 \isin \reals\), and \({e}^2 \isin \reals\). By the closure of
+	\(\reals\) under subtraction, we have that \(b - {{a}^2} \isin \reals\),
+	\(d - {{c}^2} \isin \reals\), and \(f - {{e}^2} \isin \reals\). Since we
+	have already shown that \(b - {{a}^2} = d - {{c}^2}\) and
+	\(d - {{c}^2} = f - {{e}^2}\), the transitivity of the equivalence
+	relation \(=\) of \(\reals\) gives us that
+	\(b - {{a}^2} = f - {{e}^2}\). Thus \((a,b)\thicksim(e,f)\) by the
+	definition of \(\thicksim\). Therefore \(\thicksim\) is transitive.
+\end{proof}
+
+\begin{thm}\thlabel{s03p01t4}
+	The relation \(\thicksim\) on \({\reals}^2\) such that
+	\(({x_0},{y_0})\thicksim({x_1},{y_1})\) if and only if
+	\({y_0}-{{x_0}^2}={y_1}-{{x_1}^2}\) is an equivalence relation.
+\end{thm}
+\begin{proof}
+	Let \(\thicksim\) be a relation on \({\reals}^2\) such that
+	\(({x_0},{y_0}) \thicksim ({x_1},{y_1})\) if and only if
+	\({y_0} - {{x_0}^2} = {y_1} - {{x_1}^2}\). Since \(\thicksim\) is
+	reflexive (by \thref{s03p01t1}), symmetric (by \thref{s03p01t2}), and
+	transitive (by \thref{s03p01t3}), we have that \(\thicksim\) is, by
+	definition, an equivalence relation.
+\end{proof}
+
+In each of the preceding proofs, we established the desired property can be
+shown from the already-established equivalence relation \(=\) of \(\reals\). In
+order to do so, we had to demonstrate, for some point \((a,b) \in {\reals}^2\),
+that \(b - {{a}^2}\) was in \(\reals\) and equal to some other specific value.
+But what value would this be? For the moment, consider the point
+\((0,0) \in {\reals}^2\). By simplification we have that \(0 - {{0}^2} = 0\). We
+can see that any other point \((c,d) \in {\reals}^2\) such that
+\(d - {{c}^2} = 0\) will be in the same equivalence class as \((0,0)\). By
+algebraic manipulation, we see that \(d = {c}^2\). You may remember from Algebra
+I that this is a parabola with its minimum at \((0,0)\), and so the equivalence
+class of \((0,0)\) under \(\thicksim\) consists of all points on that particular
+parabola. More generaly, if we take any arbitrary point
+\((x,y) \in {\reals}^2\), we can find an equivalence class defined by some point
+\((0,b) \in {\reals}^2\) by choosing \(b \in \reals\) such that
+\(y - {{x}^2} + b = 0\), and this equivalence class will consist of all points
+on the parabola defined by \(y = {{x}^2} - b\) (which will have a minimum at
+\((0,b)\)).
 
 \end{document}

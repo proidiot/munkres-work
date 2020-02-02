@@ -23,5 +23,5 @@ distclean: clean
 	done
 
 %.pdf: %.tex *.tex */*.tex */*/*.tex */*/*/*.tex */*/*/*/*.tex
-	latexmk -cd -pdf $<
+	latexmk -f -cd -pdf $<
 

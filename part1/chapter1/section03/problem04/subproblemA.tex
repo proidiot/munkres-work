@@ -6,6 +6,57 @@
 
 Show that this is an equivalence relation.
 
-\todo{}
+\begin{thm}\thlabel{s03p04at1}
+	Given \(\therelation{=}\) is an equivalence relation on \(\theset{B}\),
+	a surjective function \(\mapping{f}{\theset{A}}{\theset{B}}\), and
+	\(\therelation{\sim}\) is a relation on \(\theset{A}\) such that, for
+	\(\thepair{a_0}{a_1} \in {\theset{A}^2}\), \({a_0} \sim {a_1}\) if and
+	only if \(f(a_0) = f(a_1)\), then \(\therelation{\sim}\) is an
+	equivalence relation.
+\end{thm}
+\begin{proof}
+	Let \(\therelation{=}\) be an equivalence relation on \(\theset{B}\).
+	Let \(\mapping{f}{\theset{A}}{\theset{B}}\) be a surjective function.
+	Let \(\therelation{\sim}\) be a relation on \(\theset{A}\) such that,
+	for all \(\thepair{a_0}{a_1} \in {\theset{A}^2}\), \({a_0} \sim {a_1}\)
+	iff \(f(a_0) = f(a_1)\). We will show that \(\therelation{\sim}\) is an
+	equivalence relation by demonstrating reflexivity, symmetry, and
+	transitivity.
+
+	First, let \(x \in \theset{A}\). Note that by the definition of the
+	cartesian product, \(\thepair{x}{x} \isin {\theset{A}^2}\). By the rule
+	of assignment, there exists some unique \(y \in \theset{B}\) such that
+	\(y = f(x)\). By the reflexivity of \(\therelation{=}\) on
+	\(\theset{B}\), we have that \(y = y\), and by substitution
+	\(f(x) = f(x)\). By the definition of \(\therelation{\sim}\), we have
+	that \(x \sim x\). Thus \(\therelation{\sim}\) is reflexive.
+
+	Next, let \(\thepair{x_0}{x_1} \in \therelation{\sim}\). By the
+	definition of \(\therelation{\sim}\), we have that \(f(x_0) = f(x_1)\).
+	By the rule of assignment, there exists \({y_0} \in \theset{B}\) and
+	\({y_1} \in \theset{B}\) such that \({y_0} = f(x_0)\) and
+	\({y_1} = f(x_1)\). By substitution, we have that \({y_0} = {y_1}\).
+	Since \(\therelation{=}\) is symmetric, we know that \({y_1} = {y_0}\).
+	By substitution, \(f(x_1) = f(x_0)\). Again applying the definition of
+	\(\therelation{\sim}\), we see that \({x_1} \sim {x_0}\). Thus
+	\(\therelation{\sim}\) is symmetric.
+
+	Finally, let \(\thepair{x_0}{x_1} \in \therelation{\sim}\) and
+	\(\thepair{x_1}{x_2} \in \therelation{\sim}\). By the definition of
+	\(\therelation{\sim}\), we have that \(f(x_0) = f(x_1)\) and
+	\(f(x_1) = f(x_2)\). By the rule of assignment, there exists
+	\({y_0} \in \theset{B}\), \({y_1} \in \theset{B}\), and
+	\({y_2} \in \theset{B}\) such that \({y_0} = f(x_0)\),
+	\({y_1} = f(x_1)\), and \({y_2} = f(x_2)\). By substitution, we have
+	that \({y_0} = {y_1}\) and \({y_1} = {y_2}\). Since \(\therelation{=}\)
+	is transitive, we know that \({y_0} = {y_2}\). By substitution,
+	\(f(x_0) = f(x_2)\). Again applying the definition of
+	\(\therelation{\sim}\), we see that \({x_0} \sim {x_2}\). Thus
+	\(\therelation{\sim}\) is transitive.
+
+	As we have demonstrated the reflexivity, symmetry, and transitivity of
+	\(\therelation{\sim}\), we have therefore shown \(\therelation{\sim}\)
+	is an equivalence relation.
+\end{proof}
 
 \end{document}

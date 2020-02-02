@@ -12,7 +12,28 @@ transitive is also reflexive: ``Since \(C\) is symmetric, \(aCb\) implies
 \(bCa\). Since \(C\) is transitive, \(aCb\) and \(bCa\) together imply \(aCa\),
 as desired.'' Find the flaw in this argument.
 
-\todo{}
-%\subfile{part1/chapter1/section2/problem1/subproblemA.tex}
+\begin{remark}[Symmetry and Transitivity are Insufficient for Reflexivity]
+	It is true that given \(\therelation{C}\) is a symmetric and transitive
+	relation on \(\theset{A}\), we can say that any
+	\(\thepair{a}{b} \in \therelation{C}\) implies
+	\(\thepair{b}{a} \isin \therelation{C}\),
+	\(\thepair{a}{a} \isin \therelation{C}\), and
+	\(\thepair{b}{b} \isin \therelation{C}\). However, symmetry and
+	transitivity alone \emph{do not} imply that every \(x \in \theset{A}\)
+	is represented by some pair in \(\therelation{C}\), which would indeed
+	be required for reflexivity. That is, while it is true that the
+	combination of symmetry and transitivity imply reflexivity among the
+	subset of elements which do indeed have some other relation in
+	\(\therelation{C}\), without reflexivity, it would still possible for
+	some \(x\) to exist in \(\theset{A}\) such that there exists no \(y\) in
+	\(\theset{A}\) such that \(\thepair{x}{y} \isin \therelation{C}\). For
+	example, suppose \(\therelation{C}\) is a relation on \(\theset{A}\)
+	such that \(\theset{A}\) is not the empty set but \(\therelation{C}\) is
+	the empty set. This would be possible since the empty set is a subset of
+	any other set, including
+	\(\thecartesianproductof{\theset{A}}{\theset{A}}\). Both symmetry and
+	transitivity would be vacuously true of \(\therelation{C}\) even though
+	reflexivity would not hold.
+\end{remark}
 
 \end{document}

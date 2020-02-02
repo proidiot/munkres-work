@@ -7,6 +7,69 @@
 Let \(\theset{A^*}\) be the set of equivalence classes. Show there is a
 bijective correspondence of \(\theset{A^*}\) with \(\theset{B}\).
 
-\todo{}
+\begin{thm}\thlabel{s03p04bt1}
+	An equivalence class must be non-empty.
+\end{thm}
+\begin{proof}
+	Let \(\therelation{\sim}\) be an equivalence relation on \(\theset{A}\),
+	and let \(\theset{E_x}\) be an equivalence class for an element
+	\(x \in \theset{A}\) on that relation. By the definition of an
+	equivalence relation, we know that \(\therelation{\sim}\) is reflexive.
+	So \(x \sim x\). Thus \(x \in \theset{E_x}\). Therefore \(\theset{E_x}\)
+	is non-empty.
+\end{proof}
+
+\begin{thm}\thlabel{s03p04bt2}
+	Given \(\therelation{=}\) is an equivalence relation on \(\theset{B}\),
+	a surjective function \(\mapping{f}{\theset{A}}{\theset{B}}\), and
+	\(\therelation{\sim}\) is a relation on \(\theset{A}\) such that, for
+	\(\thepair{a_0}{a_1} \in {\theset{A}^2}\), \({a_0} \sim {a_1}\) if and
+	only if \(f(a_0) = f(a_1)\), then \(\therelation{\sim}\) is an
+	equivalence relation whose set of equivalence classes \(\theset{A^*}\)
+	has a bijective correspondence with \(\theset{B}\).
+\end{thm}
+\begin{proof}
+	Let \(\therelation{=}\) be an equivalence relation on \(\theset{B}\).
+	Let \(\mapping{f}{\theset{A}}{\theset{B}}\) be a surjective function.
+	Let \(\therelation{\sim}\) be a relation on \(\theset{A}\) such that,
+	for \(\thepair{a_0}{a_1} \in {\theset{A}^2}\), \({a_0} \sim {a_1}\) iff
+	\(f(a_0) = f(a_1)\). By \thref{s03p04at1}, we know that
+	\(\therelation{\sim}\) is an equivalence relation. Let \(\theset{A^*}\)
+	be the corresponding set of equivalence classes. Let
+	\(\mapping{g}{\theset{B}}{\theset{A^*}}\) such that \(g(y)\) gives the
+	equivalence class of \(x \in \theset{A}\) where \(y = f(x)\). We will
+	show that \(g\) is a bijective correspondence between \(\theset{B}\)
+	and \(\theset{A^*}\) by showing things.
+
+	First, let \({y_0} \in \theset{B}\) and \({y_1} \in \theset{B}\) such
+	that \({y_0} \neq {y_1}\). Since \(\mapping{f}{\theset{A}}{\theset{B}}\)
+	is surjective, we know that there must exist values
+	\({x_0} \in \theset{A}\) and \({x_1} \in \theset{A}\) such that
+	\({y_0} = f(x_0)\) and \({y_1} = f(x_1)\). Since we can see that
+	\(f(x_0) \neq f(x_1)\) by substitution, the rule of assignment gives us
+	that \({x_0} \neq {x_1}\). Suppose that \(g(y_0) = g(y_1)\). By
+	substitution, we would have that \(g(f(x_0)) = g(f(x_1))\). By the
+	definition of \(g\), we would have that the equivalence class of \(x_0\)
+	would be equal to the equivalence class of \(x_1\). By the definition of
+	\(\therelation{\sim}\), that would give us that \(f(x_0) = f(x_1)\),
+	which contradicts \(f(x_0) \neq f(x_1)\), which was already established.
+	So the supposition is false, and \(g(y_0) \neq g(y_1)\). Thus \(g\) is
+	injective.
+
+	Next, let \(\theset{E} \in \theset{A^*}\). By the definition of
+	\(\theset{A^*}\), \(\theset{E}\) is an equivalence class of
+	\(\therelation{\sim}\). By \thref{s03p04bt1}, \(\theset{E}\) is
+	non-empty. Let \(x \in \theset{E}\). By the definition of an equivalence
+	class of \(\therelation{\sim}\), we know there is some
+	\(y \in \theset{B}\) such that \(y = f(x)\). By the definition of \(g\),
+	we have that \(g(y) = \theset{E}\). Since an arbitrary
+	\(\theset{E} \in \theset{A^*}\) necessarilly has a corresponding
+	\(y \in \theset{B}\) such that \(g(y) = \theset{E}\), we have thus shown
+	that \(g\) is surjective.
+
+	Since \(g\) is both injective and surjective, we have therefore
+	demonstrated that there is a bijective correspondence between
+	\(\theset{A^*}\) and \(\theset{B}\).
+\end{proof}
 
 \end{document}

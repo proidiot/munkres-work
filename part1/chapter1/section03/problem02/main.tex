@@ -5,14 +5,163 @@
 
 \begin{document}
 
-\problem{}\label{s3p2}
+\problem{}\label{s03p02}
 
 Let \(C\) be a relation on a set \(A\). If \(A_0 \isasubsetof A\), define the
 \keyword{restriction} of \(C\) to \(A_0\) to be the relation
 \(C \intersect (A_0 \cross A_0)\). Show that the restriction of an equivalence
 relation is an equivalence relation.
 
-\todo{}
-%\subfile{part1/chapter1/section2/problem1/subproblemA.tex}
+\begin{thm}\thlabel{s03p02t1}
+	Given \(\therelation{C}\) is a relation on \(\theset{A}\) and
+	\(\theset{A_0}\) is a subset of \(\theset{A}\), the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is a relation on
+	\(\theset{A_0}\).
+\end{thm}
+\begin{proof}
+	Let \(\therelation{C}\) be a relation on \(\theset{A}\). So
+	\(\therelation{C}\) is a subset of
+	\(\thecartesianproductof{\theset{A}}{\theset{A}}\). Let \(\theset{A_0}\)
+	be a subset of \(\theset{A}\). By the definition of the restriction of a
+	relation, the restriction of \(\therelation{C}\) to \(\theset{A_0}\) is
+	a subset of
+	\(\therelation{C} \intersect \thecartesianproductof{\theset{A_0}}{\theset{A_0}}\).
+	Let \(\thepair{x}{y}\) be in the restriction of \(\therelation{C}\) to
+	\(\theset{A_0}\). So \(\thepair{x}{y} \isin \theintersectionof{\therelation{C}}{\thecartesianproductof{\theset{A_0}}{\theset{A_0}}}\).
+	By the definition of set intersection,
+	\(\thepair{x}{y} \isin \therelation{C}\) and
+	\(\thepair{x}{y} \isin \thecartesianproductof{\theset{A_0}}{\theset{A_0}}\).
+	Since \(\thepair{x}{y}\) being in the restriction of \(\therelation{C}\)
+	to \(\theset{A_0}\) implies that \(\thepair{x}{y}\) is also in
+	\(\thecartesianproductof{\theset{A_0}}{\theset{A_0}}\), we have shown
+	that the restriction of \(\therelation{C}\) to \(\theset{A_0}\) is a
+	subset of \(\thecartesianproductof{\theset{A_0}}{\theset{A_0}}\). Thus,
+	be the definition of a relation, the restriction of \(\therelation{C}\)
+	to \(\theset{A_0}\) is a relation on \(\theset{A_0}\).
+\end{proof}
+
+\begin{thm}\thlabel{s03p02t2}
+	Given \(\therelation{C}\) is a reflexive relation on \(\theset{A}\) and
+	\(\theset{A_0}\) is a subset of \(\theset{A}\), the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is a reflexive relation on
+	\(\theset{A_0}\).
+\end{thm}
+\begin{proof}
+	Let \(\therelation{C}\) be a reflexive relation on \(\theset{A}\). Let
+	\(\theset{A_0}\) be a subset of \(\theset{A}\). By \thref{s03p02t1},
+	the restriction of \(\therelation{C}\) to \(\theset{A_0}\) is a relation
+	on \(\theset{A_0}\). Let \(x\) be some element of \(\theset{A_0}\).
+	Since \(\theset{A_0}\) is a subset of \(\theset{A}\), we know that
+	\(x \isin \theset{A}\) as well. Since \(\therelation{C}\) is reflexive,
+	we know that \(\thepair{x}{x}\) must be in \(\therelation{C}\). Note
+	that by the definition of the cartesian product, \(x \in \theset{A_0}\)
+	implies that
+	\(\thepair{x}{x} \isin \thecartesianproductof{\theset{A_0}}{\theset{A_0}}\).
+	Since \(\thepair{x}{x}\) is in both \(\therelation{C}\) and
+	\(\thecartesianproductof{\theset{A_0}}{\theset{A_0}}\), the definition
+	of set intersection gives us that
+	\(\thepair{x}{x} \isin \theintersectionof{\therelation{C}}{\thecartesianproductof{\theset{A_0}}{\theset{A_0}}}\).
+	By the definition of the restriction of a relation, we see that
+	\(\thepair{x}{x}\) is in the restriction of \(\therelation{C}\) to
+	\(\theset{A_0}\). Since \(x \in \theset{A_0}\) implies
+	\(\thepair{x}{x}\) is in the restriction of \(\therelation{C}\) to
+	\(\theset{A_0}\), we have thus shown that the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is a reflexive relation.
+\end{proof}
+
+\begin{thm}\thlabel{s03p02t3}
+	Given \(\therelation{C}\) is a symmetric relation on \(\theset{A}\) and
+	\(\theset{A_0}\) is a subset of \(\theset{A}\), the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is a symmetric relation on
+	\(\theset{A_0}\).
+\end{thm}
+\begin{proof}
+	Let \(\therelation{C}\) be a symmetric relation on \(\theset{A}\). Let
+	\(\theset{A_0}\) be a subset of \(\theset{A}\). By \thref{s03p02t1},
+	the restriction of \(\therelation{C}\) to \(\theset{A_0}\) is a relation
+	on \(\theset{A_0}\). Let \(\thepair{x}{y}\) be in the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\). So \(x \isin \theset{A_0}\) and
+	\(y \isin \theset{A_0}\). Note that by the definition of
+	the cartesian product,
+	\(\thepair{y}{x} \isin \thecartesianproductof{\theset{A_0}}{\theset{A_0}}\).
+	By the definition of the restriction of a relation, \(\thepair{x}{y}\)
+	being in the restriction of \(\therelation{C}\) to \(\theset{A_0}\)
+	implies
+	\(\thepair{x}{y} \isin \theintersectionof{\therelation{C}}{\thecartesianproductof{\theset{A_0}}{\theset{A_0}}}\),
+	and so further \(\thepair{x}{y} \isin \therelation{C}\). Now since
+	\(\therelation{C}\) is symmetric, we know that
+	\(\thepair{y}{x} \isin \therelation{C}\) as well. Since
+	\(\thepair{y}{x}\) is in both \(\therelation{C}\) and
+	\(\thecartesianproductof{\theset{A_0}}{\theset{A_0}}\), the definition
+	of set intersection gives us that
+	\(\thepair{y}{x} \isin \theintersectionof{\therelation{C}}{\thecartesianproductof{\theset{A_0}}{\theset{A_0}}}\).
+	By the definition of the restriction of a relation, we see that
+	\(\thepair{y}{x}\) is in the restriction of \(\therelation{C}\) to
+	\(\theset{A_0}\). Since \(\thepair{x}{y}\) being in the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is sufficient to show that
+	\(\thepair{y}{x}\) is also in the restriction of \(\therelation{C}\) to
+	\(\theset{A_0}\), we have thus shown that the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is a symmetric relation.
+\end{proof}
+
+\begin{thm}\thlabel{s03p02t4}
+	Given \(\therelation{C}\) is a transitive relation on \(\theset{A}\) and
+	\(\theset{A_0}\) is a subset of \(\theset{A}\), the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is a transitive relation on
+	\(\theset{A_0}\).
+\end{thm}
+\begin{proof}
+	Let \(\therelation{C}\) be a transitive relation on \(\theset{A}\). Let
+	\(\theset{A_0}\) be a subset of \(\theset{A}\). By \thref{s03p02t1},
+	the restriction of \(\therelation{C}\) to \(\theset{A_0}\) is a relation
+	on \(\theset{A_0}\). Let \(\thepair{x}{y}\) and \(\thepair{y}{z}\) be in
+	the restriction of \(\therelation{C}\) to \(\theset{A_0}\). So
+	\(x \isin \theset{A_0}\), \(y \isin \theset{A_0}\), and
+	\(z \isin \theset{A_0}\). Note that by the definition of the cartesian
+	product,
+	\(\thepair{x}{z} \isin \thecartesianproductof{\theset{A_0}}{\theset{A_0}}\).
+	By the definition of the restriction of a relation, \(\thepair{x}{y}\)
+	and \(\thepair{y}{z}\) being in the restriction of \(\therelation{C}\)
+	to \(\theset{A_0}\) implies both
+	\(\thepair{x}{y} \isin \theintersectionof{\therelation{C}}{\thecartesianproductof{\theset{A_0}}{\theset{A_0}}}\)
+	and
+	\(\thepair{y}{z} \isin \theintersectionof{\therelation{C}}{\thecartesianproductof{\theset{A_0}}{\theset{A_0}}}\),
+	and so further both \(\thepair{x}{y} \isin \therelation{C}\) and
+	\(\thepair{y}{z} \isin \therelation{C}\). Now since \(\therelation{C}\)
+	is transitive, we know that \(\thepair{x}{z} \isin \therelation{C}\) as
+	well. Since \(\thepair{x}{z}\) is in both \(\therelation{C}\) and
+	\(\thecartesianproductof{\theset{A_0}}{\theset{A_0}}\), the definition
+	of set intersection gives us that
+	\(\thepair{x}{z} \isin \theintersectionof{\therelation{C}}{\thecartesianproductof{\theset{A_0}}{\theset{A_0}}}\).
+	By the definition of the restriction of a relation, we see that
+	\(\thepair{x}{z}\) is in the restriction of \(\therelation{C}\) to
+	\(\theset{A_0}\). Since \(\thepair{x}{y}\) and \(\thepair{y}{z}\) being
+	in the restriction of \(\therelation{C}\) to \(\theset{A_0}\) is
+	sufficient to show that \(\thepair{x}{z}\) is also in the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\), we have thus shown that the
+	restriction of \(\therelation{C}\) to \(\theset{A_0}\) is a transitive
+	relation.
+\end{proof}
+
+\begin{thm}\thlabel{s03p02t5}
+	Given \(\therelation{C}\) is an equivalence relation on \(\theset{A}\)
+	and \(\theset{A_0}\) is a subset of \(\theset{A}\), the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is an equivalence relation on
+	\(\theset{A_0}\).
+\end{thm}
+\begin{proof}
+	Let \(\therelation{C}\) be an equivalence relation on \(\theset{A}\).
+	By the definition of an equivalence relation, \(\therelation{C}\) is
+	reflexive, symmetric, and transitive. Let \(\theset{A_0}\) be a subset
+	of \(\theset{A}\). By \thref{s03p02t1}, the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is a relation on
+	\(\theset{A_0}\). By \thref{s03p02t2}, the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is reflexive. By
+	\thref{s03p02t3}, the restrction of \(\therelation{C}\) to
+	\(\theset{A_0}\) is symmetric. By \thref{s03p02t4}, the restriction of
+	\(\therelation{C}\) to \(\theset{A_0}\) is transitive. Therefore the
+	restriction of \(\therelation{C}\) to \(\theset{A_0}\) is an equivalence
+	relation.
+\end{proof}
 
 \end{document}

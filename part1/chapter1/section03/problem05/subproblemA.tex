@@ -8,6 +8,94 @@ Show that \(\theset{S'}\) is an equivalence relation on the real line and
 \(\theset{S'} \isasupersetof \theset{S}\). Describe the equivalence classes of
 \(\theset{S'}\).
 
-\todo{}
+\begin{thm}\thlabel{s03p05at1}
+	\(\theset{S'}\) is reflexive.
+\end{thm}
+\begin{proof}
+	Assume \(\theset{S'}\) is the set of all \(\thepair{x}{y}\) in
+	\(\reals ^ 2\) such that \(y - x\) is an integer. Let \(r\) be some
+	value in \(\reals\). Note that \(\thepair{r}{r}\) is in \(\reals ^2\).
+	Now since \(0\) is the additive identity of \(\reals\), by the
+	definition of subtraction over \(\reals\), we know that \(r - r = 0\).
+	Observe that \(0\) is an integer. By the definition of \(\theset{S'}\),
+	we see that \(\thepair{r}{r}\) is in \(\theset{S'}\). Therefore
+	\(\theset{S'}\) is reflexive by definition.
+\end{proof}
+
+\begin{thm}\thlabel{s03p05at2}
+	\(\theset{S'}\) is symmetric.
+\end{thm}
+\begin{proof}
+	Assume \(\theset{S'}\) is the set of all \(\thepair{x}{y}\) in
+	\(\reals ^ 2\) such that \(y - x\) is an integer. Assume
+	\(\thepair{a}{b}\) is in \(\theset{S'}\). Note that \(a \isin \reals\),
+	that \(b \isin \reals\), and that there exists some \(k \in \reals\)
+	such that \(b - a = k\) and \(k\) is known to be an integer. Now by
+	algebraic manipulation of the equation \(b - a = k\), we have that
+	\(b = k + a\), and that \(0 = k + a - b\), and finally that
+	\(-k = a - b\). By the symmetry of \(=\) in \(\reals\), we have that
+	\(a - b = -k\). As we have already established that \(k\) is an integer,
+	we know that \(-k\) is also an integer by the definition of the
+	integers. So \(\thepair{b}{a}\) is in \(\theset{S'}\) by definition.
+	Therefore, by definition, \(\theset{S'}\) is symmetric.
+\end{proof}
+
+\begin{thm}\thlabel{s03p05at3}
+	\(\theset{S'}\) is transitive.
+\end{thm}
+\begin{proof}
+	Assume \(\theset{S'}\) is the set of all \(\thepair{x}{y}\) in
+	\(\reals ^ 2\) such that \(y - x\) is an integer. Assume both
+	\(\thepair{a}{b}\) and \(\thepair{b}{c}\) are in \(\theset{S'}\). Note
+	that \(a \isin \reals\), that \(b \isin \reals\), that
+	\(c \isin \reals\), that there exists some \(k \in \reals\) such that
+	\(b - a = k\), that there exists some \(j \in \reals\) such that
+	\(c - b = j\), and that both \(k \isin \integers\) and
+	\(j \isin \integers\). Now by algebraic manipulation of the equation
+	\(b - a = k\), we have that \(b = k + a\). By substitution into the
+	equation \(c - b = j\), we have that \(c - (k + a) = j\), which can be
+	simplified to \(c - k - a = j\) by distribution. By algebraic
+	manipulation, we have that \(c - a = j + k\). Note that by the closure
+	of addition over the integers, we know that there exists some
+	\(m \in \integers\) such that \(m = j + k\). By substitution, we have
+	that \(c - a = m\). So \(\thepair{a}{c}\) is in \(\theset{S'}\) by
+	definition. Therefore, by definition, \(\theset{S'}\) is transitive.
+\end{proof}
+
+\begin{thm}\thlabel{s03p05at4}
+	\(\theset{S'}\) is an equivalence relation on \(\reals\).
+\end{thm}
+\begin{proof}
+	As \(\theset{S'}\) is reflexive (by \thref{s03p05at1}), symmetric (by
+	\thref{s03p05at2}), and transitive (by \thref{s03p05at3}), we can
+	therefore say that  \(\theset{S'}\) is an equivalence relation by
+	definition.
+\end{proof}
+
+\begin{thm}\thlabel{s03p05at5}
+	\(\theset{S}\) is a subset of \(\theset{S'}\).
+\end{thm}
+\begin{proof}
+	Assume \(\theset{S'}\) is the set of all \(\thepair{x}{y}\) in
+	\(\reals ^ 2\) such that \(y - x\) is an integer. Assume \(\theset{S}\)
+	is the set of all \(\thepair{x}{y}\) in \(\reals ^ 2\) such that
+	\(y = x + 1\) and \(0 < x < 2\). Let \(\thepair{a}{b}\) be in
+	\(\theset{S}\). Note that \(a \isin \reals\), that \(b \isin \reals\),
+	that \(b = a + 1\), that \(a > 0\), and that \(a < 2\). By algebraic
+	manipulation of the equation \(b = a + 1\), we have that \(b - a = 1\).
+	Observe that \(1\) is an integer. So \(\thepair{a}{b}\) is in
+	\(\theset{S'}\) by definition. Therefore \(\theset{S}\) is a subset of
+	\(\theset{S'}\).
+\end{proof}
+
+\begin{remark}
+	The equivalence classes of \(\theset{S'}\) are the sets of all values in
+	\(\reals\) that differ from each other by an integer. By choosing the
+	unique representative \(r \in \reals\) in each equivalence class such
+	that \(0 \leq r < 1\), we can see that while each equivalence class has
+	only a countably infinite number of members, there is an uncountably
+	infinite number of equivalence classes in \(\theset{S'}\).
+\end{remark}
+
 
 \end{document}

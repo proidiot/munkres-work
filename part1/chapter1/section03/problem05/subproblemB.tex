@@ -5,8 +5,138 @@
 \subproblem{}\label{s03p05b}
 
 Show that given any collection of equivalence relations on a set \(\theset{A}\),
-their intersection is an equivalence relation on A.
+their intersection is an equivalence relation on \(\theset{A}\).
 
-\todo{}
+\begin{lemma}\thlabel{emptyIntersectNotEquivRel}
+	Given an empty collection of equivalence relations on a non-empty set
+	\(\theset{A}\), the intersection of the empty collection is not an
+	equivalence relation on \(\theset{A}\).
+\end{lemma}
+\begin{proof}
+	Assume there is a non-empty set \(\theset{A}\) and an empty set
+	\(\theset{E}\) of equivalence relations on \(\theset{A}\). Since
+	\(\theset{E}\) has no elements, then \(\intersectionofset{E}\) is the
+	empty set. Since \(\theset{A}\) is non-empty, let \(a\) be some element
+	of \(\theset{A}\). Suppose \(\intersectionofset{E}\) is an
+	equivalence relation on \(\theset{A}\). By the definition of an
+	equivalence relation on \(\theset{A}\), \(\intersectionofset{E}\) is a
+	reflexive relation on \(\theset{A}\). By the definition of a reflexive
+	relation on \(\theset{A}\), we know that \(\thepair{a}{a}\) must be in
+	\(\intersectionofset{E}\). However, this contradicts
+	\(\intersectionofset{E}\) being the empty set. So the supposition is
+	false, and therefore \(\intersectionofset{E}\) is not an equivalence
+	relation on \(\theset{A}\).
+\end{proof}
+
+\begin{lemma}\thlabel{relIntersectIsRel}
+	Given a collection consisting of relations on a set \(\theset{A}\),
+	their intersection is a relation on \(\theset{A}\).
+\end{lemma}
+\begin{proof}
+	Assume there is a set \(\theset{A}\) and a non-empty set \(\theset{E}\)
+	consisting of relations on \(\theset{A}\). Let \(\theset{E_0}\) be a
+	member of \(\theset{E}\). By the definition of \(\theset{E}\), we know
+	that \(\theset{E_0}\) is a relation on \(\theset{A}\). By the definition
+	of a relation on \(\theset{A}\), we know that \(\theset{E_0}\) is a
+	subset of \(\theset{A}^2\). By definition, we know that
+	\(\intersectionofset{E}\) is a subset of \(\theset{E_0}\). By the
+	transitivity of the subset relation, we know that
+	\(\intersectionofset{E}\) is a subset of \(\theset{A}^2\). Therefore
+	\(\intersectionofset{E}\) is a relation on \(\theset{A}\) by definition.
+\end{proof}
+
+\begin{lemma}\thlabel{reflIntersectIsRefl}
+	Given a non-empty collection consisting of reflexive relations on a set
+	\(\theset{A}\), their intersection is a reflexive relation on
+	\(\theset{A}\).
+\end{lemma}
+\begin{proof}
+	Assume there is a set \(\theset{A}\) and a non-empty set \(\theset{E}\)
+	consisting of reflexive relations on \(\theset{A}\). Suppose
+	\(\intersectionofset{E}\) is not a reflexive relation on \(\theset{A}\).
+	Then by the definition of a reflexive relation, there exists some
+	element \(a\) in \(\theset{A}\) such that \(\thepair{a}{a}\) is not in
+	\(\intersectionofset{E}\). By definition, there is at least one member
+	\(\theset{E_0}\) in \(\theset{E}\) such that \(\thepair{a}{a}\) is not
+	in \(\theset{E_0}\). Note that by the definition of \(\theset{E}\), we
+	know that \(\theset{E_0}\) is a reflexive relation on \(\theset{A}\). So
+	by the definition of a reflexive relation on \(\theset{A}\), we can say
+	that \(\thepair{a}{a}\) is in \(\theset{E_0}\). However, this
+	contradicts the statement that \(\thepair{a}{a}\) is not in
+	\(\theset{E_0}\). So the supposition was false, and
+	\(\intersectionofset{E}\) is a reflexive relation on \(\theset{A}\).
+\end{proof}
+
+\begin{lemma}\thlabel{symmIntersectIsSymm}
+	Given a collection consisting of symmetric relations on a set
+	\(\theset{A}\), their intersection is a symmetric relation on
+	\(\theset{A}\).
+\end{lemma}
+\begin{proof}
+	Assume there is a set \(\theset{A}\) and a set \(\theset{E}\) consisting
+	of symmetric relations on \(\theset{A}\). Suppose
+	\(\intersectionofset{E}\) is not a symmetric relation on \(\theset{A}\).
+	Then by definition, there exists \(\somepair{a}{b}\) in
+	\(\intersectionofset{E}\) such that \(a \isin \theset{A}\) and
+	\(b \isin \theset{A}\) but \(\thepair{b}{a}\) is not in
+	\(\intersectionofset{E}\). So \(\thepair{a}{b}\) is in every member of
+	\(\theset{E}\), but there exists \(\someset{E_0}\) in \(\theset{E}\)
+	such that \(\thepair{b}{a}\) is not in \(\theset{E_0}\). As we have
+	established that \(\thepair{a}{b}\) is in every member of
+	\(\theset{E}\), we know that \(\thepair{a}{b}\) is in \(\theset{E_0}\).
+	By the definition of \(\theset{E}\), we can say that \(\theset{E_0}\) is
+	a symmetric relation on \(\theset{A}\). Since \(\thepair{a}{b}\) is in
+	\(\theset{E_0}\), we know that \(\thepair{b}{a}\) is also in
+	\(\theset{E_0}\) by the definition of a symmetric relation. However,
+	this contradicts the statement that \(\thepair{b}{a}\) is not in
+	\(\theset{E_0}\). So the supposition was false, and
+	\(\intersectionofset{E}\) is a symmetric relation on \(\theset{A}\).
+\end{proof}
+
+\begin{lemma}\thlabel{transIntersectIsTrans}
+	Given a collection consisting of transitive relations on a set
+	\(\theset{A}\), their intersection is a transitive relation on
+	\(\theset{A}\).
+\end{lemma}
+\begin{proof}
+	Assume there is a set \(\theset{A}\) and a non-empty set \(\theset{E}\)
+	consisting of transitive relations on \(\theset{A}\). Suppose
+	\(\intersectionofset{E}\) is not a transitive relation on
+	\(\theset{A}\). Then by definition, there exists
+	\(\somepair{a}{b} \in \intersectionofset{E}\) and
+	\(\somepair{b}{c} \in \intersectionofset{E}\) such that
+	\(a \isin \theset{A}\), that \(b \isin \theset{A}\), and that
+	\(c \isin \theset{A}\), but \(\thepair{a}{c}\) is not in
+	\(\intersectionofset{E}\). So \(\thepair{a}{b}\) and \(\thepair{b}{c}\)
+	are in every member of \(\theset{E}\), but there exists
+	\(\someset{E_0}\) in \(\theset{E}\) such that \(\thepair{a}{c}\) is not
+	in \(\theset{E_0}\). Now by the definition of \(\theset{E}\), we know
+	that \(\theset{E_0}\) is a transitive relation on \(\theset{A}\). As we
+	have already established that both
+	\(\thepair{a}{b} \isin \theset{E_0}\) and
+	\(\thepair{b}{c} \isin \theset{E_0}\), we can say that
+	\(\thepair{a}{c} \isin \theset{E_0}\) by the definition of a transitive
+	relation on \(\theset{A}\). However, this contradicts the statement that
+	\(\thepair{a}{c}\) is not in \(\theset{E_0}\). So the supposition was
+	false, and \(\intersectionofset{E}\) is a transitive relation on
+	\(\theset{A}\).
+\end{proof}
+
+\begin{thm}\thlabel{equivIntersectIsEquiv}
+	Given a non-empty collection of equivalence relations on a set
+	\(\theset{A}\), their intersection is an equivalence relation on
+	\(\theset{A}\).
+\end{thm}
+\begin{proof}
+	Assume there is a set \(\theset{A}\) and a non-empty set \(\theset{E}\)
+	consisting of equivalence relations on \(\theset{A}\). As
+	\(\intersectionofset{E}\) is a relation on \(\theset{A}\) (by
+	\thref{relIntersectIsRel}) that is reflexive (by
+	\thref{reflIntersectIsRefl}), symmetric (by
+	\thref{symmIntersectIsSymm}), and transitive (by
+	\thref{transIntersectIsTrans}), we can say that
+	\(\intersectionofset{E}\) is an equivalence relation on \(\theset{A}\)
+	by definition.
+\end{proof}
 
 \end{document}
